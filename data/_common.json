@@ -1,15 +1,9 @@
 {
   "appName": "hello Special",
-  "nav": [
-    {
-      "name": "About",
-      "url": "/about"
-    }
-  ],
   "subheader": [{
     "icon": "alles",
     "title": "Alle online veilingen",
-    "link": "/categories.html"
+    "link": "categories.html"
   }, {
     "icon": "huis_tuin",
     "title": "Huis & Tuin",
@@ -42,7 +36,7 @@
       "link": "#"
     }, {
       "text": "Team",
-      "link": "/about-us.html"
+      "link": "about-us.html"
     }, {
       "text": "Vacatures",
       "link": "#"
@@ -76,15 +70,15 @@
     "items": [{
       "text": "Facebook",
       "link": "https://www.facebook.com/HelloSpecials/",
-      "img": "/facebook.png"
+      "img": "facebook.png"
     }, {
       "text": "LinkedIn",
       "link": "https://www.linkedin.com/company/hellospecial",
-      "img": "/li.png"
+      "img": "li.png"
     }, {
       "text": "Instagram",
       "link": "https://www.instagram.com/hellospecial",
-      "img": "/instagram.png"
+      "img": "instagram.png"
     }]
   }],
   "newsletter": {
@@ -94,35 +88,35 @@
   "account": {
     "sidebar": [{
       "title": "Mijn veilingen",
-      "url": "/mijn-biedingen.html",
+      "url": "mijn-biedingen.html",
       "subpages": [{
           "title": "Mijn biedingen",
-          "url": "/mijn-biedingen.html"
+          "url": "mijn-biedingen.html"
         }, {
           "title": "Gewonnen veilingen",
-          "url": "/mijn-gewonnen.html"
+          "url": "mijn-gewonnen.html"
         }
       ]
     }, {
       "title": "Mijn Account",
-      "url": "/mijn-gewonnen.html",
+      "url": "mijn-gewonnen.html",
       "subpages": [{
           "title": "Mijn gegevens",
-          "url": "/mijn-gegevens.html"
+          "url": "mijn-gegevens.html"
         }, {
           "title": "Deel & Verdien",
-          "url": "/mijn-gewonnen.html"
+          "url": "mijn-gewonnen.html"
         }
       ]
     }, {
       "title": "Hulp",
-      "url": "/table.html",
+      "url": "table.html",
       "subpages": [{
           "title": "Mijn bestellingen",
-          "url": "/table.html"
+          "url": "table.html"
         }, {
           "title": "Klantenservice",
-          "url": "/table.html"
+          "url": "table.html"
         }
       ]
     }]
@@ -226,7 +220,7 @@
   "items" : [{
     "id": 1,
     "title" : "Phone",
-    "url": "/detail.html",
+    "url": "detail.html",
     "img" : "3.jpg",
     "price": 759,
     "bid": 475,
@@ -237,7 +231,7 @@
   }, {
     "id": 2,
     "title" : "Forta lattenbodem",
-    "url": "/detail.html",
+    "url": "detail.html",
     "img" : "2.jpg",
     "price": 759,
     "bid": 475,
@@ -249,7 +243,7 @@
   }, {
     "id": 3,
     "title" : "Ring",
-    "url": "/detail.html",
+    "url": "detail.html",
     "img" : "4.jpg",
     "price": 759,
     "bid": 475,
@@ -260,7 +254,7 @@
   }, {
     "id": 4,
     "title" : "500 EcoClean Vaatwastabletten",
-    "url": "/detail.html",
+    "url": "detail.html",
     "img" : "5.jpg",
     "price": 759,
     "bid": 475,
@@ -272,7 +266,7 @@
   }, {
     "id": 5,
     "title" : "Phone",
-    "url": "/detail.html",
+    "url": "detail.html",
     "img" : "3.jpg",
     "price": 799,
     "bid": 620,
@@ -283,7 +277,7 @@
   }, {
     "id": 6,
     "title" : "Joystick",
-    "url": "/detail.html",
+    "url": "detail.html",
     "img" : "2.jpg",
     "price": 399,
     "bid": 270,
@@ -294,7 +288,7 @@
   }, {
     "id": 7,
     "title" : "Shoe",
-    "url": "/detail.html",
+    "url": "detail.html",
     "img" : "5.jpg",
     "price": 150,
     "bid": 45,
@@ -305,7 +299,7 @@
   }, {
     "id": 8,
     "title" : "Ring",
-    "url": "/detail.html",
+    "url": "detail.html",
     "img" : "4.jpg",
     "price": 190,
     "bid": 67,
@@ -316,7 +310,7 @@
   }, {
     "id": 9,
     "title" : "Shoe",
-    "url": "/detail.html",
+    "url": "detail.html",
     "img" : "5.jpg",
     "price": 159,
     "bid": 175,
@@ -328,7 +322,7 @@
   "detail": {
     "id": 1,
     "title": "Apple iPhone 7 32 GB Zilver",
-    "url": "/detail.html",
+    "url": "detail.html",
     "img" : "3.jpg",
     "price": 759,
     "bid": 475,
