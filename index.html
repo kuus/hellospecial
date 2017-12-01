@@ -1,0 +1,1353 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HelloSpecial</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="kuus <kunderikuus@gmail.com> (http://kunderikuus.net)">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="styles/app.css?v=36fb1ce3b7a61b09f1dcdd68d2b70a76" inline> </head>
+  <body class="page--home">
+    <div class="wrap">
+      <div class="wrap__top">
+        <!-- macro: header -->
+        <header class="hsHeader" id="hsHeader">
+          <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse hsGradient">
+            <a class="navbar-brand hsLogotype" href="/">Hello Special</a>
+            <div class="container">
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#js_navbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-collapse collapse" id="js_navbar">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
+                      <span class="sr-only">Home</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/hoe-werkt-het-bieden.html">Hoe werkt het?</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/seller.html">Verkopen</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login.html" data-authmodal="login">Inloggen</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/register.html" data-authmodal="register">Registreren</a>
+                  </li>
+                  <li class="nav-item hsLang js-dropdown" id="hsLang__header">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                      <img class="hsLang__img" src="/images/flag-nl.png">
+                      <span class="hsLang__label hidden-lg-up">Nederlands</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" href="#nl">
+                        <img class="hsLang__img" src="/images/flag-nl.png">
+                        <span class="hsLang__label">Nederlands</span>
+                      </a>
+                      <a class="dropdown-item" href="#en">
+                        <img class="hsLang__img" src="/images/flag-en.png">
+                        <span class="hsLang__label">English</span>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <!-- endmacro: header -->
+        <aside class="appSubheader">
+          <div class="container">
+            <ul class="appSubheader__list">
+              <li class="appSubheader__item">
+                <a class="appSubheader__link" href="/categories.html">
+                  <i class="icon icon-alles"></i>
+                  <h4 class="appSubheader__title">Alle online veilingen</h4>
+                </a>
+              </li>
+              <li class="appSubheader__item">
+                <a class="appSubheader__link" href="#">
+                  <i class="icon icon-huis_tuin"></i>
+                  <h4 class="appSubheader__title">Huis &amp; Tuin</h4>
+                </a>
+              </li>
+              <li class="appSubheader__item">
+                <a class="appSubheader__link" href="#">
+                  <i class="icon icon-beauty_verzorging"></i>
+                  <h4 class="appSubheader__title">Beauty &amp; Verzorging</h4>
+                </a>
+              </li>
+              <li class="appSubheader__item">
+                <a class="appSubheader__link" href="#">
+                  <i class="icon icon-baby_kinderen"></i>
+                  <h4 class="appSubheader__title">Baby &amp; Kinderen</h4>
+                </a>
+              </li>
+              <li class="appSubheader__item">
+                <a class="appSubheader__link active" href="#">
+                  <i class="icon icon-gadgets_elektronica"></i>
+                  <h4 class="appSubheader__title">Gadgets &amp; Elektronica</h4>
+                </a>
+              </li>
+              <li class="appSubheader__item">
+                <a class="appSubheader__link" href="#">
+                  <i class="icon icon-hobby_vrije_tijd"></i>
+                  <h4 class="appSubheader__title">Hobby &amp; Vrije Tijd</h4>
+                </a>
+              </li>
+              <li class="appSubheader__item">
+                <a class="appSubheader__link" href="#">
+                  <i class="icon icon-mode_sieraden"></i>
+                  <h4 class="appSubheader__title">Mode &amp; Sieraden</h4>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <div class="wrap__top-inner container">
+          <!--[if lt IE 10]>
+  <div class="alert alert-warning browserupgrade"><p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>
+<![endif]-->
+          <section class="row table-row hidden-md-down">
+            <div class="col-lg-9">
+              <div id="homepageRegisterCard__frame"></div>
+              <div id="homepageRegisterCard" class="card hsContentCard">
+                <div class="hsContentCard__top" style="background-image:url(/images/home--centered.jpg)">
+                  <div class="hsContentCard__overlay"></div>
+                  <h2 class="hsContentCard__top-title">De interactieve en razendsnelle veilingsite</h2>
+                </div>
+                <div class="hsContentCard__bottom row">
+                  <div class="col-md-4">
+                    <div class="media">
+                      <img class="d-flex img-fluid" src="/images/home-icon1.png">
+                      <div class="media-body">
+                        <h3>1. Registreer</h3>
+                        <h4>Maak gratis een account aan om mee te bieden op jouw favoriete ‘Specials’</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="media">
+                      <img class="d-flex img-fluid" src="/images/home-icon2.png">
+                      <div class="media-body">
+                        <h3>2. Bied mee en win!</h3>
+                        <h4>Bied gratis mee en betaal alleen als je de veiling wint</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="media">
+                      <img class="d-flex img-fluid" src="/images/home-icon3.png">
+                      <div class="media-body">
+                        <h3>3. Ontvang je product!</h3>
+                        <h4>Je ontvangt jouw ‘Special’ binnen enkele dagen thuis</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mx-auto">
+                    <a href="#" class="btn btn-success">Registreer en bied mee!</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 hsItem__col">
+              <!-- Start main macro: `itemCard` -->
+              <div class="card hsItem hsItemCard" data-state="verkocht">
+                <div class="hsItemCard__top">
+                  <div class="hsItemCard__top-inner">
+                    <h3 class="hsItemCard__top-title">500 EcoClean Vaatwastabletten</h3>
+                    <div class="hsItemCard__top-img-wrap">
+                      <a class="hsItemCard__link" href="/detail.html">
+                        <img class="img-fluid hsItemCard__top-img" src="/images/_preview/5.jpg" alt="500 EcoClean Vaatwastabletten" data-item-modal="4"> </a>
+                    </div>
+                    <!-- Start macro: `item__search` -->
+                    <a href="/detail.html" class="hsItem__search">
+                      <i class="icon icon-search"></i>
+                    </a>
+                    <!-- End macro: `item__search` -->
+                  </div>
+                </div>
+                <div class="hsItemCard__bottom">
+                  <div class="hsItemCard__bottom-inner">
+                    <!-- Start macro: `item__discount` -->
+                    <div class="hsDiscount hsGradient--orange">-43%</div>
+                    <!-- End macro: `item__discount` -->
+                    <div class="hsItemCard__middle">
+                      <div class="hsItemCard__bottom-left" data-item-modal="4">
+                        <a class="hsItemCard__link" href="/detail.html">
+                          <img class="hsItemCard__bottom-img" src="/images/_preview/5.jpg" alt="500 EcoClean Vaatwastabletten"> </a>
+                      </div>
+                      <div class="hsItemCard__bottom-right">
+                        <h3 class="hsItemCard__bottom-title">500 EcoClean Vaatwastabletten</h3>
+                        <div class="hsItemCard__bottom-right-bottom">
+                          <!-- Start macro: `item__info` -->
+                          <div class="hsItem__info d-flex justify-content-between">
+                            <h4 class="hsItem__info-price">
+                              <span class="hsItem__info-what">winkelprijs</span>
+                              <b class="hsItem__info-is">&euro;
+                                <span data-price>759</span>
+                              </b>
+                            </h4>
+                            <h4 class="hsItem__info-bid">
+                              <span class="hsItem__info-what">topbod</span>
+                              <b class="hsItem__info-is" data-hsItem-bidder>Diederik</b>
+                            </h4>
+                          </div>
+                          <!-- End macro: `item__info` -->
+                          <button class="btn btn-primary btn-block hsItem__btn" data-bid>
+                            <span class="hsItem__btn-bid">Bied</span> &euro;
+                            <span data-price>475</span>
+                            <span class="hsItem__btn-shipping">+ &euro;5,59 verzendkosten</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Start macro: `item__state` -->
+                    <div class="hsItem__state">
+                      <span class="hsItem__state-msg" data-state-msg>Verkocht!</span>
+                      <div class="hsItem__state-circle">
+                        <svg class="hsItem__state-svg" viewbox="0 0 50 50">
+                          <defs>
+                            <linearGradient id="hsStateGrad--34" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop class="stop1" offset="0%" />
+                              <stop class="stop2" offset="100%" /> </linearGradient>
+                          </defs>
+                          <path data-state-svg transform="translate(25,25)" fill="url(#hsStateGrad--34)" /> </svg>
+                      </div>
+                    </div>
+                    <!-- End macro: `item__state` -->
+                  </div>
+                </div>
+              </div>
+              <!-- End main macro: `itemCard` -->
+            </div>
+          </section>
+          <section class="row">
+            <header class="col-12">
+              <h4 class="py-2 mt-lg-5 text-center text-muted">Alle veilingen</h4>
+            </header>
+            <div class="col-12 col-lg-4 hsItem__col">
+              <!-- Start main macro: `itemCard` -->
+              <div class="card hsItem hsItemCard" data-state="eenmaal">
+                <div class="hsItemCard__top">
+                  <div class="hsItemCard__top-inner">
+                    <h3 class="hsItemCard__top-title">Phone</h3>
+                    <div class="hsItemCard__top-img-wrap">
+                      <a class="hsItemCard__link" href="/detail.html">
+                        <img class="img-fluid hsItemCard__top-img" src="/images/_preview/3.jpg" alt="Phone" data-item-modal="1"> </a>
+                    </div>
+                    <!-- Start macro: `item__search` -->
+                    <a href="/detail.html" class="hsItem__search">
+                      <i class="icon icon-search"></i>
+                    </a>
+                    <!-- End macro: `item__search` -->
+                  </div>
+                </div>
+                <div class="hsItemCard__bottom">
+                  <div class="hsItemCard__bottom-inner">
+                    <!-- Start macro: `item__discount` -->
+                    <!-- End macro: `item__discount` -->
+                    <div class="hsItemCard__middle">
+                      <div class="hsItemCard__bottom-left" data-item-modal="1">
+                        <a class="hsItemCard__link" href="/detail.html">
+                          <img class="hsItemCard__bottom-img" src="/images/_preview/3.jpg" alt="Phone"> </a>
+                      </div>
+                      <div class="hsItemCard__bottom-right">
+                        <h3 class="hsItemCard__bottom-title">Phone</h3>
+                        <div class="hsItemCard__bottom-right-bottom">
+                          <!-- Start macro: `item__info` -->
+                          <div class="hsItem__info d-flex justify-content-between">
+                            <h4 class="hsItem__info-price">
+                              <span class="hsItem__info-what">winkelprijs</span>
+                              <b class="hsItem__info-is">&euro;
+                                <span data-price>759</span>
+                              </b>
+                            </h4>
+                            <h4 class="hsItem__info-bid">
+                              <span class="hsItem__info-what">topbod</span>
+                              <b class="hsItem__info-is" data-hsItem-bidder>Diederik</b>
+                            </h4>
+                          </div>
+                          <!-- End macro: `item__info` -->
+                          <button class="btn btn-primary btn-block hsItem__btn btn-accent" data-bid>
+                            <span class="hsItem__btn-bid">Bied</span> &euro;
+                            <span data-price>475</span>
+                            <span class="hsItem__btn-shipping">+ &euro;5,59 verzendkosten</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Start macro: `item__state` -->
+                    <div class="hsItem__state">
+                      <span class="hsItem__state-msg" data-state-msg>Eenmaal...</span>
+                      <div class="hsItem__state-circle">
+                        <svg class="hsItem__state-svg" viewbox="0 0 50 50">
+                          <defs>
+                            <linearGradient id="hsStateGrad--19" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop class="stop1" offset="0%" />
+                              <stop class="stop2" offset="100%" /> </linearGradient>
+                          </defs>
+                          <path data-state-svg transform="translate(25,25)" fill="url(#hsStateGrad--19)" /> </svg>
+                      </div>
+                    </div>
+                    <!-- End macro: `item__state` -->
+                  </div>
+                </div>
+              </div>
+              <!-- End main macro: `itemCard` -->
+            </div>
+            <div class="col-12 col-lg-4 hsItem__col">
+              <!-- Start main macro: `itemCard` -->
+              <div class="card hsItem hsItemCard" data-state="andermaal">
+                <div class="hsItemCard__top">
+                  <div class="hsItemCard__top-inner">
+                    <h3 class="hsItemCard__top-title">Forta lattenbodem</h3>
+                    <div class="hsItemCard__top-img-wrap">
+                      <a class="hsItemCard__link" href="/detail.html">
+                        <img class="img-fluid hsItemCard__top-img" src="/images/_preview/2.jpg" alt="Forta lattenbodem" data-item-modal="2"> </a>
+                    </div>
+                    <!-- Start macro: `item__search` -->
+                    <a href="/detail.html" class="hsItem__search">
+                      <i class="icon icon-search"></i>
+                    </a>
+                    <!-- End macro: `item__search` -->
+                  </div>
+                </div>
+                <div class="hsItemCard__bottom">
+                  <div class="hsItemCard__bottom-inner">
+                    <!-- Start macro: `item__discount` -->
+                    <div class="hsDiscount hsGradient--orange">-43%</div>
+                    <!-- End macro: `item__discount` -->
+                    <div class="hsItemCard__middle">
+                      <div class="hsItemCard__bottom-left" data-item-modal="2">
+                        <a class="hsItemCard__link" href="/detail.html">
+                          <img class="hsItemCard__bottom-img" src="/images/_preview/2.jpg" alt="Forta lattenbodem"> </a>
+                      </div>
+                      <div class="hsItemCard__bottom-right">
+                        <h3 class="hsItemCard__bottom-title">Forta lattenbodem</h3>
+                        <div class="hsItemCard__bottom-right-bottom">
+                          <!-- Start macro: `item__info` -->
+                          <div class="hsItem__info d-flex justify-content-between">
+                            <h4 class="hsItem__info-price">
+                              <span class="hsItem__info-what">winkelprijs</span>
+                              <b class="hsItem__info-is">&euro;
+                                <span data-price>759</span>
+                              </b>
+                            </h4>
+                            <h4 class="hsItem__info-bid">
+                              <span class="hsItem__info-what">topbod</span>
+                              <b class="hsItem__info-is" data-hsItem-bidder>Diederik</b>
+                            </h4>
+                          </div>
+                          <!-- End macro: `item__info` -->
+                          <button class="btn btn-primary btn-block hsItem__btn" data-bid>
+                            <span class="hsItem__btn-bid">Bied</span> &euro;
+                            <span data-price>475</span>
+                            <span class="hsItem__btn-shipping">+ &euro;5,59 verzendkosten</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Start macro: `item__state` -->
+                    <div class="hsItem__state">
+                      <span class="hsItem__state-msg" data-state-msg>Andermaal...</span>
+                      <div class="hsItem__state-circle">
+                        <svg class="hsItem__state-svg" viewbox="0 0 50 50">
+                          <defs>
+                            <linearGradient id="hsStateGrad--28" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop class="stop1" offset="0%" />
+                              <stop class="stop2" offset="100%" /> </linearGradient>
+                          </defs>
+                          <path data-state-svg transform="translate(25,25)" fill="url(#hsStateGrad--28)" /> </svg>
+                      </div>
+                    </div>
+                    <!-- End macro: `item__state` -->
+                  </div>
+                </div>
+              </div>
+              <!-- End main macro: `itemCard` -->
+            </div>
+            <div class="col-12 col-lg-4 hsItem__col">
+              <!-- Start main macro: `itemCard` -->
+              <div class="card hsItem hsItemCard" data-state="geboden">
+                <div class="hsItemCard__top">
+                  <div class="hsItemCard__top-inner">
+                    <h3 class="hsItemCard__top-title">Ring</h3>
+                    <div class="hsItemCard__top-img-wrap">
+                      <a class="hsItemCard__link" href="/detail.html">
+                        <img class="img-fluid hsItemCard__top-img" src="/images/_preview/4.jpg" alt="Ring" data-item-modal="3"> </a>
+                    </div>
+                    <!-- Start macro: `item__search` -->
+                    <a href="/detail.html" class="hsItem__search">
+                      <i class="icon icon-search"></i>
+                    </a>
+                    <!-- End macro: `item__search` -->
+                  </div>
+                </div>
+                <div class="hsItemCard__bottom">
+                  <div class="hsItemCard__bottom-inner">
+                    <!-- Start macro: `item__discount` -->
+                    <!-- End macro: `item__discount` -->
+                    <div class="hsItemCard__middle">
+                      <div class="hsItemCard__bottom-left" data-item-modal="3">
+                        <a class="hsItemCard__link" href="/detail.html">
+                          <img class="hsItemCard__bottom-img" src="/images/_preview/4.jpg" alt="Ring"> </a>
+                      </div>
+                      <div class="hsItemCard__bottom-right">
+                        <h3 class="hsItemCard__bottom-title">Ring</h3>
+                        <div class="hsItemCard__bottom-right-bottom">
+                          <!-- Start macro: `item__info` -->
+                          <div class="hsItem__info d-flex justify-content-between">
+                            <h4 class="hsItem__info-price">
+                              <span class="hsItem__info-what">winkelprijs</span>
+                              <b class="hsItem__info-is">&euro;
+                                <span data-price>759</span>
+                              </b>
+                            </h4>
+                            <h4 class="hsItem__info-bid">
+                              <span class="hsItem__info-what">topbod</span>
+                              <b class="hsItem__info-is" data-hsItem-bidder>Diederik</b>
+                            </h4>
+                          </div>
+                          <!-- End macro: `item__info` -->
+                          <button class="btn btn-primary btn-block hsItem__btn" data-bid>
+                            <span class="hsItem__btn-bid">Bied</span> &euro;
+                            <span data-price>475</span>
+                            <span class="hsItem__btn-shipping">+ &euro;5,59 verzendkosten</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Start macro: `item__state` -->
+                    <div class="hsItem__state">
+                      <span class="hsItem__state-msg" data-state-msg>Geboden...</span>
+                      <div class="hsItem__state-circle">
+                        <svg class="hsItem__state-svg" viewbox="0 0 50 50">
+                          <defs>
+                            <linearGradient id="hsStateGrad--39" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop class="stop1" offset="0%" />
+                              <stop class="stop2" offset="100%" /> </linearGradient>
+                          </defs>
+                          <path data-state-svg transform="translate(25,25)" fill="url(#hsStateGrad--39)" /> </svg>
+                      </div>
+                    </div>
+                    <!-- End macro: `item__state` -->
+                  </div>
+                </div>
+              </div>
+              <!-- End main macro: `itemCard` -->
+            </div>
+            <div class="col-12 col-lg-4 hsItem__col">
+              <!-- Start main macro: `itemCard` -->
+              <div class="card hsItem hsItemCard" data-state="verkocht">
+                <div class="hsItemCard__top">
+                  <div class="hsItemCard__top-inner">
+                    <h3 class="hsItemCard__top-title">500 EcoClean Vaatwastabletten</h3>
+                    <div class="hsItemCard__top-img-wrap">
+                      <a class="hsItemCard__link" href="/detail.html">
+                        <img class="img-fluid hsItemCard__top-img" src="/images/_preview/5.jpg" alt="500 EcoClean Vaatwastabletten" data-item-modal="4"> </a>
+                    </div>
+                    <!-- Start macro: `item__search` -->
+                    <a href="/detail.html" class="hsItem__search">
+                      <i class="icon icon-search"></i>
+                    </a>
+                    <!-- End macro: `item__search` -->
+                  </div>
+                </div>
+                <div class="hsItemCard__bottom">
+                  <div class="hsItemCard__bottom-inner">
+                    <!-- Start macro: `item__discount` -->
+                    <div class="hsDiscount hsGradient--orange">-43%</div>
+                    <!-- End macro: `item__discount` -->
+                    <div class="hsItemCard__middle">
+                      <div class="hsItemCard__bottom-left" data-item-modal="4">
+                        <a class="hsItemCard__link" href="/detail.html">
+                          <img class="hsItemCard__bottom-img" src="/images/_preview/5.jpg" alt="500 EcoClean Vaatwastabletten"> </a>
+                      </div>
+                      <div class="hsItemCard__bottom-right">
+                        <h3 class="hsItemCard__bottom-title">500 EcoClean Vaatwastabletten</h3>
+                        <div class="hsItemCard__bottom-right-bottom">
+                          <!-- Start macro: `item__info` -->
+                          <div class="hsItem__info d-flex justify-content-between">
+                            <h4 class="hsItem__info-price">
+                              <span class="hsItem__info-what">winkelprijs</span>
+                              <b class="hsItem__info-is">&euro;
+                                <span data-price>759</span>
+                              </b>
+                            </h4>
+                            <h4 class="hsItem__info-bid">
+                              <span class="hsItem__info-what">topbod</span>
+                              <b class="hsItem__info-is" data-hsItem-bidder>Diederik</b>
+                            </h4>
+                          </div>
+                          <!-- End macro: `item__info` -->
+                          <button class="btn btn-primary btn-block hsItem__btn" data-bid>
+                            <span class="hsItem__btn-bid">Bied</span> &euro;
+                            <span data-price>475</span>
+                            <span class="hsItem__btn-shipping">+ &euro;5,59 verzendkosten</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Start macro: `item__state` -->
+                    <div class="hsItem__state">
+                      <span class="hsItem__state-msg" data-state-msg>Verkocht!</span>
+                      <div class="hsItem__state-circle">
+                        <svg class="hsItem__state-svg" viewbox="0 0 50 50">
+                          <defs>
+                            <linearGradient id="hsStateGrad--48" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop class="stop1" offset="0%" />
+                              <stop class="stop2" offset="100%" /> </linearGradient>
+                          </defs>
+                          <path data-state-svg transform="translate(25,25)" fill="url(#hsStateGrad--48)" /> </svg>
+                      </div>
+                    </div>
+                    <!-- End macro: `item__state` -->
+                  </div>
+                </div>
+              </div>
+              <!-- End main macro: `itemCard` -->
+            </div>
+            <div class="col-12 col-lg-4 hsItem__col">
+              <!-- Start main macro: `itemCard` -->
+              <div class="card hsItem hsItemCard" data-state="bieden">
+                <div class="hsItemCard__top">
+                  <div class="hsItemCard__top-inner">
+                    <h3 class="hsItemCard__top-title">Phone</h3>
+                    <div class="hsItemCard__top-img-wrap">
+                      <a class="hsItemCard__link" href="/detail.html">
+                        <img class="img-fluid hsItemCard__top-img" src="/images/_preview/3.jpg" alt="Phone" data-item-modal="5"> </a>
+                    </div>
+                    <!-- Start macro: `item__search` -->
+                    <a href="/detail.html" class="hsItem__search">
+                      <i class="icon icon-search"></i>
+                    </a>
+                    <!-- End macro: `item__search` -->
+                  </div>
+                </div>
+                <div class="hsItemCard__bottom">
+                  <div class="hsItemCard__bottom-inner">
+                    <!-- Start macro: `item__discount` -->
+                    <!-- End macro: `item__discount` -->
+                    <div class="hsItemCard__middle">
+                      <div class="hsItemCard__bottom-left" data-item-modal="5">
+                        <a class="hsItemCard__link" href="/detail.html">
+                          <img class="hsItemCard__bottom-img" src="/images/_preview/3.jpg" alt="Phone"> </a>
+                      </div>
+                      <div class="hsItemCard__bottom-right">
+                        <h3 class="hsItemCard__bottom-title">Phone</h3>
+                        <div class="hsItemCard__bottom-right-bottom">
+                          <!-- Start macro: `item__info` -->
+                          <div class="hsItem__info d-flex justify-content-between">
+                            <h4 class="hsItem__info-price">
+                              <span class="hsItem__info-what">winkelprijs</span>
+                              <b class="hsItem__info-is">&euro;
+                                <span data-price>799</span>
+                              </b>
+                            </h4>
+                            <h4 class="hsItem__info-bid">
+                              <span class="hsItem__info-what">topbod</span>
+                              <b class="hsItem__info-is" data-hsItem-bidder>Diederik</b>
+                            </h4>
+                          </div>
+                          <!-- End macro: `item__info` -->
+                          <button class="btn btn-primary btn-block hsItem__btn" data-bid>
+                            <span class="hsItem__btn-bid">Bied</span> &euro;
+                            <span data-price>620</span>
+                            <span class="hsItem__btn-shipping">+ &euro;5,59 verzendkosten</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Start macro: `item__state` -->
+                    <div class="hsItem__state">
+                      <span class="hsItem__state-msg" data-state-msg>Bieden</span>
+                      <div class="hsItem__state-circle">
+                        <svg class="hsItem__state-svg" viewbox="0 0 50 50">
+                          <defs>
+                            <linearGradient id="hsStateGrad--51" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop class="stop1" offset="0%" />
+                              <stop class="stop2" offset="100%" /> </linearGradient>
+                          </defs>
+                          <path data-state-svg transform="translate(25,25)" fill="url(#hsStateGrad--51)" /> </svg>
+                      </div>
+                    </div>
+                    <!-- End macro: `item__state` -->
+                  </div>
+                </div>
+              </div>
+              <!-- End main macro: `itemCard` -->
+            </div>
+            <div class="col-12 col-lg-4 hsItem__col">
+              <!-- Start main macro: `itemCard` -->
+              <div class="card hsItem hsItemCard" data-state="winnen">
+                <div class="hsItemCard__top">
+                  <div class="hsItemCard__top-inner">
+                    <h3 class="hsItemCard__top-title">Joystick</h3>
+                    <div class="hsItemCard__top-img-wrap">
+                      <a class="hsItemCard__link" href="/detail.html">
+                        <img class="img-fluid hsItemCard__top-img" src="/images/_preview/2.jpg" alt="Joystick" data-item-modal="6"> </a>
+                    </div>
+                    <!-- Start macro: `item__search` -->
+                    <a href="/detail.html" class="hsItem__search">
+                      <i class="icon icon-search"></i>
+                    </a>
+                    <!-- End macro: `item__search` -->
+                  </div>
+                </div>
+                <div class="hsItemCard__bottom">
+                  <div class="hsItemCard__bottom-inner">
+                    <!-- Start macro: `item__discount` -->
+                    <!-- End macro: `item__discount` -->
+                    <div class="hsItemCard__middle">
+                      <div class="hsItemCard__bottom-left" data-item-modal="6">
+                        <a class="hsItemCard__link" href="/detail.html">
+                          <img class="hsItemCard__bottom-img" src="/images/_preview/2.jpg" alt="Joystick"> </a>
+                      </div>
+                      <div class="hsItemCard__bottom-right">
+                        <h3 class="hsItemCard__bottom-title">Joystick</h3>
+                        <div class="hsItemCard__bottom-right-bottom">
+                          <!-- Start macro: `item__info` -->
+                          <div class="hsItem__info d-flex justify-content-between">
+                            <h4 class="hsItem__info-price">
+                              <span class="hsItem__info-what">winkelprijs</span>
+                              <b class="hsItem__info-is">&euro;
+                                <span data-price>399</span>
+                              </b>
+                            </h4>
+                            <h4 class="hsItem__info-bid">
+                              <span class="hsItem__info-what">topbod</span>
+                              <b class="hsItem__info-is" data-hsItem-bidder>Diederik</b>
+                            </h4>
+                          </div>
+                          <!-- End macro: `item__info` -->
+                          <button class="btn btn-primary btn-block hsItem__btn" data-bid>
+                            <span class="hsItem__btn-bid">Bied</span> &euro;
+                            <span data-price>270</span>
+                            <span class="hsItem__btn-shipping">+ &euro;5,59 verzendkosten</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Start macro: `item__state` -->
+                    <div class="hsItem__state">
+                      <span class="hsItem__state-msg" data-state-msg>Winnen</span>
+                      <div class="hsItem__state-circle">
+                        <svg class="hsItem__state-svg" viewbox="0 0 50 50">
+                          <defs>
+                            <linearGradient id="hsStateGrad--64" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop class="stop1" offset="0%" />
+                              <stop class="stop2" offset="100%" /> </linearGradient>
+                          </defs>
+                          <path data-state-svg transform="translate(25,25)" fill="url(#hsStateGrad--64)" /> </svg>
+                      </div>
+                    </div>
+                    <!-- End macro: `item__state` -->
+                  </div>
+                </div>
+              </div>
+              <!-- End main macro: `itemCard` -->
+            </div>
+            <div class="col-12 col-lg-4 hsItem__col">
+              <!-- Start main macro: `itemCard` -->
+              <div class="card hsItem hsItemCard" data-state="geladen">
+                <div class="hsItemCard__top">
+                  <div class="hsItemCard__top-inner">
+                    <h3 class="hsItemCard__top-title">Shoe</h3>
+                    <div class="hsItemCard__top-img-wrap">
+                      <a class="hsItemCard__link" href="/detail.html">
+                        <img class="img-fluid hsItemCard__top-img" src="/images/_preview/5.jpg" alt="Shoe" data-item-modal="7"> </a>
+                    </div>
+                    <!-- Start macro: `item__search` -->
+                    <a href="/detail.html" class="hsItem__search">
+                      <i class="icon icon-search"></i>
+                    </a>
+                    <!-- End macro: `item__search` -->
+                  </div>
+                </div>
+                <div class="hsItemCard__bottom">
+                  <div class="hsItemCard__bottom-inner">
+                    <!-- Start macro: `item__discount` -->
+                    <!-- End macro: `item__discount` -->
+                    <div class="hsItemCard__middle">
+                      <div class="hsItemCard__bottom-left" data-item-modal="7">
+                        <a class="hsItemCard__link" href="/detail.html">
+                          <img class="hsItemCard__bottom-img" src="/images/_preview/5.jpg" alt="Shoe"> </a>
+                      </div>
+                      <div class="hsItemCard__bottom-right">
+                        <h3 class="hsItemCard__bottom-title">Shoe</h3>
+                        <div class="hsItemCard__bottom-right-bottom">
+                          <!-- Start macro: `item__info` -->
+                          <div class="hsItem__info d-flex justify-content-between">
+                            <h4 class="hsItem__info-price">
+                              <span class="hsItem__info-what">winkelprijs</span>
+                              <b class="hsItem__info-is">&euro;
+                                <span data-price>150</span>
+                              </b>
+                            </h4>
+                            <h4 class="hsItem__info-bid">
+                              <span class="hsItem__info-what">topbod</span>
+                              <b class="hsItem__info-is" data-hsItem-bidder>Diederik</b>
+                            </h4>
+                          </div>
+                          <!-- End macro: `item__info` -->
+                          <button class="btn btn-primary btn-block hsItem__btn" data-bid>
+                            <span class="hsItem__btn-bid">Bied</span> &euro;
+                            <span data-price>45</span>
+                            <span class="hsItem__btn-shipping">+ &euro;5,59 verzendkosten</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Start macro: `item__state` -->
+                    <div class="hsItem__state">
+                      <span class="hsItem__state-msg" data-state-msg>Veiling wordt geladen</span>
+                      <div class="hsItem__state-circle">
+                        <svg class="hsItem__state-svg" viewbox="0 0 50 50">
+                          <defs>
+                            <linearGradient id="hsStateGrad--78" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop class="stop1" offset="0%" />
+                              <stop class="stop2" offset="100%" /> </linearGradient>
+                          </defs>
+                          <path data-state-svg transform="translate(25,25)" fill="url(#hsStateGrad--78)" /> </svg>
+                      </div>
+                    </div>
+                    <!-- End macro: `item__state` -->
+                  </div>
+                </div>
+              </div>
+              <!-- End main macro: `itemCard` -->
+            </div>
+            <div class="col-12 col-lg-4 hsItem__col">
+              <!-- Start main macro: `itemCard` -->
+              <div class="card hsItem hsItemCard" data-state="gesloten">
+                <div class="hsItemCard__top">
+                  <div class="hsItemCard__top-inner">
+                    <h3 class="hsItemCard__top-title">Ring</h3>
+                    <div class="hsItemCard__top-img-wrap">
+                      <a class="hsItemCard__link" href="/detail.html">
+                        <img class="img-fluid hsItemCard__top-img" src="/images/_preview/4.jpg" alt="Ring" data-item-modal="8"> </a>
+                    </div>
+                    <!-- Start macro: `item__search` -->
+                    <a href="/detail.html" class="hsItem__search">
+                      <i class="icon icon-search"></i>
+                    </a>
+                    <!-- End macro: `item__search` -->
+                  </div>
+                </div>
+                <div class="hsItemCard__bottom">
+                  <div class="hsItemCard__bottom-inner">
+                    <!-- Start macro: `item__discount` -->
+                    <!-- End macro: `item__discount` -->
+                    <div class="hsItemCard__middle">
+                      <div class="hsItemCard__bottom-left" data-item-modal="8">
+                        <a class="hsItemCard__link" href="/detail.html">
+                          <img class="hsItemCard__bottom-img" src="/images/_preview/4.jpg" alt="Ring"> </a>
+                      </div>
+                      <div class="hsItemCard__bottom-right">
+                        <h3 class="hsItemCard__bottom-title">Ring</h3>
+                        <div class="hsItemCard__bottom-right-bottom">
+                          <!-- Start macro: `item__info` -->
+                          <div class="hsItem__info d-flex justify-content-between">
+                            <h4 class="hsItem__info-price">
+                              <span class="hsItem__info-what">winkelprijs</span>
+                              <b class="hsItem__info-is">&euro;
+                                <span data-price>190</span>
+                              </b>
+                            </h4>
+                            <h4 class="hsItem__info-bid">
+                              <span class="hsItem__info-what">topbod</span>
+                              <b class="hsItem__info-is" data-hsItem-bidder>Diederik</b>
+                            </h4>
+                          </div>
+                          <!-- End macro: `item__info` -->
+                          <button class="btn btn-primary btn-block hsItem__btn" data-bid>
+                            <span class="hsItem__btn-bid">Bied</span> &euro;
+                            <span data-price>67</span>
+                            <span class="hsItem__btn-shipping">+ &euro;5,59 verzendkosten</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Start macro: `item__state` -->
+                    <div class="hsItem__state">
+                      <span class="hsItem__state-msg" data-state-msg>Veiling wordt gesloten</span>
+                      <div class="hsItem__state-circle">
+                        <svg class="hsItem__state-svg" viewbox="0 0 50 50">
+                          <defs>
+                            <linearGradient id="hsStateGrad--81" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop class="stop1" offset="0%" />
+                              <stop class="stop2" offset="100%" /> </linearGradient>
+                          </defs>
+                          <path data-state-svg transform="translate(25,25)" fill="url(#hsStateGrad--81)" /> </svg>
+                      </div>
+                    </div>
+                    <!-- End macro: `item__state` -->
+                  </div>
+                </div>
+              </div>
+              <!-- End main macro: `itemCard` -->
+            </div>
+            <div class="col-12 col-lg-4 hsItem__col">
+              <!-- Start main macro: `itemCard` -->
+              <div class="card hsItem hsItemCard" data-state="controleren">
+                <div class="hsItemCard__top">
+                  <div class="hsItemCard__top-inner">
+                    <h3 class="hsItemCard__top-title">Shoe</h3>
+                    <div class="hsItemCard__top-img-wrap">
+                      <a class="hsItemCard__link" href="/detail.html">
+                        <img class="img-fluid hsItemCard__top-img" src="/images/_preview/5.jpg" alt="Shoe" data-item-modal="9"> </a>
+                    </div>
+                    <!-- Start macro: `item__search` -->
+                    <a href="/detail.html" class="hsItem__search">
+                      <i class="icon icon-search"></i>
+                    </a>
+                    <!-- End macro: `item__search` -->
+                  </div>
+                </div>
+                <div class="hsItemCard__bottom">
+                  <div class="hsItemCard__bottom-inner">
+                    <!-- Start macro: `item__discount` -->
+                    <!-- End macro: `item__discount` -->
+                    <div class="hsItemCard__middle">
+                      <div class="hsItemCard__bottom-left" data-item-modal="9">
+                        <a class="hsItemCard__link" href="/detail.html">
+                          <img class="hsItemCard__bottom-img" src="/images/_preview/5.jpg" alt="Shoe"> </a>
+                      </div>
+                      <div class="hsItemCard__bottom-right">
+                        <h3 class="hsItemCard__bottom-title">Shoe</h3>
+                        <div class="hsItemCard__bottom-right-bottom">
+                          <!-- Start macro: `item__info` -->
+                          <div class="hsItem__info d-flex justify-content-between">
+                            <h4 class="hsItem__info-price">
+                              <span class="hsItem__info-what">winkelprijs</span>
+                              <b class="hsItem__info-is">&euro;
+                                <span data-price>159</span>
+                              </b>
+                            </h4>
+                            <h4 class="hsItem__info-bid">
+                              <span class="hsItem__info-what">topbod</span>
+                              <b class="hsItem__info-is" data-hsItem-bidder>Diederik</b>
+                            </h4>
+                          </div>
+                          <!-- End macro: `item__info` -->
+                          <button class="btn btn-primary btn-block hsItem__btn" data-bid>
+                            <span class="hsItem__btn-bid">Bied</span> &euro;
+                            <span data-price>175</span>
+                            <span class="hsItem__btn-shipping">+ &euro;5,59 verzendkosten</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Start macro: `item__state` -->
+                    <div class="hsItem__state">
+                      <span class="hsItem__state-msg" data-state-msg>Controleren...</span>
+                      <div class="hsItem__state-circle">
+                        <svg class="hsItem__state-svg" viewbox="0 0 50 50">
+                          <defs>
+                            <linearGradient id="hsStateGrad--94" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop class="stop1" offset="0%" />
+                              <stop class="stop2" offset="100%" /> </linearGradient>
+                          </defs>
+                          <path data-state-svg transform="translate(25,25)" fill="url(#hsStateGrad--94)" /> </svg>
+                      </div>
+                    </div>
+                    <!-- End macro: `item__state` -->
+                  </div>
+                </div>
+              </div>
+              <!-- End main macro: `itemCard` -->
+            </div>
+            <div id="js-loadmore" class="col-12 hsLoadmore">
+              <button class="btn btn-lg btn-success">Laad Meer Veilingen</button>
+            </div>
+            <div class="col-12">
+              <!-- macro: siteInfoTxt -->
+              <aside class="hsPage__textblock text-center mt-5">
+                <h3 class="h5">HelloSpecial</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </aside>
+              <!-- endmacro: siteInfoTxt -->
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="wrap__bottom">
+        <aside class="hsColophon__above hidden-sm-down">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-lg-9 col-xl-8">
+                <div class="row">
+                  <div class="col-sm-12 col-lg-auto hsColophon__above-title">
+                    <h3>Geen deal missen?</h3>
+                  </div>
+                  <div class="clearfix d-none d-sm-block"></div>
+                  <div class="col-sm-12 col-lg-auto hsColophon__above-txt">
+                    <p>Schrijf je in en je bent als eerste op de hoogte van de nieuwste Specials</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-3 col-xl-4">
+                <!-- Start macro: `newsletter` -->
+                <form class="input-group hsNewsletter">
+                  <input type="text" class="form-control" placeholder="Jouw e-mailadres">
+                  <span class="input-group-btn">
+                    <button class="btn btn-success" type="button">
+                      <i class="fa fa-plus"></i>
+                      <i class="fa fa-check"></i>
+                    </button>
+                  </span>
+                </form>
+                <!-- End macro: `newsletter` -->
+              </div>
+            </div>
+          </div>
+        </aside>
+        <aside class="hsColophon">
+          <div class="container">
+            <nav class="row">
+              <div class="hsColophon__col col-md-6 col-lg-3">
+                <h4 class="hsColophon__heading">HelloSpecial.com</h4>
+                <ul class="list-unstyled">
+                  <li>
+                    <a class="hsColophon__item" href="#">Over ons</a>
+                  </li>
+                  <li>
+                    <a class="hsColophon__item" href="/about-us.html">Team</a>
+                  </li>
+                  <li>
+                    <a class="hsColophon__item" href="#">Vacatures</a>
+                  </li>
+                  <li>
+                    <a class="hsColophon__item" href="#">Privacy &amp; Cookies</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="hsColophon__col col-md-6 col-lg-3">
+                <h4 class="hsColophon__heading">Klantenservice</h4>
+                <ul class="list-unstyled">
+                  <li>
+                    <a class="hsColophon__item" href="#">Retourneren</a>
+                  </li>
+                  <li>
+                    <a class="hsColophon__item" href="#">Veelgestelde vragen</a>
+                  </li>
+                  <li>
+                    <a class="hsColophon__item" href="#">Contact</a>
+                  </li>
+                  <li>
+                    <a class="hsColophon__item" href="#">Algemene voorwaarden</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="hsColophon__col col-md-6 col-lg-3">
+                <ul class="list-unstyled"> </ul>
+              </div>
+              <div class="hsColophon__col col-md-6 col-lg-3">
+                <h4 class="hsColophon__heading">Volg ons ook op</h4>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="https://www.facebook.com/HelloSpecials/" target="_blank">
+                      <img src="/images//facebook.png" alt="Facebook"> </a>
+                    <a href="https://www.linkedin.com/company/hellospecial" target="_blank">
+                      <img src="/images//li.png" alt="LinkedIn"> </a>
+                    <a href="https://www.instagram.com/hellospecial" target="_blank">
+                      <img src="/images//instagram.png" alt="Instagram"> </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </aside>
+        <footer class="hsFooter hsGradient p-3">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="hsFooter__text col">
+                <span>&copy;
+                  <span id="js-copyyear">2017</span>
+                </span>
+                <a class="text-white" href="/"> | HelloSpecial.com</a> | Kabelweg 43 | 1014 BA Amsterdam | &nbsp;
+                <span class="text-nowrap">
+                  <i class="fa fa-phone"></i> +31 (0)20 - 261 894 0</span>
+              </div>
+              <div class="w-100 hidden-lg-up"></div>
+              <div class="hsFooter__logos col">
+                <div class="row justify-content-end">
+                  <div class="hsFooter__keur col-sm-12 col-md-3 col-lg-auto">
+                    <a href="https://www.webwinkelkeur.nl/leden/HelloSpecial_1201424.html" title="Webwinkel Keurmerk en klantebeoordelingen" rel="nofollow">
+                      <img class="img-fluid" src="https://dashboard.webwinkelkeur.nl/banners/3" alt="Webwinkel Keurmerk en klantebeoordelingen" title="Webwinkel Keurmerk en klantebeoordelingen">
+                    </a>
+                  </div>
+                  <div class="w-100 hidden-md-up"></div>
+                  <div class="hsFooter__pay col-sm-12 col-md-8 col-lg-auto">
+                    <img src="/images/ideal.png" height="48">
+                    <img src="/images/paypal.png" height="48">
+                    <img src="/images/mastercard.png" height="48">
+                    <img src="/images/visa.png" height="48">
+                    <img src="/images/maestro.png" height="48">
+                    <img src="/images/afterpay-white.png" height="48"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- Start main macro: `itemModal` -->
+        <div id="hsItemModal" class="modal hsItemModal" tabindex="-1" role="dialog" aria-labelledby="itemModal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <button type="button" class="hsModalBtn close" data-dismiss="modal" aria-label="Close">
+                <i class="icon icon-cross" aria-hidden="true"></i>
+              </button>
+              <div id="hsItemModal__content" class="hsItemModal__content"></div>
+            </div>
+          </div>
+        </div>
+        <script type="text/template" id="hsItemModal__tpl"> </script>
+        <!-- End main macro: `itemModal` -->
+        <!-- Start macro: `modal__win` -->
+        <div id="hsWinModal" class="modal fade hsModal" tabindex="-1" role="dialog" aria-labelledby="winModal" aria-hidden="true">
+          <div class="modal-dialog centered" role="document">
+            <div class="modal-content text-center">
+              <div class="modal-content__top p-3">
+                <img class="img-fluid" src="/images/_preview/3.jpg"> </div>
+              <form class="modal-content__bottom hsGradient--diagonal p-4">
+                <h2>Je hebt gewonnen!</h2>
+                <p>Gefeliciteerd, jouw bod van €438 is het winnende bod!</p>
+                <div class="form-group">
+                  <select class="custom-select" name="product_color">
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="black">Black</option>
+                  </select>
+                </div>
+                <!-- @dev this link should be a button.. style won't change: -->
+                <a href="/checkout.html" class="btn btn-md btn-success hsShadow" data-dismiss="modal">Naar de kassa</a>
+                <!-- end @dev -->
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- End macro: `modal__win` -->
+        <!-- Start macro: `modal__auctionclosed` -->
+        <div id="appModalAuctionclosed" class="modal fade appAuctionclosed__modal appAuctionclosed-hasemail" tabindex="-1" role="dialog" aria-labelledby="Auction closed" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <button type="button" class="hsModalBtn close" data-dismiss="modal" aria-label="Close">
+                <id="appAuctionclosed_hasemail" i class="icon icon-cross" aria-hidden="true">
+                  </i>
+              </button>
+              <!-- if has email -->
+              <div class="modal-body" id="appAuctionclosed_hasemail">
+                <h2 class="appAuctionclosed__title">
+                  <img class="appAuctionclosed__img" src="images/emoji--thumb_up.png"> We laten het weten als een nieuwe veiling start!</h2>
+                <a href="#" class="btn btn-xl btn-success">Sluiten</a>
+              </div>
+              <!-- if has no email -->
+              <div class="modal-body" id="appAuctionclosed_askemail">
+                <h2 class="appAuctionclosed__title">Ah Jammer!
+                  <img class="appAuctionclosed__img" src="/images/emoji--sad.png">
+                </h2>
+                <h3 class="appAuctionclosed__subtitle">Deze veiling is gesloten!</h3>
+                <p class="appAuctionclosed__msg">Laat uw emailadres achter en we sturen u een bericht als de veiling weer open is</p>
+                <form class="w-100" action="#" method="post">
+                  <!-- Start macro: `newsletter` -->
+                  <div class="input-group hsNewsletter">
+                    <input type="text" class="form-control" placeholder="Jouw e-mailadres">
+                    <span class="input-group-btn">
+                      <button class="btn btn-success" type="button">
+                        <i class="fa fa-plus"></i>
+                        <i class="fa fa-check"></i>
+                      </button>
+                    </span>
+                  </div>
+                  <!-- End macro: `newsletter` -->
+                  <label class="custom-control custom-checkbox mt-3">
+                    <input type="checkbox" class="custom-control-input" name="nieuwsbrief" value="yes">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Meld mij aan voor de nieuwsbrief</span>
+                  </label>
+                </form>
+              </div>
+              <footer class="modal-footer" data-state="geboden">
+                <!-- Start macro: `item__state_static` -->
+                <div class="hsItem__state">
+                  <span class="hsItem__state-msg" data-state-msg>Gesloten...</span>
+                  <div class="hsItem__state-circle">
+                    <svg class="hsItem__state-svg" viewbox="0 0 50 50">
+                      <path data-state-svg transform="translate(25,25)" /> </svg>
+                  </div>
+                </div>
+                <!-- End macro: `item__state_static` -->
+              </footer>
+            </div>
+          </div>
+        </div>
+        <!-- End macro: `modal__auctionclosed` -->
+        <!-- Start macro: `modal__payreminder` -->
+        <div id="appPayreminderModal" class="modal fade appModal appPayreminder__modal" tabindex="-1" role="dialog" aria-labelledby="payreminderModal" aria-hidden="true">
+          <div class="modal-dialog modal-lg centered" role="document">
+            <div class="modal-content">
+              <header class="modal-header hsGradient--diagonal">
+                <h3 class="modal-title modal-title--withicon">
+                  <i class="icon icon-lock" aria-hidden="true"></i> Gewonnen veiling betalen </h3>
+                <button type="button" class="appModal__close close" data-dismiss="modal" aria-label="Close">
+                  <i class="icon icon-cross-thin" aria-hidden="true"></i>
+                </button>
+              </header>
+              <form class="modal-body appPayreminder">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="media">
+                      <img class="mr-4" src="/images/_preview/5.jpg" alt="Product title" width="100">
+                      <div class="media-body">
+                        <p class="appPayreminder__date">Gewonennen op 26 september om 16:00</p>
+                        <h4 class="appPayreminder__title">K'NEX bouwset 5-in-1 combat crew</h4>
+                        <h5 class="appPayreminder__variation">Blue</h5>
+                      </div>
+                    </div>
+                    <div class="appPayreminder__table">
+                      <p class="appPayreminder__table-header">Jouw bestelling met order nummer:
+                        <b>123456789</b>
+                      </p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>Winbedrag</td>
+                            <td data-winbedrag>&euro; 24</td>
+                          </tr>
+                          <tr>
+                            <td>Verzendkosten</td>
+                            <td data-verzendkosten>&euro; 7,95</td>
+                          </tr>
+                          <tr>
+                            <td>Veilingkosten</td>
+                            <td data-veilingkosten>&euro; 0,99</td>
+                          </tr>
+                          <tr>
+                            <td>Betaalkosten</td>
+                            <td data-betaalkosten>&euro; 0,95</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr class="appPayreminder__table-total">
+                            <td>Totaal</td>
+                            <td data-totaal>&euro; 25,94</td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                      <p class="appPayreminder__table-footer">Neem
+                        <a class="text-violet" href="/contact.html">
+                          <u>contact</u>
+                        </a> op voor vragen over je betaling.</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 text-center">
+                    <!-- Start macro: `countdown` -->
+                    <div class="countdown">
+                      <div class="countdown__blocks">
+                        <div class="countdown__block">
+                          <span class="countdown__label">Dagen</span>
+                          <div class="countdown__bg">
+                            <div class="countdown__value" data-countdown="days">02</div>
+                          </div>
+                        </div>
+                        <div class="countdown__block">
+                          <span class="countdown__label">Uren</span>
+                          <div class="countdown__bg">
+                            <div class="countdown__value" data-countdown="hours">23</div>
+                          </div>
+                        </div>
+                        <div class="countdown__block">
+                          <span class="countdown__label">Minuten</span>
+                          <div class="countdown__bg">
+                            <div class="countdown__value" data-countdown="minutes">58</div>
+                          </div>
+                        </div>
+                        <div class="countdown__block">
+                          <span class="countdown__label">Seconden</span>
+                          <div class="countdown__bg">
+                            <div class="countdown__value" data-countdown="seconds">03</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End macro: `countdown` -->
+                    <!-- @dev this can either be a `<button type="submit"> and a `<a href="#/"></a>` in both cases keep the other attributes: -->
+                    <a href="/checkout.html" class="btn btn-xl btn-success mt-5">Direct betalen</a>
+                    <!-- end @dev -->
+                    <p class="mt-4">Eerst mogelijke verzenddatum 29 september</p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- End macro: `modal__payreminder` -->
+      </div>
+    </div>
+    <!-- Start macro: `auth_modal` -->
+    <div id="hsAuthModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+      <div class="modal-dialog centered" role="document">
+        <div class="modal-content">
+          <div class="modal-content__top">
+            <div class="view view__register">
+              <!-- Start macro: `auth_register` -->
+              <form class="card hsAuthform">
+                <div class="card-block">
+                  <h2 class="display-4 hsAuthform__title">Creeër een nieuw account</h2>
+                  <a href="/mijn-biedingen.html" class="btn btn-info btn-lg btn-normalcase">Met Facebook</a>
+                  <div class="hsDivider py-3">
+                    <span>of</span>
+                    <hr>
+                  </div>
+                  <p class="pre-form-group">Meld aan met:</p>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="formUsername" placeholder="Voornaam"> </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="formEmail" placeholder="E-mailadres"> </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="formPassword" placeholder="Uw wachtwoord"> </div>
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="nieuwsbrief" value="yes">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Meld mij aan voor de nieuwsbrief</span>
+                  </label>
+                  <div class="my-4">
+                    <button type="submit" class="btn btn-success btn-lg">Aanmelden</button>
+                  </div>
+                  <div class="hsAuthform__footer"> Heb je al een account?
+                    <a class="text-violet text-underline" href="/login.html" data-authmodal="login">Log in</a>
+                  </div>
+                </div>
+              </form>
+              <!-- End macro: `auth_register` -->
+            </div>
+            <div class="view view__login">
+              <!-- Start macro: `auth_login` -->
+              <form class="card hsAuthform">
+                <div class="card-block">
+                  <h2 class="display-4 hsAuthform__title">Log in</h2>
+                  <a href="/mijn-biedingen.html" class="btn btn-info btn-lg btn-normalcase">Met Facebook</a>
+                  <div class="hsDivider py-3">
+                    <span>of</span>
+                    <hr>
+                  </div>
+                  <p class="pre-form-group">Meld aan met:</p>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="formUsername" placeholder="Voornaam"> </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="formPassword" placeholder="Uw wachtwoord"> </div>
+                  <div class="my-4">
+                    <button type="submit" class="btn btn-success btn-lg">Aanmelden</button>
+                  </div>
+                  <div class="hsAuthform__footer">
+                    <a class="text-violet text-underline" href="/wachtwoord-vergeten.html">Wachtwoord vergeten?</a>
+                  </div>
+                </div>
+              </form>
+              <!-- End macro: `auth_login` -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End macro: `auth_modal` -->
+    <!-- macro: cookieannouncement -->
+    <div id="js-cookieannouncement" class="cookieannouncement">
+      <div class="cookieannouncement__inner">
+        <div class="cookieannouncement__text">
+          <p>Zeg hello tegen cookies voor een optimale beleving van de site</p>
+          <a href="#">Meer informatie </a>
+        </div>
+        <button class="btn btn-md btn-success js-cookieannouncement-dismiss">
+          <i class="fa fa-close"></i> Sluiten</button>
+      </div>
+    </div>
+    <!-- endmacro: cookieannouncement -->
+    <script>
+      (function(b, o, i, l, e, r)
+      {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] = function()
+        {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = 'https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+      }(window, document, 'script', 'ga'));
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script>
+    <script>
+      window.i18n = {
+        // set here from the backend the current langcode
+        "current": "en",
+        // here are the translations
+        "en":
+        {
+          "bieden": "Bid",
+          "geboden": "ssss",
+          "eenmaal": "One time...",
+          "andermaal": "Other time...",
+          "geboden": "bid placed...",
+          "geboden-timeless": "Bid placed",
+          "verkocht": "Sold!",
+          "bieden": "Please Bid",
+          "winnen": "Winning",
+          "geladen": "Loading Auction",
+          "gesloten": "Closing",
+          "controleren": "Checking...",
+          "uitverkocht": "Sold out"
+        },
+        "nl":
+        {
+          "bieden": "Bid",
+          "geboden": "ssss",
+          "eenmaal": "Eenmaal...",
+          "andermaal": "Andermaal...",
+          "geboden": "Geboden...",
+          "geboden-timeless": "Geboden",
+          "verkocht": "Verkocht!",
+          "bieden": "Bieden",
+          "winnen": "Winnen",
+          "geladen": "Veiling wordt geladen",
+          "gesloten": "Veiling wordt gesloten",
+          "controleren": "Controleren...",
+          "uitverkocht": "Uitverkocht"
+        },
+        "fr":
+        {
+          "bieden": "Bid",
+          "geboden": "ss",
+          "eenmaal": "Eenmaal...",
+          "andermaal": "Andermaal...",
+          "geboden": "Geboden...",
+          "geboden-timeless": "Geboden",
+          "verkocht": "Verkocht!",
+          "bieden": "Bieden",
+          "winnen": "Winnen",
+          "geladen": "Veiling wordt geladen",
+          "gesloten": "Veiling wordt gesloten",
+          "controleren": "Controleren...",
+          "uitverkocht": "Uitverkocht"
+        }
+      };
+    </script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha256-gL1ibrbVcRIHKlCO5OXOPC/lZz/gpdApgQAzskqqXp8=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js" integrity="sha256-WKvqiY0jZHWQZIohYEmr9KUC5rEaYEOFTq+ByllJK8w=" crossorigin="anonymous"></script> -->
+    <script src="scripts/app.js?v=1812126b2633107f08d5a1be15d2f58e" inline></script>
+  </body>
+</html>

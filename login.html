@@ -1,0 +1,203 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HelloSpecial</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="kuus <kunderikuus@gmail.com> (http://kunderikuus.net)">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="styles/app.css?v=36fb1ce3b7a61b09f1dcdd68d2b70a76" inline> </head>
+  <body class="page--login wrap--centered hsGradient--bg">
+    <div class="wrap">
+      <div class="wrap__top">
+        <div class="wrap__top-inner">
+          <a href="/">
+            <h1 class="hsLogotype mb-2">Hello Special</h1>
+          </a>
+          <!-- Start macro: `auth_login` -->
+          <form class="card hsAuthform">
+            <div class="card-block">
+              <h2 class="display-4 hsAuthform__title">Log in</h2>
+              <a href="/mijn-biedingen.html" class="btn btn-info btn-lg btn-normalcase">Met Facebook</a>
+              <div class="hsDivider py-3">
+                <span>of</span>
+                <hr>
+              </div>
+              <p class="pre-form-group">Meld aan met:</p>
+              <div class="form-group">
+                <input type="text" class="form-control" id="formUsername" placeholder="Voornaam"> </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="formPassword" placeholder="Uw wachtwoord"> </div>
+              <div class="my-4">
+                <button type="submit" class="btn btn-success btn-lg">Aanmelden</button>
+              </div>
+              <div class="hsAuthform__footer">
+                <a class="text-violet text-underline" href="/wachtwoord-vergeten.html">Wachtwoord vergeten?</a>
+              </div>
+            </div>
+          </form>
+          <!-- End macro: `auth_login` -->
+        </div>
+      </div>
+      <div class="wrap__bottom"> </div>
+    </div>
+    <!-- Start macro: `auth_modal` -->
+    <div id="hsAuthModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+      <div class="modal-dialog centered" role="document">
+        <div class="modal-content">
+          <div class="modal-content__top">
+            <div class="view view__register">
+              <!-- Start macro: `auth_register` -->
+              <form class="card hsAuthform">
+                <div class="card-block">
+                  <h2 class="display-4 hsAuthform__title">Creeër een nieuw account</h2>
+                  <a href="/mijn-biedingen.html" class="btn btn-info btn-lg btn-normalcase">Met Facebook</a>
+                  <div class="hsDivider py-3">
+                    <span>of</span>
+                    <hr>
+                  </div>
+                  <p class="pre-form-group">Meld aan met:</p>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="formUsername" placeholder="Voornaam"> </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="formEmail" placeholder="E-mailadres"> </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="formPassword" placeholder="Uw wachtwoord"> </div>
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="nieuwsbrief" value="yes">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Meld mij aan voor de nieuwsbrief</span>
+                  </label>
+                  <div class="my-4">
+                    <button type="submit" class="btn btn-success btn-lg">Aanmelden</button>
+                  </div>
+                  <div class="hsAuthform__footer"> Heb je al een account?
+                    <a class="text-violet text-underline" href="/login.html" data-authmodal="login">Log in</a>
+                  </div>
+                </div>
+              </form>
+              <!-- End macro: `auth_register` -->
+            </div>
+            <div class="view view__login">
+              <!-- Start macro: `auth_login` -->
+              <form class="card hsAuthform">
+                <div class="card-block">
+                  <h2 class="display-4 hsAuthform__title">Log in</h2>
+                  <a href="/mijn-biedingen.html" class="btn btn-info btn-lg btn-normalcase">Met Facebook</a>
+                  <div class="hsDivider py-3">
+                    <span>of</span>
+                    <hr>
+                  </div>
+                  <p class="pre-form-group">Meld aan met:</p>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="formUsername" placeholder="Voornaam"> </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="formPassword" placeholder="Uw wachtwoord"> </div>
+                  <div class="my-4">
+                    <button type="submit" class="btn btn-success btn-lg">Aanmelden</button>
+                  </div>
+                  <div class="hsAuthform__footer">
+                    <a class="text-violet text-underline" href="/wachtwoord-vergeten.html">Wachtwoord vergeten?</a>
+                  </div>
+                </div>
+              </form>
+              <!-- End macro: `auth_login` -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End macro: `auth_modal` -->
+    <!-- macro: cookieannouncement -->
+    <div id="js-cookieannouncement" class="cookieannouncement">
+      <div class="cookieannouncement__inner">
+        <div class="cookieannouncement__text">
+          <p>Zeg hello tegen cookies voor een optimale beleving van de site</p>
+          <a href="#">Meer informatie </a>
+        </div>
+        <button class="btn btn-md btn-success js-cookieannouncement-dismiss">
+          <i class="fa fa-close"></i> Sluiten</button>
+      </div>
+    </div>
+    <!-- endmacro: cookieannouncement -->
+    <script>
+      (function(b, o, i, l, e, r)
+      {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] = function()
+        {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = 'https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+      }(window, document, 'script', 'ga'));
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script>
+    <script>
+      window.i18n = {
+        // set here from the backend the current langcode
+        "current": "en",
+        // here are the translations
+        "en":
+        {
+          "bieden": "Bid",
+          "geboden": "ssss",
+          "eenmaal": "One time...",
+          "andermaal": "Other time...",
+          "geboden": "bid placed...",
+          "geboden-timeless": "Bid placed",
+          "verkocht": "Sold!",
+          "bieden": "Please Bid",
+          "winnen": "Winning",
+          "geladen": "Loading Auction",
+          "gesloten": "Closing",
+          "controleren": "Checking...",
+          "uitverkocht": "Sold out"
+        },
+        "nl":
+        {
+          "bieden": "Bid",
+          "geboden": "ssss",
+          "eenmaal": "Eenmaal...",
+          "andermaal": "Andermaal...",
+          "geboden": "Geboden...",
+          "geboden-timeless": "Geboden",
+          "verkocht": "Verkocht!",
+          "bieden": "Bieden",
+          "winnen": "Winnen",
+          "geladen": "Veiling wordt geladen",
+          "gesloten": "Veiling wordt gesloten",
+          "controleren": "Controleren...",
+          "uitverkocht": "Uitverkocht"
+        },
+        "fr":
+        {
+          "bieden": "Bid",
+          "geboden": "ss",
+          "eenmaal": "Eenmaal...",
+          "andermaal": "Andermaal...",
+          "geboden": "Geboden...",
+          "geboden-timeless": "Geboden",
+          "verkocht": "Verkocht!",
+          "bieden": "Bieden",
+          "winnen": "Winnen",
+          "geladen": "Veiling wordt geladen",
+          "gesloten": "Veiling wordt gesloten",
+          "controleren": "Controleren...",
+          "uitverkocht": "Uitverkocht"
+        }
+      };
+    </script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha256-gL1ibrbVcRIHKlCO5OXOPC/lZz/gpdApgQAzskqqXp8=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js" integrity="sha256-WKvqiY0jZHWQZIohYEmr9KUC5rEaYEOFTq+ByllJK8w=" crossorigin="anonymous"></script> -->
+    <script src="scripts/app.js?v=1812126b2633107f08d5a1be15d2f58e" inline></script>
+  </body>
+</html>
