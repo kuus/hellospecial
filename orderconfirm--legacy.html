@@ -11,7 +11,7 @@
     <base href="/hellospecial/">
     <!-- for github deploy only -->
     <link rel="stylesheet" href="styles/app.css?v=af64b39c598be1c653cef1b3e620af0c" inline> </head>
-  <body class="page--checkout">
+  <body class="page--thanks">
     <div class="wrap">
       <div class="wrap__top">
         <!-- macro: header -->
@@ -117,321 +117,84 @@
           <!--[if lt IE 10]>
   <div class="alert alert-warning browserupgrade"><p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>
 <![endif]-->
-          <div id="hsCheckout" class="row hsCheckout">
-            <form id="hsCheckout__form" class="col-lg-9 col-xl-10 hsCheckout__main">
-              <article class="row">
-                <!-- Summary side: Step 0 / 1 -->
-                <div class="hsCheckout__expander">
-                  <div class="hsCheckout__expander-price hsCheckout__cost-total">&euro; 7,99</div>
-                  <div class="hsCheckout__expander-title">Bekijk Special</div>
+          <article class="container hsThanks">
+            <div class="row hsPage__intro">
+              <div class="col">
+                <h1 class="text-uppercase">Gefeliciteerd!</h1>
+                <hr class="divider"></hr>
+                <div class="media hsCheckout__product">
+                  <img class="d-flex mr-3 mb-3 hsCheckout__product-img" src="images/preview/1.png" width="120">
+                  <div class="media-body">
+                    <h5 class="mt-0 hsCheckout__product-name font-sans">Magnani Italy 5-delige messenset</h5>
+                  </div>
                 </div>
-                <section class="push-md-7 push-lg-6 col-md-5 col-lg-6 hsArea hsCheckout__main-summary">
-                  <div class="media hsCheckout__product">
-                    <img class="d-flex mr-3 mb-3 hsCheckout__product-img" src="images/preview/5.jpg" width="120">
-                    <div class="media-body">
-                      <h5 class="mt-0 hsCheckout__product-name font-sans">Magnani Italy 5-delige messenset</h5>
-                      <div class="form-group">
-                        <select class="custom-select" name="product_color">
-                          <option value="red">Red</option>
-                          <option value="yellow">Yellow</option>
-                          <option value="black">Black</option>
-                        </select>
-                      </div>
-                    </div>
+                <p>We hebben je betaling in goede orde ontvangen Jeffrey.
+                  <br> Je ordernummer is
+                  <strong>7959586</strong>. We gaan direct aan het werk om je bestelling te verwerken.
+                  <br> Binnen enkele seconden ontvang je een bevestigingsmail op het opgegeven emailadres. Het kan zijn dat de email in je spam folder terecht komt.
+                  <br> Je kunt je bestelling in je account bij
+                  <a href="#" class="hsLink">gewonnen specials</a> volgen.</p>
+              </div>
+            </div>
+            <div class="row hsThanks__steps">
+              <h2 class="col-12 text-uppercase">Wat gebeurt er nu?</h2>
+              <div class="col-lg-12">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h3 class="hsThanks__steps-title">1. Bevestiging per mail</h3>
+                    <p>Binnen enkele seconden ontvang je een bevestigingsmail op het opgegeven emailadres.</p>
                   </div>
-                  <div class="hsCheckout__cost">
-                    <hr>
-                    <h5>Winbedrag
-                      <span class="hsCheckout__cost-winbedrag" data-val="7,00">&euro; 7,00</span>
-                      <del class="hsCheckout__cost-winbedrag--del"></del>
-                    </h5>
-                    <h5>Verzendkosten
-                      <span class="hsCheckout__cost-verzendkosten" data-val="0,00">&euro; 0,00</span>
-                    </h5>
-                    <h5>Veilingkosten
-                      <span class="hsCheckout__cost-veilingkosten" data-val="0,99">&euro; 0,99</span>
-                    </h5>
-                    <hr>
-                    <h4>Totaal
-                      <span class="hsCheckout__cost-totaal" data-val="7,99">&euro; 7,99</span>
-                    </h4>
-                    <hr>
-                    <a class="hsCheckout__coupon-trigger" href="#">Heb je een kortingscode?</a>
+                  <div class="col-md-4">
+                    <h3 class="hsThanks__steps-title pink-warm">2. Special wordt verzonden</h3>
+                    <p>Zodra je Special klaar is wordt deze verzonden door de leverancier. De Track & Trace code kun je in dive account bekijken bij
+                      <a href="#" class="hsLink">gewonnen specials</a>.</p>
                   </div>
-                  <div class="hsCheckout__coupon-area">
-                    <div class="form-group">
-                      <label class="form-control-label" for="kortingscode">Vul hier je kortingscode in</label>
-                      <div class="input-group">
-                        <input id="kortingscode" type="text" class="form-control hsCheckout__coupon-input" placeholder="Kortingscode">
-                        <span class="input-group-btn">
-                          <button class="btn btn-success hsCheckout__coupon-submit" type="button">Toepassen</button>
-                        </span>
-                      </div>
-                      <div class="form-control-feedback ml-3 mt-2 hsCheckout__coupon-feedback" data-discount="2">De kortingscode is succesvol toegepast!</div>
-                    </div>
+                  <div class="col-md-4">
+                    <h3 class="hsThanks__steps-title violet">3. Je ontvangt je special</h3>
+                    <p>De levertijd van je Special is afhankelijk van de leverancier.</p>
                   </div>
-                </section>
-                <!-- Data side -->
-                <section class="pull-md-5 pull-lg-6 col-md-7 col-lg-6 hsArea hsCheckout__main-data">
-                  <ol class="hsCheckout__breadcrumbs">
-                    <li class="hsCheckout__breadcrumb active">
-                      <a href="#">Verzendgegevens</a>
-                    </li>
-                    <li class="hsCheckout__breadcrumb">
-                      <a href="#">Betaalmethode</a>
-                    </li>
-                  </ol>
-                  <div class="hsCheckout__steps">
-                    <!-- Data side: Step 0 -->
-                    <div id="hsCheckout__step-0" class="hsCheckout__step">
-                      <h3 class="font-sans h4 my-4">Verzendgegevens</h3>
-                      <p class="m-3 text-muted">Opgeslagen gegevens</p>
-                      <div class="form-group hsCheckout__addresschoice">
-                        <label class="custom-control custom-radio">
-                          <input name="addresschoice" type="radio" value="" class="custom-control-input" checked>
-                          <span class="custom-control-indicator"></span>
-                          <span id="hsAddress__prefilled" class="custom-control-description">Jeffrey Kuik, Jacobstraat 14,
-                            <br>12312, Amsterdam, Nederland</span>
-                        </label>
-                        <label class="custom-control custom-radio">
-                          <input name="addresschoice" type="radio" value="true" class="custom-control-input">
-                          <span class="custom-control-indicator"></span>
-                          <span class="custom-control-description">Nieuwe gegevens invoeren</span>
-                        </label>
-                      </div>
-                      <div class="hsCheckout__details">
-                        <div class="row">
-                          <div class="col col-12 form-group">
-                            <label class="label-over">Aanhef</label>
-                            <label class="custom-control custom-radio">
-                              <input name="aanhef" type="radio" class="custom-control-input" required checked>
-                              <span class="custom-control-indicator"></span>
-                              <span class="custom-control-description">Dhr.</span>
-                            </label>
-                            <label class="custom-control custom-radio">
-                              <input name="aanhef" type="radio" class="custom-control-input" required>
-                              <span class="custom-control-indicator"></span>
-                              <span class="custom-control-description">Mvr.</span>
-                            </label>
-                          </div>
-                          <div class="col-lg-6 form-group">
-                            <label for="voornaam">Voornaam</label>
-                            <input id="voornaam" name="voornaam" type="text" class="form-control" required> </div>
-                          <div class="col-lg-6 form-group">
-                            <label for="achternaam">Achternaam</label>
-                            <input id="achternaam" name="achternaam" type="text" class="form-control" required> </div>
-                          <div class="col-lg-8 form-group">
-                            <label for="straat">Straat</label>
-                            <input id="straat" name="straat" type="text" class="form-control" required> </div>
-                          <div class="col-md-5 col-lg-4 form-group">
-                            <label for="huisnummer">Huisnummer</label>
-                            <input id="huisnummer" name="huisnummer" type="text" class="form-control" required> </div>
-                          <div class="col-md-7 col-lg-4 form-group">
-                            <label for="postcode">Postcode</label>
-                            <input id="postcode" name="postcode" type="text" class="form-control" required> </div>
-                          <div class="col-lg-8 form-group">
-                            <label for="woonplaats">Woonplaats</label>
-                            <input id="woonplaats" name="woonplaats" type="text" class="form-control" required> </div>
-                          <div class="col-12 form-group">
-                            <label class="label-over">Land</label>
-                            <select id="land" class="custom-select w-100" name="land" required>
-                              <option selected>Select a country</option>
-                              <option value="nl">Nederland</option>
-                              <option value="bl">België</option>
-                              <option value="it">Italy</option>
-                            </select>
-                          </div>
-                          <div class="col-12 form-group">
-                            <label for="telefoonnummer">Telefoonnummer</label>
-                            <input id="telefoonnummer" name="telefoonnummer" type="tel" class="form-control"> </div>
-                        </div>
-                      </div>
-                      <button type="submit" class="btn btn-success float-md-right hsCheckout__tostep2 mt-3">Verder naar betaalmethode</button>
-                    </div>
-                    <!-- Data side: Step 1 -->
-                    <div id="hsCheckout__step-1" class="hsCheckout__step">
-                      <div class="hsCheckout__address-label">Verzendgegevens</div>
-                      <div class="hsCheckout__address">
-                        <p id="hsAddress__display">Jeffrey, Jacobstraat 14, 12312 Amsterdam</p>
-                        <a href="#" class="hsCheckout__tostep1 text-muted">Wijzigen</a href="#">
-                      </div>
-                      <h3 class="font-sans h4 mt-5 mb-4">Betaalmethode</h3>
-                      <div class="hsCheckout__methods">
-                        <label class="hsCheckout__method hsCheckout__method--ideal">
-                          <input type="radio" name="pay-method" value="ideal">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/ideal.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">iDEAL</span>
-                        </label>
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="paypal">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/paypal.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">PayPal</span>
-                        </label>
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="bancontact">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/bancontact.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">Bancontact</span>
-                        </label>
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="sofort">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/sofort.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">SOFORT</span>
-                        </label>
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="afterpay">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/afterpay.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">AfterPay</span>
-                        </label>
-                      </div>
-                      <p class="mt-4 mb-0">Credit card</p>
-                      <div class="hsCheckout__methods">
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="mastercard">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/mastercard.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">Mastercard</span>
-                        </label>
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="visa">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/visa.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">VISA</span>
-                        </label>
-                      </div>
-                      <div class="hsCheckout__banks">
-                        <hr>
-                        <h6 class="font-sans my-4">Selecteer uw bank</h6>
-                        <div class="hsCheckout__methods hsCheckout__methods--bank">
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="abn_amro">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/abn_amro.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">ABN AMRO</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="asn_bank">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/asn_bank.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">ASN Bank</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="bunq">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/bunq.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Bunq</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="ing">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/ing.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">ING</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="knab">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/knab.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Knab</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="rabobank">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/rabobank.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Rabobank</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="regio_bank">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/regio_bank.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Regiobank</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="sns_bank">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/sns_bank.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">SNS Bank</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="triodos">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/triodos.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Triodos Bank</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="van_lanschot">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/van_lanschot.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Van Lanschot</span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="hsCheckout__submit">
-                        <button type="submit" class="btn btn-success float-md-right mt-3">Betalen</button>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </article>
-            </form>
-            <aside class="hidden-md-down col-lg-3 col-xl-2 hsCheckout__side">
-              <div class="hsArea">
-                <ol class="checklist">
-                  <li>
-                    <i class="fa fa-check"></i>Geverifieerde verkopers</li>
-                  <li>
-                    <i class="fa fa-check"></i>Niet tevreden? Geld terug</li>
-                  <li>
-                    <i class="fa fa-check"></i>Vragen? Bel:
-                    <a href="tel:020-2618940">020-2618940</a> (ma-vr 9.00-17.00u)</li>
-                </ol>
-                <div class="hsCheckout__side-pay">
-                  <div class="row no-gutters">
-                    <div class="col-4">
-                      <img class="img-fluid" title="iDeal" src="images/ideal.png">
-                    </div>
-                    <div class="col-4">
-                      <img class="img-fluid" title="PayPal" src="images/paypal.png">
-                    </div>
-                    <div class="col-4">
-                      <img class="img-fluid" title="Mastercard" src="images/mastercard.png">
-                    </div>
-                    <div class="col-4">
-                      <img class="img-fluid" title="Visa" src="images/visa.png">
-                    </div>
-                    <div class="col-4">
-                      <img class="img-fluid" title="Maestro" src="images/maestro.png">
-                    </div>
-                    <div class="col-4">
-                      <img class="img-fluid" title="Afterpay" src="images/afterpay.png">
-                    </div>
-                  </div>
-                  <a href="https://www.webwinkelkeur.nl/leden/HelloSpecial_1201424.html" title="Webwinkel Keurmerk en klantebeoordelingen" rel="nofollow">
-                    <img class="img-fluid" src="https://dashboard.webwinkelkeur.nl/banners/3" alt="Webwinkel Keurmerk en klantebeoordelingen" title="Webwinkel Keurmerk en klantebeoordelingen"> </a>
                 </div>
               </div>
-            </aside>
-          </div>
+            </div>
+            <div class="row hsThanks__footer">
+              <div class="col-md-6">
+                <div class="hsSimpleCard">
+                  <h3 class="text-uppercase">Heb je nog vragen?</h3>
+                  <p>Als je nog vragen hebt over je Special kun je onze
+                    <a href="#" class="hsLink">veelgestelde vragen</a> pagina bezoeken. Mocht je vraag er niet tussen zitten kun je altijd
+                    <a href="#" class="hsLink">contact</a> met ons opnemen.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="hsSimpleCard">
+                  <h3 class="text-uppercase">Deel je ervaring</h3>
+                  <p>Ken jij iemand die ook wel van onze aanbiedingen gebruik wilt maken? Deel het met ze!</p>
+                  <ul class="list-unstyled hsThanks__share">
+                    <li>
+                      <a href="https://facebook.com/hellospecial" target="_blank">
+                        <img src="images/share-logo--facebook.png" width="40" height="40" alt="Facebook">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/hellospecial" target="_blank">
+                        <img src="images/share-logo--twitter.png" width="40" height="40" alt="Twitter">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://linkedin.com/hellospecial" target="_blank">
+                        <img src="images/share-logo--linkedin.png" width="40" height="40" alt="LinkedIn">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://instagram.com/hellospecial" target="_blank">
+                        <img src="images/share-logo--instagram.png" width="40" height="40" alt="Instagram">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
       <div class="wrap__bottom">
