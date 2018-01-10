@@ -10,53 +10,31 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400" rel="stylesheet">
     <base href="/hellospecial/">
     <!-- for github deploy only -->
-    <link rel="stylesheet" href="styles/app.css?v=cd10379ceec34d21124a3168a0c8df20" inline> </head>
+    <link rel="stylesheet" href="styles/app.css?v=d6da225092a389ef9eb70248182663e8" inline> </head>
   <body class="page--checkout">
     <div class="wrap">
       <div class="wrap__top">
         <!-- macro: header -->
         <header class="hsHeader" id="hsHeader">
           <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse hsGradient">
-            <a class="navbar-brand hsLogotype" href="index.html">Hello Special</a>
             <div class="container">
+              <a class="navbar-brand hsLogotype" href="index.html">Hello Special</a>
+              <span class="nav-text">Delivery!</span>
               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#js_navbar">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="navbar-collapse collapse" id="js_navbar">
-                <ul class="navbar-nav">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home
-                      <span class="sr-only">Home</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="content--hoe-werkt-het-bieden.html">Hoe werkt het?</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="seller.html">Verkopen</a>
-                  </li>
-                </ul>
+                <ul class="navbar-nav"> </ul>
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="login.html" data-authmodal="login">Inloggen</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="register.html" data-authmodal="register">Registreren</a>
-                  </li>
-                  <li class="nav-item hsLang js-dropdown" id="hsLang__header">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-                      <img class="hsLang__img" src="images/flag-nl.png">
-                      <span class="hsLang__label hidden-lg-up">Nederlands</span>
-                    </a>
+                  <li class="nav-item js-dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">mijn account</a>
                     <div class="dropdown-menu dropdown-menu-right">
-                      <a class="dropdown-item" href="#nl">
-                        <img class="hsLang__img" src="images/flag-nl.png">
-                        <span class="hsLang__label">Nederlands</span>
-                      </a>
-                      <a class="dropdown-item" href="#en">
-                        <img class="hsLang__img" src="images/flag-en.png">
-                        <span class="hsLang__label">English</span>
-                      </a>
+                      <a class="dropdown-item" href="mijn-biedingen.html">Mijn Biedingen</a>
+                      <a class="dropdown-item" href="mijn-gewonnen.html">Gewonnen veilingen</a>
+                      <a class="dropdown-item" href="mijn-biedingen.html">Deel &amp; Verdien</a>
+                      <a class="dropdown-item" href="mijn-gewonnen.html">Mijn Account</a>
+                      <a class="dropdown-item" href="mijn-gewonnen.html">Instellingen</a>
+                      <a class="dropdown-item" href="mijn-biedingen.html">Meer...</a>
                     </div>
                   </li>
                 </ul>
@@ -65,406 +43,720 @@
           </nav>
         </header>
         <!-- endmacro: header -->
-        <aside class="appSubheader">
-          <div class="container">
-            <ul class="appSubheader__list">
-              <li class="appSubheader__item">
-                <a class="appSubheader__link" href="categories.html">
-                  <i class="icon icon-alles"></i>
-                  <h4 class="appSubheader__title">Alle online veilingen</h4>
-                </a>
-              </li>
-              <li class="appSubheader__item">
-                <a class="appSubheader__link" href="#">
-                  <i class="icon icon-huis_tuin"></i>
-                  <h4 class="appSubheader__title">Huis &amp; Tuin</h4>
-                </a>
-              </li>
-              <li class="appSubheader__item">
-                <a class="appSubheader__link" href="#">
-                  <i class="icon icon-beauty_verzorging"></i>
-                  <h4 class="appSubheader__title">Beauty &amp; Verzorging</h4>
-                </a>
-              </li>
-              <li class="appSubheader__item">
-                <a class="appSubheader__link" href="#">
-                  <i class="icon icon-baby_kinderen"></i>
-                  <h4 class="appSubheader__title">Baby &amp; Kinderen</h4>
-                </a>
-              </li>
-              <li class="appSubheader__item">
-                <a class="appSubheader__link active" href="#">
-                  <i class="icon icon-gadgets_elektronica"></i>
-                  <h4 class="appSubheader__title">Gadgets &amp; Elektronica</h4>
-                </a>
-              </li>
-              <li class="appSubheader__item">
-                <a class="appSubheader__link" href="#">
-                  <i class="icon icon-hobby_vrije_tijd"></i>
-                  <h4 class="appSubheader__title">Hobby &amp; Vrije Tijd</h4>
-                </a>
-              </li>
-              <li class="appSubheader__item">
-                <a class="appSubheader__link" href="#">
-                  <i class="icon icon-mode_sieraden"></i>
-                  <h4 class="appSubheader__title">Mode &amp; Sieraden</h4>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </aside>
         <div class="wrap__top-inner container">
           <!--[if lt IE 10]>
   <div class="alert alert-warning browserupgrade"><p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>
 <![endif]-->
-          <div id="hsCheckout" class="row hsCheckout">
-            <form id="hsCheckout__form" class="col-lg-9 col-xl-10 hsCheckout__main">
-              <article class="row">
-                <!-- Summary side: Step 0 / 1 -->
-                <div class="hsCheckout__expander">
-                  <div class="hsCheckout__expander-price hsCheckout__cost-total">&euro; 7,99</div>
-                  <div class="hsCheckout__expander-title">Bekijk Special</div>
-                </div>
-                <section class="push-md-7 push-lg-6 col-md-5 col-lg-6 hsArea hsCheckout__main-summary">
-                  <div class="media hsCheckout__product">
-                    <img class="d-flex mr-3 mb-3 hsCheckout__product-img" src="images/preview/5.jpg" width="120">
-                    <div class="media-body">
-                      <h5 class="mt-0 hsCheckout__product-name font-sans">Magnani Italy 5-delige messenset</h5>
-                      <div class="form-group">
-                        <select class="custom-select" name="product_color">
-                          <option value="red">Red</option>
-                          <option value="yellow">Yellow</option>
-                          <option value="black">Black</option>
-                        </select>
+          <script>
+            window['hsCheckout'] = {
+              "currency": "€",
+              "maps":
+              {
+                "land":
+                {
+                  "nl": "Nederlands",
+                  "be": "België",
+                  "it": "Italy"
+                }
+              },
+              "product":
+              {
+                "name": "Magnani Italy 5-delige messenset",
+                "variation": "red",
+                "price": 51.94,
+                "verzendkosten": 5.95,
+                "veilingkosten": 0.99,
+                "shippingdate": "01/02/2017"
+              },
+              "shippingAsBilling": true,
+              "shipping":
+              {
+                "$valid": false,
+                "$error":
+                {
+                  "title": "Er is iets niet goed ingevuld.",
+                  "text": "We herkennen je adres niet."
+                },
+                "aanhef": "dhr",
+                "voornam": "Axel",
+                "achternaam": "Kenninck",
+                "bedrijfsnaam": "",
+                "land": "nl",
+                "postcode": "1073VP",
+                "straat": "Tweede Jan Steenstraat",
+                "huisnummer": "30h",
+                "toev": "",
+                "plaats": "Amsterdam",
+                "telefoonnummer": ""
+              },
+              "billing":
+              {
+                "$error":
+                {
+                  "title": "Er is iets niet goed ingevuld.",
+                  "text": "We herkennen je adres niet."
+                },
+                "aanhef": "dhr",
+                "voornam": "Axel",
+                "achternaam": "Kenninck",
+                "bedrijfsnaam": "HelloSpecial B.V.",
+                "land": "nl",
+                "postcode": "1014BA",
+                "straat": "Kabelweg",
+                "huisnummer": "43",
+                "toev": "",
+                "plaats": "Amsterdam",
+                "telefoonnummer": ""
+              },
+              "contact":
+              {
+                "email": "axel@hellospecial.com",
+                "phone": "0612345789"
+              },
+              "payment":
+              {
+                "method": "",
+                "coupon": "",
+                "ideal":
+                {
+                  "bank": ""
+                },
+                "afterpay":
+                {
+                  "telefoonnummer": "",
+                  "geboortedatum": ""
+                }
+              }
+            };
+          </script>
+          <form name="checkout" action="" id="checkout" class="row Checkout restyling--forms" v-on:submit="onSubmit">
+            <!-- Breadcrumbs -->
+            <nav class="col-12 Checkout__breadcrumbs">
+              <ol class="row Checkout__breadcrumbs-list">
+                <li class="col-4 Checkout__breadcrumbs-item done" data-checkout-view="overview">
+                  <span class="Checkout__breadcrumbs-text">Overzicht</span>
+                </li>
+                <li class="col-4 Checkout__breadcrumbs-item" data-checkout-view="payment">
+                  <span class="Checkout__breadcrumbs-text">Betaling</span>
+                </li>
+                <li class="col-4 Checkout__breadcrumbs-item" data-checkout-view="thanks">
+                  <span class="Checkout__breadcrumbs-text">Bedankt</span>
+                </li>
+              </ol>
+            </nav>
+            <!-- Section: Overview -->
+            <section class="col-lg-4 Checkout__overview">
+              <div class="row">
+                <!-- Article: Coupon -->
+                <article class="col Checkout__details">
+                  <h3>Gegevens</h3>
+                  <h4>Afleveradres</h4>
+                  <!-- macro: Checkout__display_shipping -->
+                  <div v-cloak>
+                    <% shipping.voornam %>
+                      <% shipping.achternaam %>
+                        <br>
+                        <% shipping.straat %>
+                          <% shipping.huisnummer %>
+                            <br>
+                            <% shipping.postcode %>
+                              <% shipping.plaats %>
+                                <br>
+                                <% maps.land[shipping.land] %>
+                  </div>
+                  <!-- endmacro: Checkout__display_shipping -->
+                  <h4>Factuuradres</h4>
+                  <!-- macro: Checkout__display_billing -->
+                  <div v-cloak>
+                    <% billing.bedrijfsnaam %>
+                      <br>
+                      <% billing.voornam %>
+                        <% billing.achternaam %>
+                          <br>
+                          <% billing.straat %>
+                            <% billing.huisnummer %>
+                              <br>
+                              <% billing.postcode %>
+                                <% billing.plaats %>
+                                  <br>
+                                  <% maps.land[billing.land] %>
+                  </div>
+                  <!-- endmacro: Checkout__display_billing -->
+                  <h4>Contactgegevens</h4>
+                  <!-- macro: Checkout__display_contact -->
+                  <div v-cloak>
+                    <% contact.email %>
+                      <br>
+                      <% contact.phone %>
+                  </div>
+                  <!-- endmacro: Checkout__display_contact -->
+                  <a class="Checkout__details-edit" href="#" data-toggle="modal" data-target="#Checkout__edit">
+                    <i class="icon icon-keyboard_arrow_right"></i> Wijzig gegevens</a>
+                </article>
+              </div>
+            </section>
+            <!-- Section: Payment -->
+            <section class="col-lg-8 Checkout__payment">
+              <div class="row">
+                <!-- Article: Coupon -->
+                <article class="col-md-6 Checkout__coupon">
+                  <h3>Kortingscode</h3>
+                  <div class="form-group">
+                    <input type="text" class="form-control Checkout__coupon-input" placeholder="Kortingscode" name="payment_coupon" v-model="payment.coupon" v-cloak>
+                    <button class="btn btn-success Checkout__coupon-submit" type="button">Inwisselen</button>
+                    <div class="form-control-feedback ml-3 mt-2 Checkout__coupon-feedback" data-discount="2">De kortingscode is succesvol toegepast!</div>
+                  </div>
+                  <h3>Verzenddatum</h3>
+                  <p class="Checkout__coupon-date" v-cloak>
+                    <strong>Uiterste verzenddatum:
+                      <% product.shippingdate %>
+                    </strong>
+                  </p>
+                </article>
+                <!-- Article: Pay -->
+                <article class="col-md-6 Checkout__pay">
+                  <h3>Kies betaalmethode</h3>
+                  <div class="alert alert-danger">
+                    <h5>Er is iets niet goed ingevuld.</h5>
+                    <p>We herkennen je adres niet.</p>
+                  </div>
+                  <div id="Checkout__methods" role="tablist" aria-multiselectable="true">
+                    <input id="Checkout__method-ideal" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="ideal">
+                    <div class="Checkout__method card">
+                      <label for="Checkout__method-ideal" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-ideal" aria-expanded="false" aria-controls="#Checkout__method-details-ideal">
+                        <div class="Checkout__method-header">
+                          <strong class="Checkout__method-name">iDEAL
+                            <small>gratis | aanbevolen</small>
+                          </strong>
+                          <img class="Checkout__method-img" src="images/Checkout__ideal.png" height="20"> </div>
+                      </label>
+                      <div id="Checkout__method-details-ideal" class="Checkout__method-details collapse" data-checkout-method="ideal" role="tabpanel">
+                        <div class="form-group" v-class="'hasdanger': errors.has('payment_ideal_bank')">
+                          <div class="custom-select__wrap">
+                            <select id="input__payment_ideal_bank" class="custom-select" name="payment_ideal_bank" v-model="payment.ideal.bank">
+                              <option value="" disabled selected>Kies je bank</option>
+                              <option value="bank1">Bank 1</option>
+                              <option value="bank2">Bank 2</option>
+                              <option value="bank3">Bank 3</option>
+                            </select>
+                          </div>
+                        </div>
+                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
+                      </div>
+                    </div>
+                    <input id="Checkout__method-paypal" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="paypal">
+                    <div class="Checkout__method card">
+                      <label for="Checkout__method-paypal" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-paypal" aria-expanded="false" aria-controls="#Checkout__method-details-paypal">
+                        <div class="Checkout__method-header">
+                          <strong class="Checkout__method-name">PayPal
+                            <small>gratis</small>
+                          </strong>
+                          <img class="Checkout__method-img" src="images/Checkout__paypal.png" height="18"> </div>
+                      </label>
+                      <div id="Checkout__method-details-paypal" class="Checkout__method-details collapse" data-checkout-method="paypal" role="tabpanel">
+                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
+                      </div>
+                    </div>
+                    <input id="Checkout__method-sofort" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="sofort">
+                    <div class="Checkout__method card">
+                      <label for="Checkout__method-sofort" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-sofort" aria-expanded="false" aria-controls="#Checkout__method-details-sofort">
+                        <div class="Checkout__method-header">
+                          <strong class="Checkout__method-name">Sofort
+                            <small>gratis</small>
+                          </strong>
+                          <img class="Checkout__method-img" src="images/Checkout__sofort.png" height="13"> </div>
+                      </label>
+                      <div id="Checkout__method-details-sofort" class="Checkout__method-details collapse" data-checkout-method="sofort" role="tabpanel">
+                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
+                      </div>
+                    </div>
+                    <input id="Checkout__method-bancontact" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="bancontact">
+                    <div class="Checkout__method card">
+                      <label for="Checkout__method-bancontact" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-bancontact" aria-expanded="false" aria-controls="#Checkout__method-details-bancontact">
+                        <div class="Checkout__method-header">
+                          <strong class="Checkout__method-name">Bancontact
+                            <small>gratis</small>
+                          </strong>
+                          <img class="Checkout__method-img" src="images/Checkout__bancontact.png" height="22"> </div>
+                      </label>
+                      <div id="Checkout__method-details-bancontact" class="Checkout__method-details collapse" data-checkout-method="bancontact" role="tabpanel">
+                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
+                      </div>
+                    </div>
+                    <input id="Checkout__method-afterpay" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="afterpay">
+                    <div class="Checkout__method card">
+                      <label for="Checkout__method-afterpay" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-afterpay" aria-expanded="false" aria-controls="#Checkout__method-details-afterpay">
+                        <div class="Checkout__method-header">
+                          <strong class="Checkout__method-name">Afterpay
+                            <small>€ 0,95</small>
+                          </strong>
+                          <img class="Checkout__method-img" src="images/Checkout__afterpay.png" height="12"> </div>
+                      </label>
+                      <div id="Checkout__method-details-afterpay" class="Checkout__method-details collapse" data-checkout-method="afterpay" role="tabpanel">
+                        <h4>Verificatie</h4>
+                        <div class="form-group has-clear" v-class="'hasdanger': errors.has('payment_afterpay_telefoonnummer')">
+                          <label for="input__payment_afterpay_telefoonnummer">Telefoonnummer
+                            <small>optioneel</small>
+                          </label>
+                          <span class="form-control-wrap">
+                            <input id="input__payment_afterpay_telefoonnummer" name="payment_afterpay_telefoonnummer" type="text" class="form-control" v-model="payment.afterpay.telefoonnummer" v-reset-input="">
+                            <span v-show="errors.has('payment_afterpay_telefoonnummer')" class="text-danger">
+                              <% errors.first('payment_afterpay_telefoonnummer') %>
+                            </span>
+                            <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('payment.afterpay.telefoonnummer')"></i>
+                          </span>
+                        </div>
+                        <div class="form-group has-clear" v-class="'hasdanger': errors.has('payment_afterpay_geboortedatum')">
+                          <label for="input__payment_afterpay_geboortedatum">Geboortedatum
+                            <small>optioneel</small>
+                          </label>
+                          <span class="form-control-wrap">
+                            <input id="input__payment_afterpay_geboortedatum" name="payment_afterpay_geboortedatum" type="text" class="form-control" v-model="payment.afterpay.geboortedatum" v-reset-input="">
+                            <span v-show="errors.has('payment_afterpay_geboortedatum')" class="text-danger">
+                              <% errors.first('payment_afterpay_geboortedatum') %>
+                            </span>
+                            <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('payment.afterpay.geboortedatum')"></i>
+                          </span>
+                        </div>
+                        <div class="alert alert-danger">
+                          <h5>Er gaat iets niet goed.</h5>
+                          <p>Het spijt ons u te moeten mededelen dat uw aanvraag om uw bestelling achteraf te betalen op dit moment niet door AfterPay wordt geaccepteerd. Dit kan om diverse (tijdelijke) redenen zijn.Voor vragen over uw afwijzing kunt u contact
+                            opnemen met de Klantenservice van AfterPay. Of kijk op de website van AfterPay bij “Veel gestelde vragen” via de link http://www.afterpay.nl/page/consument-faq onder het kopje “Gegevenscontrole”. Wij adviseren u voor een andere
+                            betaalmethode te kiezen om alsnog de betaling van uw bestelling af te ronden.</p>
+                        </div>
+                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
+                      </div>
+                    </div>
+                    <input id="Checkout__method-creditcard" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="creditcard">
+                    <div class="Checkout__method card">
+                      <label for="Checkout__method-creditcard" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-creditcard" aria-expanded="false" aria-controls="#Checkout__method-details-creditcard">
+                        <div class="Checkout__method-header">
+                          <strong class="Checkout__method-name">Creditcard
+                            <small>gratis</small>
+                          </strong>
+                          <img class="Checkout__method-img" src="images/Checkout__creditcard.png" height="16"> </div>
+                      </label>
+                      <div id="Checkout__method-details-creditcard" class="Checkout__method-details collapse" data-checkout-method="creditcard" role="tabpanel">
+                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
                   </div>
-                  <div class="hsCheckout__cost">
-                    <hr>
-                    <h5>Winbedrag
-                      <span class="hsCheckout__cost-winbedrag" data-val="7,00">&euro; 7,00</span>
-                      <del class="hsCheckout__cost-winbedrag--del"></del>
-                    </h5>
-                    <h5>Verzendkosten
-                      <span class="hsCheckout__cost-verzendkosten" data-val="0,00">&euro; 0,00</span>
-                    </h5>
-                    <h5>Veilingkosten
-                      <span class="hsCheckout__cost-veilingkosten" data-val="0,99">&euro; 0,99</span>
-                    </h5>
-                    <hr>
-                    <h4>Totaal
-                      <span class="hsCheckout__cost-totaal" data-val="7,99">&euro; 7,99</span>
-                    </h4>
-                    <hr>
-                    <a class="hsCheckout__coupon-trigger" href="#">Heb je een kortingscode?</a>
-                  </div>
-                  <div class="hsCheckout__coupon-area">
-                    <div class="form-group">
-                      <label class="form-control-label" for="kortingscode">Vul hier je kortingscode in</label>
-                      <div class="input-group">
-                        <input id="kortingscode" type="text" class="form-control hsCheckout__coupon-input" placeholder="Kortingscode">
-                        <span class="input-group-btn">
-                          <button class="btn btn-success hsCheckout__coupon-submit" type="button">Toepassen</button>
-                        </span>
+                  <p class="Checkout__pay-footer">Door verder te gaan ga je akkoord met onze
+                    <a href="#">algemene voorwaarden</a>
+                  </p>
+                </article>
+              </div>
+              <div class="row Checkout__summary">
+                <!-- Article: Summary -->
+                <article class="col-sm-12">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="Checkout__product">
+                        <header class="Checkout__product-header">
+                          <h3 class="Checkout__product-title">Jouw winkelmand</h3>
+                        </header>
+                        <div class="Checkout__product-body">
+                          <img class="Checkout__product-img" src="images/preview/5.jpg" height="50">
+                          <div class="Checkout__product-details">
+                            <table v-cloak>
+                              <tbody>
+                                <tr class="Checkout__cost-price">
+                                  <td>
+                                    <h5 class="Checkout__product-name">
+                                      <% product.name %>
+                                    </h5>
+                                  </td>
+                                  <td>
+                                    <% currency %>
+                                  </td>
+                                  <td>
+                                    <% product.price | price %>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div class="form-group" v-class="'hasdanger': errors.has('product_variation')">
+                              <div class="custom-select__wrap">
+                                <select id="input__product_variation" class="custom-select" name="product_variation" v-model="product.variation">
+                                  <option value="red">Red</option>
+                                  <option value="yellow">Yellow</option>
+                                  <option value="black">Black</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="form-control-feedback ml-3 mt-2 hsCheckout__coupon-feedback" data-discount="2">De kortingscode is succesvol toegepast!</div>
+                    </div>
+                    <div class="col-md-5">
+                      <a href="#" class="Checkout__summary-back">
+                        <i class="icon icon-keyboard_arrow_left"></i> Terug naar de veilingen</a>
+                    </div>
+                    <div class="col-md-7 Checkout__cost">
+                      <table v-cloak>
+                        <tbody>
+                          <tr class="Checkout__cost-verzendkosten">
+                            <td>Verzendkosten</td>
+                            <td>
+                              <% currency %>
+                            </td>
+                            <td>
+                              <% product.verzendkosten | price %>
+                            </td>
+                          </tr>
+                          <tr class="Checkout__cost-veilingkosten">
+                            <td>Veilingkosten</td>
+                            <td>
+                              <% currency %>
+                            </td>
+                            <td>
+                              <% product.veilingkosten | price %>
+                            </td>
+                          </tr>
+                          <tr class="Checkout__cost-totaal">
+                            <td>Totaal</td>
+                            <td>
+                              <% currency %>
+                            </td>
+                            <td>
+                              <% product.price + product.verzendkosten + product.veilingkosten | price %>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
-                </section>
-                <!-- Data side -->
-                <section class="pull-md-5 pull-lg-6 col-md-7 col-lg-6 hsArea hsCheckout__main-data">
-                  <ol class="hsCheckout__breadcrumbs">
-                    <li class="hsCheckout__breadcrumb active">
-                      <a href="#">Verzendgegevens</a>
-                    </li>
-                    <li class="hsCheckout__breadcrumb">
-                      <a href="#">Betaalmethode</a>
-                    </li>
-                  </ol>
-                  <div class="hsCheckout__steps">
-                    <!-- Data side: Step 0 -->
-                    <div id="hsCheckout__step-0" class="hsCheckout__step">
-                      <h3 class="font-sans h4 my-4">Verzendgegevens</h3>
-                      <p class="m-3 text-muted">Opgeslagen gegevens</p>
-                      <div class="form-group hsCheckout__addresschoice">
-                        <label class="custom-control custom-radio">
-                          <input name="addresschoice" type="radio" value="" class="custom-control-input" checked>
-                          <span class="custom-control-indicator"></span>
-                          <span id="hsAddress__prefilled" class="custom-control-description">Jeffrey Kuik, Jacobstraat 14,
-                            <br>12312, Amsterdam, Nederland</span>
-                        </label>
-                        <label class="custom-control custom-radio">
-                          <input name="addresschoice" type="radio" value="true" class="custom-control-input">
-                          <span class="custom-control-indicator"></span>
-                          <span class="custom-control-description">Nieuwe gegevens invoeren</span>
-                        </label>
-                      </div>
-                      <div class="hsCheckout__details">
+                </article>
+              </div>
+            </section>
+            <!-- Checkout: Edit details modal (start) -->
+            <div id="Checkout__edit" class="modal restyling--modal Checkout__edit" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+              <div class="modal-dialog centered" role="document">
+                <div class="modal-content">
+                  <header class="modal-header">
+                    <h3 class="modal-title">Gegevens wijzigen</h3>
+                    <button type="button" class="appModal__close close" data-dismiss="modal" aria-label="Close">
+                      <i class="icon icon-cross-thin" aria-hidden="true"></i>
+                    </button>
+                  </header>
+                  <section class="modal-body">
+                    <div class="row" class="Checkout__edit-shipping">
+                      <div class="col-md-6">
                         <div class="row">
-                          <div class="col col-12 form-group">
-                            <label class="label-over">Aanhef</label>
-                            <label class="custom-control custom-radio">
-                              <input name="aanhef" type="radio" class="custom-control-input" required checked>
+                          <div class="form-group col-lg-12" v-class="'hasdanger': errors.has('shipping_aanhef')">
+                            <label class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" id="shipping_aanhef_1" name="shipping_aanhef" v-model="shipping.aanhef" class="custom-control-input" value="dhr">
                               <span class="custom-control-indicator"></span>
                               <span class="custom-control-description">Dhr.</span>
                             </label>
-                            <label class="custom-control custom-radio">
-                              <input name="aanhef" type="radio" class="custom-control-input" required>
+                            <label class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" id="shipping_aanhef_2" name="shipping_aanhef" v-model="shipping.aanhef" class="custom-control-input" value="mvr">
                               <span class="custom-control-indicator"></span>
                               <span class="custom-control-description">Mvr.</span>
                             </label>
                           </div>
-                          <div class="col-lg-6 form-group">
-                            <label for="voornaam">Voornaam</label>
-                            <input id="voornaam" name="voornaam" type="text" class="form-control" required> </div>
-                          <div class="col-lg-6 form-group">
-                            <label for="achternaam">Achternaam</label>
-                            <input id="achternaam" name="achternaam" type="text" class="form-control" required> </div>
-                          <div class="col-lg-8 form-group">
-                            <label for="straat">Straat</label>
-                            <input id="straat" name="straat" type="text" class="form-control" required> </div>
-                          <div class="col-md-5 col-lg-4 form-group">
-                            <label for="huisnummer">Huisnummer</label>
-                            <input id="huisnummer" name="huisnummer" type="text" class="form-control" required> </div>
-                          <div class="col-md-7 col-lg-4 form-group">
-                            <label for="postcode">Postcode</label>
-                            <input id="postcode" name="postcode" type="text" class="form-control" required> </div>
-                          <div class="col-lg-8 form-group">
-                            <label for="woonplaats">Woonplaats</label>
-                            <input id="woonplaats" name="woonplaats" type="text" class="form-control" required> </div>
-                          <div class="col-12 form-group">
+                          <div class="form-group has-clear col-lg-6" v-class="'hasdanger': errors.has('shipping_voornam')">
+                            <label for="input__shipping_voornam">Voornaam</label>
+                            <span class="form-control-wrap">
+                              <input id="input__shipping_voornam" name="shipping_voornam" type="text" class="form-control" v-model="shipping.voornam" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('shipping_voornam')" class="text-danger">
+                                <% errors.first('shipping_voornam') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.voornam')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-6" v-class="'hasdanger': errors.has('shipping_achternaam')">
+                            <label for="input__shipping_achternaam">Achternaam</label>
+                            <span class="form-control-wrap">
+                              <input id="input__shipping_achternaam" name="shipping_achternaam" type="text" class="form-control" v-model="shipping.achternaam" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('shipping_achternaam')" class="text-danger">
+                                <% errors.first('shipping_achternaam') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.achternaam')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('shipping_bedrijfsnaam')">
+                            <label for="input__shipping_bedrijfsnaam">Bedrijfsnaam
+                              <small>optioneel</small>
+                            </label>
+                            <span class="form-control-wrap">
+                              <input id="input__shipping_bedrijfsnaam" name="shipping_bedrijfsnaam" type="text" class="form-control" v-model="shipping.bedrijfsnaam" v-reset-input="">
+                              <span v-show="errors.has('shipping_bedrijfsnaam')" class="text-danger">
+                                <% errors.first('shipping_bedrijfsnaam') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.bedrijfsnaam')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group col-lg-12" v-class="'hasdanger': errors.has('shipping_land')">
                             <label class="label-over">Land</label>
-                            <select id="land" class="custom-select w-100" name="land" required>
-                              <option selected>Select a country</option>
-                              <option value="nl">Nederland</option>
-                              <option value="bl">België</option>
-                              <option value="it">Italy</option>
-                            </select>
+                            <div class="custom-select__wrap">
+                              <select id="input__shipping_land" class="custom-select" name="shipping_land" v-model="shipping.land">
+                                <option value="nl">Nederland</option>
+                                <option value="be">België</option>
+                                <option value="it">Italy</option>
+                              </select>
+                            </div>
                           </div>
-                          <div class="col-12 form-group">
-                            <label for="telefoonnummer">Telefoonnummer</label>
-                            <input id="telefoonnummer" name="telefoonnummer" type="tel" class="form-control"> </div>
+                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('shipping_postcode')">
+                            <label for="input__shipping_postcode">Postcode</label>
+                            <span class="form-control-wrap">
+                              <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('shipping_postcode')" class="text-danger">
+                                <% errors.first('shipping_postcode') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.postcode')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('shipping_huisnummer')">
+                            <label for="input__shipping_huisnummer">Huisnummer</label>
+                            <span class="form-control-wrap">
+                              <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control" v-model="shipping.huisnummer" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('shipping_huisnummer')" class="text-danger">
+                                <% errors.first('shipping_huisnummer') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.huisnummer')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('shipping_toev')">
+                            <label for="input__shipping_toev">Toev.
+                              <small>optioneel</small>
+                            </label>
+                            <span class="form-control-wrap">
+                              <input id="input__shipping_toev" name="shipping_toev" type="text" class="form-control" v-model="shipping.toev" v-reset-input="">
+                              <span v-show="errors.has('shipping_toev')" class="text-danger">
+                                <% errors.first('shipping_toev') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.toev')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('shipping_straat')">
+                            <label for="input__shipping_straat">Straat</label>
+                            <span class="form-control-wrap">
+                              <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control" v-model="shipping.straat" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('shipping_straat')" class="text-danger">
+                                <% errors.first('shipping_straat') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.straat')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('shipping_plaats')">
+                            <label for="input__shipping_plaats">Plaats</label>
+                            <span class="form-control-wrap">
+                              <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('shipping_plaats')" class="text-danger">
+                                <% errors.first('shipping_plaats') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.plaats')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('shipping_telefoonnummer')">
+                            <label for="input__shipping_telefoonnummer">Telefoonnummer
+                              <small>optioneel</small>
+                            </label>
+                            <span class="form-control-wrap">
+                              <input id="input__shipping_telefoonnummer" name="shipping_telefoonnummer" type="text" class="form-control" v-model="shipping.telefoonnummer" v-reset-input="">
+                              <span v-show="errors.has('shipping_telefoonnummer')" class="text-danger">
+                                <% errors.first('shipping_telefoonnummer') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.telefoonnummer')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group col-lg-12" v-class="'hasdanger': errors.has('shippingAsBilling')">
+                            <label class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" name="shippingAsBilling" v-model="shippingAsBilling" v-validate="''">
+                              <span class="custom-control-indicator"></span>
+                              <span class="custom-control-description">Factuuradres is hetzelfde als afleveradres</span>
+                            </label>
+                          </div>
                         </div>
                       </div>
-                      <button type="submit" class="btn btn-success float-md-right hsCheckout__tostep2 mt-3">Verder naar betaalmethode</button>
-                    </div>
-                    <!-- Data side: Step 1 -->
-                    <div id="hsCheckout__step-1" class="hsCheckout__step">
-                      <div class="hsCheckout__address-label">Verzendgegevens</div>
-                      <div class="hsCheckout__address">
-                        <p id="hsAddress__display">Jeffrey, Jacobstraat 14, 12312 Amsterdam</p>
-                        <a href="#" class="hsCheckout__tostep1 text-muted">Wijzigen</a href="#">
-                      </div>
-                      <h3 class="font-sans h4 mt-5 mb-4">Betaalmethode</h3>
-                      <div class="hsCheckout__methods">
-                        <label class="hsCheckout__method hsCheckout__method--ideal">
-                          <input type="radio" name="pay-method" value="ideal">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/ideal.png" height="68">
+                      <div class="col-md-6">
+                        <div class="Checkout__edit-summary">
+                          <h4 v-if="shippingAsBilling">Factuur- en afleveradres</h4>
+                          <h4 v-if="!shippingAsBilling">Afleveradres</h4>
+                          <!-- macro: Checkout__display_shipping -->
+                          <div v-cloak>
+                            <% shipping.voornam %>
+                              <% shipping.achternaam %>
+                                <br>
+                                <% shipping.straat %>
+                                  <% shipping.huisnummer %>
+                                    <br>
+                                    <% shipping.postcode %>
+                                      <% shipping.plaats %>
+                                        <br>
+                                        <% maps.land[shipping.land] %>
                           </div>
-                          <span class="hsCheckout__method-name">iDEAL</span>
-                        </label>
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="paypal">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/paypal.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">PayPal</span>
-                        </label>
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="bancontact">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/bancontact.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">Bancontact</span>
-                        </label>
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="sofort">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/sofort.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">SOFORT</span>
-                        </label>
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="afterpay">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/afterpay.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">AfterPay</span>
-                        </label>
-                      </div>
-                      <p class="mt-4 mb-0">Credit card</p>
-                      <div class="hsCheckout__methods">
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="mastercard">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/mastercard.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">Mastercard</span>
-                        </label>
-                        <label class="hsCheckout__method">
-                          <input type="radio" name="pay-method" value="visa">
-                          <div class="hsCheckout__method-imgwrap">
-                            <img class="hsCheckout__method-img" src="images/visa.png" height="68">
-                          </div>
-                          <span class="hsCheckout__method-name">VISA</span>
-                        </label>
-                      </div>
-                      <div class="hsCheckout__banks">
-                        <hr>
-                        <h6 class="font-sans my-4">Selecteer uw bank</h6>
-                        <div class="hsCheckout__methods hsCheckout__methods--bank">
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="abn_amro">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/abn_amro.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">ABN AMRO</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="asn_bank">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/asn_bank.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">ASN Bank</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="bunq">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/bunq.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Bunq</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="ing">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/ing.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">ING</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="knab">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/knab.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Knab</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="rabobank">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/rabobank.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Rabobank</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="regio_bank">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/regio_bank.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Regiobank</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="sns_bank">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/sns_bank.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">SNS Bank</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="triodos">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/triodos.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Triodos Bank</span>
-                          </label>
-                          <label class="hsCheckout__method hsCheckout__method--bank">
-                            <input type="radio" name="pay-bank" value="van_lanschot">
-                            <div class="hsCheckout__method-imgwrap">
-                              <img class="hsCheckout__method-img" src="images/van_lanschot.png" height="74">
-                            </div>
-                            <span class="hsCheckout__method-name">Van Lanschot</span>
-                          </label>
+                          <!-- endmacro: Checkout__display_shipping -->
+                        </div>
+                        <button class="btn btn-success Checkout__edit-submit" type="button">Opslaan en naar betalen</button>
+                        <a href="#" class="Checkout__edit-link">
+                          <i class="icon icon-keyboard_arrow_left"></i> Zonder opslaan naar betalen</a>
+                        <div class="alert alert-danger">
+                          <h5>Er is iets niet goed ingevuld.</h5>
+                          <p>We herkennen je adres niet.</p>
                         </div>
                       </div>
-                      <div class="hsCheckout__submit">
-                        <button type="submit" class="btn btn-success float-md-right mt-3">Betalen</button>
+                    </div>
+                    <div class="row" class="Checkout__edit-shipping" v-if="!shippingAsBilling">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="form-group col-lg-12" v-class="'hasdanger': errors.has('billing_aanhef')">
+                            <label class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" id="billing_aanhef_1" name="billing_aanhef" v-model="billing.aanhef" class="custom-control-input" value="dhr">
+                              <span class="custom-control-indicator"></span>
+                              <span class="custom-control-description">Dhr.</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" id="billing_aanhef_2" name="billing_aanhef" v-model="billing.aanhef" class="custom-control-input" value="mvr">
+                              <span class="custom-control-indicator"></span>
+                              <span class="custom-control-description">Mvr.</span>
+                            </label>
+                          </div>
+                          <div class="form-group has-clear col-lg-6" v-class="'hasdanger': errors.has('billing_voornam')">
+                            <label for="input__billing_voornam">Voornaam</label>
+                            <span class="form-control-wrap">
+                              <input id="input__billing_voornam" name="billing_voornam" type="text" class="form-control" v-model="billing.voornam" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('billing_voornam')" class="text-danger">
+                                <% errors.first('billing_voornam') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.voornam')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-6" v-class="'hasdanger': errors.has('billing_achternaam')">
+                            <label for="input__billing_achternaam">Achternaam</label>
+                            <span class="form-control-wrap">
+                              <input id="input__billing_achternaam" name="billing_achternaam" type="text" class="form-control" v-model="billing.achternaam" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('billing_achternaam')" class="text-danger">
+                                <% errors.first('billing_achternaam') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.achternaam')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('billing_bedrijfsnaam')">
+                            <label for="input__billing_bedrijfsnaam">Bedrijfsnaam
+                              <small>optioneel</small>
+                            </label>
+                            <span class="form-control-wrap">
+                              <input id="input__billing_bedrijfsnaam" name="billing_bedrijfsnaam" type="text" class="form-control" v-model="billing.bedrijfsnaam" v-reset-input="">
+                              <span v-show="errors.has('billing_bedrijfsnaam')" class="text-danger">
+                                <% errors.first('billing_bedrijfsnaam') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.bedrijfsnaam')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group col-lg-12" v-class="'hasdanger': errors.has('billing_land')">
+                            <label class="label-over">Land</label>
+                            <div class="custom-select__wrap">
+                              <select id="input__billing_land" class="custom-select" name="billing_land" v-model="billing.land">
+                                <option value="nl">Nederland</option>
+                                <option value="be">België</option>
+                                <option value="it">Italy</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('billing_postcode')">
+                            <label for="input__billing_postcode">Postcode</label>
+                            <span class="form-control-wrap">
+                              <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('billing_postcode')" class="text-danger">
+                                <% errors.first('billing_postcode') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.postcode')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('billing_huisnummer')">
+                            <label for="input__billing_huisnummer">Huisnummer</label>
+                            <span class="form-control-wrap">
+                              <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control" v-model="billing.huisnummer" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('billing_huisnummer')" class="text-danger">
+                                <% errors.first('billing_huisnummer') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.huisnummer')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('billing_toev')">
+                            <label for="input__billing_toev">Toev.
+                              <small>optioneel</small>
+                            </label>
+                            <span class="form-control-wrap">
+                              <input id="input__billing_toev" name="billing_toev" type="text" class="form-control" v-model="billing.toev" v-reset-input="">
+                              <span v-show="errors.has('billing_toev')" class="text-danger">
+                                <% errors.first('billing_toev') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.toev')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('billing_straat')">
+                            <label for="input__billing_straat">Straat</label>
+                            <span class="form-control-wrap">
+                              <input id="input__billing_straat" name="billing_straat" type="text" class="form-control" v-model="billing.straat" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('billing_straat')" class="text-danger">
+                                <% errors.first('billing_straat') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.straat')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('billing_plaats')">
+                            <label for="input__billing_plaats">Plaats</label>
+                            <span class="form-control-wrap">
+                              <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required v-validate="'required'" v-reset-input="">
+                              <span v-show="errors.has('billing_plaats')" class="text-danger">
+                                <% errors.first('billing_plaats') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.plaats')"></i>
+                            </span>
+                          </div>
+                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('billing_telefoonnummer')">
+                            <label for="input__billing_telefoonnummer">Telefoonnummer
+                              <small>optioneel</small>
+                            </label>
+                            <span class="form-control-wrap">
+                              <input id="input__billing_telefoonnummer" name="billing_telefoonnummer" type="text" class="form-control" v-model="billing.telefoonnummer" v-reset-input="">
+                              <span v-show="errors.has('billing_telefoonnummer')" class="text-danger">
+                                <% errors.first('billing_telefoonnummer') %>
+                              </span>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.telefoonnummer')"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="Checkout__edit-summary">
+                          <h4>Factuuradres</h4>
+                          <!-- macro: Checkout__display_billing -->
+                          <div v-cloak>
+                            <% billing.bedrijfsnaam %>
+                              <br>
+                              <% billing.voornam %>
+                                <% billing.achternaam %>
+                                  <br>
+                                  <% billing.straat %>
+                                    <% billing.huisnummer %>
+                                      <br>
+                                      <% billing.postcode %>
+                                        <% billing.plaats %>
+                                          <br>
+                                          <% maps.land[billing.land] %>
+                          </div>
+                          <!-- endmacro: Checkout__display_billing -->
+                        </div>
+                        <button class="btn btn-success Checkout__edit-submit" type="button">Opslaan en naar betalen</button>
+                        <div class="alert alert-danger">
+                          <h5>Er is iets niet goed ingevuld.</h5>
+                          <p>We herkennen je adres niet.</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </section>
-              </article>
-            </form>
-            <aside class="hidden-md-down col-lg-3 col-xl-2 hsCheckout__side">
-              <div class="hsArea">
-                <ol class="checklist">
-                  <li>
-                    <i class="fa fa-check"></i>Geverifieerde verkopers</li>
-                  <li>
-                    <i class="fa fa-check"></i>Niet tevreden? Geld terug</li>
-                  <li>
-                    <i class="fa fa-check"></i>Vragen? Bel:
-                    <a href="tel:020-2618940">020-2618940</a> (ma-vr 9.00-17.00u)</li>
-                </ol>
-                <div class="hsCheckout__side-pay">
-                  <div class="row no-gutters">
-                    <div class="col-4">
-                      <img class="img-fluid" title="iDeal" src="images/ideal.png">
-                    </div>
-                    <div class="col-4">
-                      <img class="img-fluid" title="PayPal" src="images/paypal.png">
-                    </div>
-                    <div class="col-4">
-                      <img class="img-fluid" title="Mastercard" src="images/mastercard.png">
-                    </div>
-                    <div class="col-4">
-                      <img class="img-fluid" title="Visa" src="images/visa.png">
-                    </div>
-                    <div class="col-4">
-                      <img class="img-fluid" title="Maestro" src="images/maestro.png">
-                    </div>
-                    <div class="col-4">
-                      <img class="img-fluid" title="Afterpay" src="images/afterpay.png">
-                    </div>
-                  </div>
-                  <a href="https://www.webwinkelkeur.nl/leden/HelloSpecial_1201424.html" title="Webwinkel Keurmerk en klantebeoordelingen" rel="nofollow">
-                    <img class="img-fluid" src="https://dashboard.webwinkelkeur.nl/banners/3" alt="Webwinkel Keurmerk en klantebeoordelingen" title="Webwinkel Keurmerk en klantebeoordelingen"> </a>
+                  </section>
                 </div>
               </div>
-            </aside>
-          </div>
+            </div>
+            <!-- Checkout: Edit details modal (end) -->
+          </form>
         </div>
       </div>
       <div class="wrap__bottom">
-        <aside class="hsColophon__above hidden-sm-down">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 col-lg-9 col-xl-8">
-                <div class="row">
-                  <div class="col-sm-12 col-lg-auto hsColophon__above-title">
-                    <h3>Geen deal missen?</h3>
-                  </div>
-                  <div class="clearfix d-none d-sm-block"></div>
-                  <div class="col-sm-12 col-lg-auto hsColophon__above-txt">
-                    <p>Schrijf je in en je bent als eerste op de hoogte van de nieuwste Specials</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12 col-lg-3 col-xl-4">
-                <!-- Start macro: `newsletter` -->
-                <form class="input-group hsNewsletter">
-                  <input type="text" class="form-control" placeholder="Jouw e-mailadres">
-                  <span class="input-group-btn">
-                    <button class="btn btn-success" type="button">
-                      <i class="fa fa-plus"></i>
-                      <i class="fa fa-check"></i>
-                    </button>
-                  </span>
-                </form>
-                <!-- End macro: `newsletter` -->
-              </div>
-            </div>
-          </div>
-        </aside>
         <aside class="hsColophon">
           <div class="container">
             <nav class="row">
@@ -899,6 +1191,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script> -->
-    <script src="scripts/app.js?v=ab7537e4320ba94b42ac22014ea183c2" inline></script>
+    <script src="scripts/app.js?v=f54731fb4e4ebdb9ca675c16bba47c4f" inline></script>
   </body>
 </html>
