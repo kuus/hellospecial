@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400" rel="stylesheet">
     <base href="/hellospecial/">
     <!-- for github deploy only -->
-    <link rel="stylesheet" href="styles/app.css?v=d6da225092a389ef9eb70248182663e8" inline> </head>
+    <link rel="stylesheet" href="styles/app.css?v=fcecf378fc3692354030f06530634d27" inline> </head>
   <body class="page--checkout">
     <div class="wrap">
       <div class="wrap__top">
@@ -19,7 +19,7 @@
           <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse hsGradient">
             <div class="container">
               <a class="navbar-brand hsLogotype" href="index.html">Hello Special</a>
-              <span class="nav-text">Delivery!</span>
+              <span class="navbar-brand-special">Delivery!</span>
               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#js_navbar">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -49,6 +49,24 @@
 <![endif]-->
           <script>
             window['hsCheckout'] = {
+              "feedback":
+              {
+                "shipping":
+                {
+                  "title": "Er is iets niet goed ingevuld.",
+                  "text": "We herkennen je adres niet."
+                },
+                "billing":
+                {
+                  "title": "Er is iets niet goed ingevuld.",
+                  "text": "We herkennen je adres niet."
+                },
+                "afterpay":
+                {
+                  "title": "Er gaat iets niet goed.",
+                  "text": "Het spijt ons u te moeten mededelen dat uw aanvraag om uw bestelling achteraf te betalen op dit moment niet door AfterPay wordt geaccepteerd. Dit kan om diverse (tijdelijke) redenen zijn.Voor vragen over uw afwijzing kunt u contact opnemen met de Klantenservice van AfterPay. Of kijk op de website van AfterPay bij “Veel gestelde vragen” via de link http://www.afterpay.nl/page/consument-faq onder het kopje “Gegevenscontrole”. Wij adviseren u voor een andere betaalmethode te kiezen om alsnog de betaling van uw bestelling af te ronden."
+                }
+              },
               "currency": "€",
               "maps":
               {
@@ -57,6 +75,13 @@
                   "nl": "Nederlands",
                   "be": "België",
                   "it": "Italy"
+                },
+                "placeholders":
+                {
+                  "huisnummer": "Huisnr.",
+                  "straat": "Straatnaam",
+                  "postcode": "Postcode",
+                  "plaats": "Plaats"
                 }
               },
               "product":
@@ -68,15 +93,9 @@
                 "veilingkosten": 0.99,
                 "shippingdate": "01/02/2017"
               },
-              "shippingAsBilling": true,
+              "shippingAsBilling": false,
               "shipping":
               {
-                "$valid": false,
-                "$error":
-                {
-                  "title": "Er is iets niet goed ingevuld.",
-                  "text": "We herkennen je adres niet."
-                },
                 "aanhef": "dhr",
                 "voornam": "Axel",
                 "achternaam": "Kenninck",
@@ -91,11 +110,6 @@
               },
               "billing":
               {
-                "$error":
-                {
-                  "title": "Er is iets niet goed ingevuld.",
-                  "text": "We herkennen je adres niet."
-                },
                 "aanhef": "dhr",
                 "voornam": "Axel",
                 "achternaam": "Kenninck",
@@ -136,7 +150,7 @@
                 <li class="col-4 Checkout__breadcrumbs-item done" data-checkout-view="overview">
                   <span class="Checkout__breadcrumbs-text">Overzicht</span>
                 </li>
-                <li class="col-4 Checkout__breadcrumbs-item" data-checkout-view="payment">
+                <li class="col-4 Checkout__breadcrumbs-item active" data-checkout-view="payment">
                   <span class="Checkout__breadcrumbs-text">Betaling</span>
                 </li>
                 <li class="col-4 Checkout__breadcrumbs-item" data-checkout-view="thanks">
@@ -149,49 +163,85 @@
               <div class="row">
                 <!-- Article: Coupon -->
                 <article class="col Checkout__details">
-                  <h3>Gegevens</h3>
-                  <h4>Afleveradres</h4>
-                  <!-- macro: Checkout__display_shipping -->
-                  <div v-cloak>
-                    <% shipping.voornam %>
-                      <% shipping.achternaam %>
-                        <br>
-                        <% shipping.straat %>
-                          <% shipping.huisnummer %>
+                  <header class="row Checkout__article-header" data-toggle="collapse" data-target="#Checkout__area-details" aria-expanded="true">
+                    <i class="icon icon-keyboard_arrow_up"></i>
+                    <h3>Gegevens</h3>
+                  </header>
+                  <div id="Checkout__area-details" class="Checkout__article-body row show">
+                    <div class="Checkout__details-block col-md-4 col-lg-12">
+                      <h4 class="Checkout__details-title" v-if="shippingAsBilling">Factuur- en afleveradres</h4>
+                      <h4 class="Checkout__details-title" v-if="!shippingAsBilling">Afleveradres</h4>
+                      <!-- macro: Checkout__display_shipping -->
+                      <div v-cloak>
+                        <% shipping.voornam %>
+                          <% shipping.achternaam %>
                             <br>
-                            <% shipping.postcode %>
+                            <span v-if="shipping.straat">
+                              <% shipping.straat %>
+                            </span>
+                            <span v-if="!shipping.straat && placeholders.straat" class="text-muted">
+                              <% placeholders.straat %>
+                            </span>
+                            <span v-if="shipping.huisnummer">
+                              <% shipping.huisnummer %>
+                            </span>
+                            <span v-if="!shipping.huisnummer && placeholders.huisnummer" class="text-muted">
+                              <% placeholders.huisnummer %>
+                            </span>
+                            <br>
+                            <span v-if="shipping.postcode">
+                              <% shipping.postcode %>
+                            </span>
+                            <span v-if="!shipping.postcode && placeholders.postcode" class="text-muted">
+                              <% placeholders.postcode %>
+                            </span>
+                            <span v-if="shipping.plaats">
                               <% shipping.plaats %>
+                            </span>
+                            <span v-if="!shipping.plaats && placeholders.plaats" class="text-muted">
+                              <% placeholders.plaats %>
+                            </span>
+                            <br>
+                            <% maps.land[shipping.land] %>
+                      </div>
+                      <!-- endmacro: Checkout__display_shipping -->
+                    </div>
+                    <div class="Checkout__details-block col-md-4 col-lg-12">
+                      <h4 class="Checkout__details-title" v-if="!shippingAsBilling">Factuuradres</h4>
+                      <div v-if="!shippingAsBilling">
+                        <!-- macro: Checkout__display_billing -->
+                        <div v-cloak>
+                          <% billing.bedrijfsnaam %>
+                            <br>
+                            <% billing.voornam %>
+                              <% billing.achternaam %>
                                 <br>
-                                <% maps.land[shipping.land] %>
-                  </div>
-                  <!-- endmacro: Checkout__display_shipping -->
-                  <h4>Factuuradres</h4>
-                  <!-- macro: Checkout__display_billing -->
-                  <div v-cloak>
-                    <% billing.bedrijfsnaam %>
-                      <br>
-                      <% billing.voornam %>
-                        <% billing.achternaam %>
+                                <% billing.straat %>
+                                  <% billing.huisnummer %>
+                                    <br>
+                                    <% billing.postcode %>
+                                      <% billing.plaats %>
+                                        <br>
+                                        <% maps.land[billing.land] %>
+                        </div>
+                        <!-- endmacro: Checkout__display_billing -->
+                      </div>
+                    </div>
+                    <div class="Checkout__details-block col-md-4 col-lg-12">
+                      <h4 class="Checkout__details-title">Contactgegevens</h4>
+                      <!-- macro: Checkout__display_contact -->
+                      <div v-cloak>
+                        <% contact.email %>
                           <br>
-                          <% billing.straat %>
-                            <% billing.huisnummer %>
-                              <br>
-                              <% billing.postcode %>
-                                <% billing.plaats %>
-                                  <br>
-                                  <% maps.land[billing.land] %>
+                          <% contact.phone %>
+                      </div>
+                      <!-- endmacro: Checkout__display_contact -->
+                    </div>
+                    <div class="col-12">
+                      <a class="Checkout__details-edit" href="#" data-toggle="modal" data-target="#Checkout__edit">
+                        <i class="icon icon-keyboard_arrow_right"></i> Wijzig gegevens</a>
+                    </div>
                   </div>
-                  <!-- endmacro: Checkout__display_billing -->
-                  <h4>Contactgegevens</h4>
-                  <!-- macro: Checkout__display_contact -->
-                  <div v-cloak>
-                    <% contact.email %>
-                      <br>
-                      <% contact.phone %>
-                  </div>
-                  <!-- endmacro: Checkout__display_contact -->
-                  <a class="Checkout__details-edit" href="#" data-toggle="modal" data-target="#Checkout__edit">
-                    <i class="icon icon-keyboard_arrow_right"></i> Wijzig gegevens</a>
                 </article>
               </div>
             </section>
@@ -199,28 +249,41 @@
             <section class="col-lg-8 Checkout__payment">
               <div class="row">
                 <!-- Article: Coupon -->
-                <article class="col-md-6 Checkout__coupon">
-                  <h3>Kortingscode</h3>
-                  <div class="form-group">
+                <article class="col-lg-6 Checkout__coupon">
+                  <header class="row Checkout__article-header" data-toggle="collapse" data-target="#Checkout__area-coupon" aria-expanded="true">
+                    <i class="icon icon-keyboard_arrow_up"></i>
+                    <h3>Kortingscode</h3>
+                  </header>
+                  <div id="Checkout__area-coupon" class="Checkout__article-body form-group show">
                     <input type="text" class="form-control Checkout__coupon-input" placeholder="Kortingscode" name="payment_coupon" v-model="payment.coupon" v-cloak>
-                    <button class="btn btn-success Checkout__coupon-submit" type="button">Inwisselen</button>
-                    <div class="form-control-feedback ml-3 mt-2 Checkout__coupon-feedback" data-discount="2">De kortingscode is succesvol toegepast!</div>
+                    <button class="btn btn-success Checkout__coupon-submit" type="button" :disabled="!payment.coupon">Inwisselen</button>
                   </div>
-                  <h3>Verzenddatum</h3>
-                  <p class="Checkout__coupon-date" v-cloak>
-                    <strong>Uiterste verzenddatum:
-                      <% product.shippingdate %>
-                    </strong>
-                  </p>
+                  <header class="row Checkout__article-header" data-toggle="collapse" data-target="#Checkout__area-shippingdate" aria-expanded="true">
+                    <i class="icon icon-keyboard_arrow_up"></i>
+                    <h3>Verzenddatum</h3>
+                  </header>
+                  <div id="Checkout__area-shippingdate" class="Checkout__article-body show">
+                    <p class="Checkout__coupon-date" v-cloak>
+                      <strong>Uiterste verzenddatum:
+                        <% product.shippingdate %>
+                      </strong>
+                    </p>
+                  </div>
                 </article>
                 <!-- Article: Pay -->
-                <article class="col-md-6 Checkout__pay">
-                  <h3>Kies betaalmethode</h3>
-                  <div class="alert alert-danger">
-                    <h5>Er is iets niet goed ingevuld.</h5>
-                    <p>We herkennen je adres niet.</p>
+                <article class="col-lg-6 Checkout__pay">
+                  <header class="row Checkout__article-header">
+                    <h3>Kies betaalmethode</h3>
+                  </header>
+                  <div class="alert alert-danger" v-if="feedback.shipping">
+                    <h5 v-if="feedback.shipping.title">
+                      <% feedback.shipping.title %>
+                    </h5>
+                    <p v-if="feedback.shipping.text">
+                      <% feedback.shipping.text %>
+                    </p>
                   </div>
-                  <div id="Checkout__methods" role="tablist" aria-multiselectable="true">
+                  <div id="Checkout__methods" class="Checkout__article-body" role="tablist" aria-multiselectable="true">
                     <input id="Checkout__method-ideal" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="ideal">
                     <div class="Checkout__method card">
                       <label for="Checkout__method-ideal" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-ideal" aria-expanded="false" aria-controls="#Checkout__method-details-ideal">
@@ -231,7 +294,7 @@
                           <img class="Checkout__method-img" src="images/Checkout__ideal.png" height="20"> </div>
                       </label>
                       <div id="Checkout__method-details-ideal" class="Checkout__method-details collapse" data-checkout-method="ideal" role="tabpanel">
-                        <div class="form-group" v-class="'hasdanger': errors.has('payment_ideal_bank')">
+                        <div class="form-group">
                           <div class="custom-select__wrap">
                             <select id="input__payment_ideal_bank" class="custom-select" name="payment_ideal_bank" v-model="payment.ideal.bank">
                               <option value="" disabled selected>Kies je bank</option>
@@ -294,35 +357,27 @@
                       </label>
                       <div id="Checkout__method-details-afterpay" class="Checkout__method-details collapse" data-checkout-method="afterpay" role="tabpanel">
                         <h4>Verificatie</h4>
-                        <div class="form-group has-clear" v-class="'hasdanger': errors.has('payment_afterpay_telefoonnummer')">
+                        <div class="form-group has-clear">
                           <label for="input__payment_afterpay_telefoonnummer">Telefoonnummer
                             <small>optioneel</small>
                           </label>
                           <span class="form-control-wrap">
-                            <input id="input__payment_afterpay_telefoonnummer" name="payment_afterpay_telefoonnummer" type="text" class="form-control" v-model="payment.afterpay.telefoonnummer" v-reset-input="">
-                            <span v-show="errors.has('payment_afterpay_telefoonnummer')" class="text-danger">
-                              <% errors.first('payment_afterpay_telefoonnummer') %>
-                            </span>
-                            <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('payment.afterpay.telefoonnummer')"></i>
-                          </span>
+                            <input id="input__payment_afterpay_telefoonnummer" name="payment_afterpay_telefoonnummer" type="text" class="form-control" v-model="payment.afterpay.telefoonnummer"> </span>
                         </div>
-                        <div class="form-group has-clear" v-class="'hasdanger': errors.has('payment_afterpay_geboortedatum')">
+                        <div class="form-group has-clear">
                           <label for="input__payment_afterpay_geboortedatum">Geboortedatum
                             <small>optioneel</small>
                           </label>
                           <span class="form-control-wrap">
-                            <input id="input__payment_afterpay_geboortedatum" name="payment_afterpay_geboortedatum" type="text" class="form-control" v-model="payment.afterpay.geboortedatum" v-reset-input="">
-                            <span v-show="errors.has('payment_afterpay_geboortedatum')" class="text-danger">
-                              <% errors.first('payment_afterpay_geboortedatum') %>
-                            </span>
-                            <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('payment.afterpay.geboortedatum')"></i>
-                          </span>
+                            <input id="input__payment_afterpay_geboortedatum" name="payment_afterpay_geboortedatum" type="text" class="form-control" v-model="payment.afterpay.geboortedatum"> </span>
                         </div>
-                        <div class="alert alert-danger">
-                          <h5>Er gaat iets niet goed.</h5>
-                          <p>Het spijt ons u te moeten mededelen dat uw aanvraag om uw bestelling achteraf te betalen op dit moment niet door AfterPay wordt geaccepteerd. Dit kan om diverse (tijdelijke) redenen zijn.Voor vragen over uw afwijzing kunt u contact
-                            opnemen met de Klantenservice van AfterPay. Of kijk op de website van AfterPay bij “Veel gestelde vragen” via de link http://www.afterpay.nl/page/consument-faq onder het kopje “Gegevenscontrole”. Wij adviseren u voor een andere
-                            betaalmethode te kiezen om alsnog de betaling van uw bestelling af te ronden.</p>
+                        <div class="alert alert-danger" v-if="feedback.afterpay">
+                          <h5 v-if="feedback.afterpay.title">
+                            <% feedback.afterpay.title %>
+                          </h5>
+                          <p v-if="feedback.afterpay.text">
+                            <% feedback.afterpay.text %>
+                          </p>
                         </div>
                         <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
@@ -375,7 +430,7 @@
                                 </tr>
                               </tbody>
                             </table>
-                            <div class="form-group" v-class="'hasdanger': errors.has('product_variation')">
+                            <div class="form-group">
                               <div class="custom-select__wrap">
                                 <select id="input__product_variation" class="custom-select" name="product_variation" v-model="product.variation">
                                   <option value="red">Red</option>
@@ -388,11 +443,11 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-lg-5">
                       <a href="#" class="Checkout__summary-back">
                         <i class="icon icon-keyboard_arrow_left"></i> Terug naar de veilingen</a>
                     </div>
-                    <div class="col-md-7 Checkout__cost">
+                    <div class="col-lg-7 Checkout__cost">
                       <table v-cloak>
                         <tbody>
                           <tr class="Checkout__cost-verzendkosten">
@@ -428,6 +483,11 @@
                   </div>
                 </article>
               </div>
+              <div class="row hidden-lg-up mt-3">
+                <div class="col-12">
+                  <button type="submit" class="btn btn-success" :disabled="!isFormValid">Doorgaan naar betalen</button>
+                </div>
+              </div>
             </section>
             <!-- Checkout: Edit details modal (start) -->
             <div id="Checkout__edit" class="modal restyling--modal Checkout__edit" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
@@ -440,10 +500,19 @@
                     </button>
                   </header>
                   <section class="modal-body">
-                    <div class="row" class="Checkout__edit-shipping">
-                      <div class="col-md-6">
+                    <div class="hidden-lg-up">
+                      <button type="submit" class="btn btn-success btn-block-mobile">Opslaan en naar betalen</button>
+                      <header class="Checkout__article-header">
+                        <h3>Gegevens wijzigen</h3>
+                      </header>
+                    </div>
+                    <div class="row Checkout__edit-shipping">
+                      <div class="col-lg-6">
                         <div class="row">
-                          <div class="form-group col-lg-12" v-class="'hasdanger': errors.has('shipping_aanhef')">
+                          <div class="col form-group">
+                            <h4>Afleveradres</h4>
+                          </div>
+                          <div class="form-group col-lg-12">
                             <label class="custom-control custom-radio custom-control-inline">
                               <input type="radio" id="shipping_aanhef_1" name="shipping_aanhef" v-model="shipping.aanhef" class="custom-control-input" value="dhr">
                               <span class="custom-control-indicator"></span>
@@ -455,39 +524,24 @@
                               <span class="custom-control-description">Mvr.</span>
                             </label>
                           </div>
-                          <div class="form-group has-clear col-lg-6" v-class="'hasdanger': errors.has('shipping_voornam')">
+                          <div class="form-group has-clear col-lg-6">
                             <label for="input__shipping_voornam">Voornaam</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_voornam" name="shipping_voornam" type="text" class="form-control" v-model="shipping.voornam" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('shipping_voornam')" class="text-danger">
-                                <% errors.first('shipping_voornam') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.voornam')"></i>
-                            </span>
+                              <input id="input__shipping_voornam" name="shipping_voornam" type="text" class="form-control" v-model="shipping.voornam" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-6" v-class="'hasdanger': errors.has('shipping_achternaam')">
+                          <div class="form-group has-clear col-lg-6">
                             <label for="input__shipping_achternaam">Achternaam</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_achternaam" name="shipping_achternaam" type="text" class="form-control" v-model="shipping.achternaam" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('shipping_achternaam')" class="text-danger">
-                                <% errors.first('shipping_achternaam') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.achternaam')"></i>
-                            </span>
+                              <input id="input__shipping_achternaam" name="shipping_achternaam" type="text" class="form-control" v-model="shipping.achternaam" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('shipping_bedrijfsnaam')">
+                          <div class="form-group has-clear col-lg-12">
                             <label for="input__shipping_bedrijfsnaam">Bedrijfsnaam
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_bedrijfsnaam" name="shipping_bedrijfsnaam" type="text" class="form-control" v-model="shipping.bedrijfsnaam" v-reset-input="">
-                              <span v-show="errors.has('shipping_bedrijfsnaam')" class="text-danger">
-                                <% errors.first('shipping_bedrijfsnaam') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.bedrijfsnaam')"></i>
-                            </span>
+                              <input id="input__shipping_bedrijfsnaam" name="shipping_bedrijfsnaam" type="text" class="form-control" v-model="shipping.bedrijfsnaam"> </span>
                           </div>
-                          <div class="form-group col-lg-12" v-class="'hasdanger': errors.has('shipping_land')">
+                          <div class="form-group col-lg-12">
                             <label class="label-over">Land</label>
                             <div class="custom-select__wrap">
                               <select id="input__shipping_land" class="custom-select" name="shipping_land" v-model="shipping.land">
@@ -497,71 +551,41 @@
                               </select>
                             </div>
                           </div>
-                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('shipping_postcode')">
+                          <div class="form-group has-clear col-lg-4">
                             <label for="input__shipping_postcode">Postcode</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('shipping_postcode')" class="text-danger">
-                                <% errors.first('shipping_postcode') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.postcode')"></i>
-                            </span>
+                              <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('shipping_huisnummer')">
+                          <div class="form-group has-clear col-lg-4">
                             <label for="input__shipping_huisnummer">Huisnummer</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control" v-model="shipping.huisnummer" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('shipping_huisnummer')" class="text-danger">
-                                <% errors.first('shipping_huisnummer') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.huisnummer')"></i>
-                            </span>
+                              <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control" v-model="shipping.huisnummer" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('shipping_toev')">
+                          <div class="form-group has-clear col-lg-4">
                             <label for="input__shipping_toev">Toev.
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_toev" name="shipping_toev" type="text" class="form-control" v-model="shipping.toev" v-reset-input="">
-                              <span v-show="errors.has('shipping_toev')" class="text-danger">
-                                <% errors.first('shipping_toev') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.toev')"></i>
-                            </span>
+                              <input id="input__shipping_toev" name="shipping_toev" type="text" class="form-control" v-model="shipping.toev"> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('shipping_straat')">
+                          <div class="form-group has-clear col-lg-12">
                             <label for="input__shipping_straat">Straat</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control" v-model="shipping.straat" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('shipping_straat')" class="text-danger">
-                                <% errors.first('shipping_straat') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.straat')"></i>
-                            </span>
+                              <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control" v-model="shipping.straat" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('shipping_plaats')">
+                          <div class="form-group has-clear col-lg-12">
                             <label for="input__shipping_plaats">Plaats</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('shipping_plaats')" class="text-danger">
-                                <% errors.first('shipping_plaats') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.plaats')"></i>
-                            </span>
+                              <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('shipping_telefoonnummer')">
+                          <div class="form-group has-clear col-lg-12">
                             <label for="input__shipping_telefoonnummer">Telefoonnummer
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_telefoonnummer" name="shipping_telefoonnummer" type="text" class="form-control" v-model="shipping.telefoonnummer" v-reset-input="">
-                              <span v-show="errors.has('shipping_telefoonnummer')" class="text-danger">
-                                <% errors.first('shipping_telefoonnummer') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('shipping.telefoonnummer')"></i>
-                            </span>
+                              <input id="input__shipping_telefoonnummer" name="shipping_telefoonnummer" type="text" class="form-control" v-model="shipping.telefoonnummer"> </span>
                           </div>
-                          <div class="form-group col-lg-12" v-class="'hasdanger': errors.has('shippingAsBilling')">
+                          <div class="form-group col-lg-12">
                             <label class="custom-control custom-checkbox">
                               <input type="checkbox" class="custom-control-input" name="shippingAsBilling" v-model="shippingAsBilling" v-validate="''">
                               <span class="custom-control-indicator"></span>
@@ -570,7 +594,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-lg-6">
                         <div class="Checkout__edit-summary">
                           <h4 v-if="shippingAsBilling">Factuur- en afleveradres</h4>
                           <h4 v-if="!shippingAsBilling">Afleveradres</h4>
@@ -579,29 +603,56 @@
                             <% shipping.voornam %>
                               <% shipping.achternaam %>
                                 <br>
-                                <% shipping.straat %>
+                                <span v-if="shipping.straat">
+                                  <% shipping.straat %>
+                                </span>
+                                <span v-if="!shipping.straat && placeholders.straat" class="text-muted">
+                                  <% placeholders.straat %>
+                                </span>
+                                <span v-if="shipping.huisnummer">
                                   <% shipping.huisnummer %>
-                                    <br>
-                                    <% shipping.postcode %>
-                                      <% shipping.plaats %>
-                                        <br>
-                                        <% maps.land[shipping.land] %>
+                                </span>
+                                <span v-if="!shipping.huisnummer && placeholders.huisnummer" class="text-muted">
+                                  <% placeholders.huisnummer %>
+                                </span>
+                                <br>
+                                <span v-if="shipping.postcode">
+                                  <% shipping.postcode %>
+                                </span>
+                                <span v-if="!shipping.postcode && placeholders.postcode" class="text-muted">
+                                  <% placeholders.postcode %>
+                                </span>
+                                <span v-if="shipping.plaats">
+                                  <% shipping.plaats %>
+                                </span>
+                                <span v-if="!shipping.plaats && placeholders.plaats" class="text-muted">
+                                  <% placeholders.plaats %>
+                                </span>
+                                <br>
+                                <% maps.land[shipping.land] %>
                           </div>
                           <!-- endmacro: Checkout__display_shipping -->
                         </div>
                         <button class="btn btn-success Checkout__edit-submit" type="button">Opslaan en naar betalen</button>
-                        <a href="#" class="Checkout__edit-link">
+                        <a href="#pay" class="Checkout__edit-close" v-on:click="editClose">
                           <i class="icon icon-keyboard_arrow_left"></i> Zonder opslaan naar betalen</a>
-                        <div class="alert alert-danger">
-                          <h5>Er is iets niet goed ingevuld.</h5>
-                          <p>We herkennen je adres niet.</p>
+                        <div class="alert alert-danger" v-if="feedback.shipping">
+                          <h5 v-if="feedback.shipping.title">
+                            <% feedback.shipping.title %>
+                          </h5>
+                          <p v-if="feedback.shipping.text">
+                            <% feedback.shipping.text %>
+                          </p>
                         </div>
                       </div>
                     </div>
-                    <div class="row" class="Checkout__edit-shipping" v-if="!shippingAsBilling">
-                      <div class="col-md-6">
+                    <div class="row Checkout__edit-billing" v-if="!shippingAsBilling">
+                      <div class="col-lg-6">
                         <div class="row">
-                          <div class="form-group col-lg-12" v-class="'hasdanger': errors.has('billing_aanhef')">
+                          <div class="col form-group">
+                            <h4>Factuuradres</h4>
+                          </div>
+                          <div class="form-group col-lg-12">
                             <label class="custom-control custom-radio custom-control-inline">
                               <input type="radio" id="billing_aanhef_1" name="billing_aanhef" v-model="billing.aanhef" class="custom-control-input" value="dhr">
                               <span class="custom-control-indicator"></span>
@@ -613,39 +664,24 @@
                               <span class="custom-control-description">Mvr.</span>
                             </label>
                           </div>
-                          <div class="form-group has-clear col-lg-6" v-class="'hasdanger': errors.has('billing_voornam')">
+                          <div class="form-group has-clear col-lg-6">
                             <label for="input__billing_voornam">Voornaam</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_voornam" name="billing_voornam" type="text" class="form-control" v-model="billing.voornam" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('billing_voornam')" class="text-danger">
-                                <% errors.first('billing_voornam') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.voornam')"></i>
-                            </span>
+                              <input id="input__billing_voornam" name="billing_voornam" type="text" class="form-control" v-model="billing.voornam" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-6" v-class="'hasdanger': errors.has('billing_achternaam')">
+                          <div class="form-group has-clear col-lg-6">
                             <label for="input__billing_achternaam">Achternaam</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_achternaam" name="billing_achternaam" type="text" class="form-control" v-model="billing.achternaam" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('billing_achternaam')" class="text-danger">
-                                <% errors.first('billing_achternaam') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.achternaam')"></i>
-                            </span>
+                              <input id="input__billing_achternaam" name="billing_achternaam" type="text" class="form-control" v-model="billing.achternaam" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('billing_bedrijfsnaam')">
+                          <div class="form-group has-clear col-lg-12">
                             <label for="input__billing_bedrijfsnaam">Bedrijfsnaam
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_bedrijfsnaam" name="billing_bedrijfsnaam" type="text" class="form-control" v-model="billing.bedrijfsnaam" v-reset-input="">
-                              <span v-show="errors.has('billing_bedrijfsnaam')" class="text-danger">
-                                <% errors.first('billing_bedrijfsnaam') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.bedrijfsnaam')"></i>
-                            </span>
+                              <input id="input__billing_bedrijfsnaam" name="billing_bedrijfsnaam" type="text" class="form-control" v-model="billing.bedrijfsnaam"> </span>
                           </div>
-                          <div class="form-group col-lg-12" v-class="'hasdanger': errors.has('billing_land')">
+                          <div class="form-group col-lg-12">
                             <label class="label-over">Land</label>
                             <div class="custom-select__wrap">
                               <select id="input__billing_land" class="custom-select" name="billing_land" v-model="billing.land">
@@ -655,73 +691,43 @@
                               </select>
                             </div>
                           </div>
-                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('billing_postcode')">
+                          <div class="form-group has-clear col-lg-4">
                             <label for="input__billing_postcode">Postcode</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('billing_postcode')" class="text-danger">
-                                <% errors.first('billing_postcode') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.postcode')"></i>
-                            </span>
+                              <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('billing_huisnummer')">
+                          <div class="form-group has-clear col-lg-4">
                             <label for="input__billing_huisnummer">Huisnummer</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control" v-model="billing.huisnummer" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('billing_huisnummer')" class="text-danger">
-                                <% errors.first('billing_huisnummer') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.huisnummer')"></i>
-                            </span>
+                              <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control" v-model="billing.huisnummer" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-4" v-class="'hasdanger': errors.has('billing_toev')">
+                          <div class="form-group has-clear col-lg-4">
                             <label for="input__billing_toev">Toev.
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_toev" name="billing_toev" type="text" class="form-control" v-model="billing.toev" v-reset-input="">
-                              <span v-show="errors.has('billing_toev')" class="text-danger">
-                                <% errors.first('billing_toev') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.toev')"></i>
-                            </span>
+                              <input id="input__billing_toev" name="billing_toev" type="text" class="form-control" v-model="billing.toev"> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('billing_straat')">
+                          <div class="form-group has-clear col-lg-12">
                             <label for="input__billing_straat">Straat</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_straat" name="billing_straat" type="text" class="form-control" v-model="billing.straat" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('billing_straat')" class="text-danger">
-                                <% errors.first('billing_straat') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.straat')"></i>
-                            </span>
+                              <input id="input__billing_straat" name="billing_straat" type="text" class="form-control" v-model="billing.straat" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('billing_plaats')">
+                          <div class="form-group has-clear col-lg-12">
                             <label for="input__billing_plaats">Plaats</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required v-validate="'required'" v-reset-input="">
-                              <span v-show="errors.has('billing_plaats')" class="text-danger">
-                                <% errors.first('billing_plaats') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.plaats')"></i>
-                            </span>
+                              <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required> </span>
                           </div>
-                          <div class="form-group has-clear col-lg-12" v-class="'hasdanger': errors.has('billing_telefoonnummer')">
+                          <div class="form-group has-clear col-lg-12">
                             <label for="input__billing_telefoonnummer">Telefoonnummer
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_telefoonnummer" name="billing_telefoonnummer" type="text" class="form-control" v-model="billing.telefoonnummer" v-reset-input="">
-                              <span v-show="errors.has('billing_telefoonnummer')" class="text-danger">
-                                <% errors.first('billing_telefoonnummer') %>
-                              </span>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear" v-on:click="clearInput('billing.telefoonnummer')"></i>
-                            </span>
+                              <input id="input__billing_telefoonnummer" name="billing_telefoonnummer" type="text" class="form-control" v-model="billing.telefoonnummer"> </span>
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-lg-6">
                         <div class="Checkout__edit-summary">
                           <h4>Factuuradres</h4>
                           <!-- macro: Checkout__display_billing -->
@@ -742,9 +748,13 @@
                           <!-- endmacro: Checkout__display_billing -->
                         </div>
                         <button class="btn btn-success Checkout__edit-submit" type="button">Opslaan en naar betalen</button>
-                        <div class="alert alert-danger">
-                          <h5>Er is iets niet goed ingevuld.</h5>
-                          <p>We herkennen je adres niet.</p>
+                        <div class="alert alert-danger" v-if="feedback.billing">
+                          <h5 v-if="feedback.billing.title">
+                            <% feedback.billing.title %>
+                          </h5>
+                          <p v-if="feedback.billing.text">
+                            <% feedback.billing.text %>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -1191,6 +1201,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script> -->
-    <script src="scripts/app.js?v=f54731fb4e4ebdb9ca675c16bba47c4f" inline></script>
+    <script src="scripts/app.js?v=cee513921f310ee3461181c61f6fdbe1" inline></script>
   </body>
 </html>
