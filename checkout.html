@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400" rel="stylesheet">
     <base href="/hellospecial/">
     <!-- for github deploy only -->
-    <link rel="stylesheet" href="styles/app.css?v=fcecf378fc3692354030f06530634d27" inline> </head>
+    <link rel="stylesheet" href="styles/app.css?v=ea40b21763f8faf715a7d82271384355" inline> </head>
   <body class="page--checkout">
     <div class="wrap">
       <div class="wrap__top">
@@ -49,20 +49,51 @@
 <![endif]-->
           <script>
             window['hsCheckout'] = {
+              "steps":
+              {
+                "overview":
+                {
+                  "active": true,
+                  "done": false
+                },
+                "payment":
+                {
+                  "active": true,
+                  "done": false
+                },
+                "thanks":
+                {
+                  "active": true,
+                  "done": false
+                }
+              },
               "feedback":
               {
                 "shipping":
                 {
+                  "show": false,
                   "title": "Er is iets niet goed ingevuld.",
                   "text": "We herkennen je adres niet."
                 },
                 "billing":
                 {
+                  "show": false,
                   "title": "Er is iets niet goed ingevuld.",
                   "text": "We herkennen je adres niet."
                 },
+                "method":
+                {
+                  "show": false,
+                  "text": "Please select a payment method"
+                },
+                "ideal":
+                {
+                  "show": false,
+                  "text": "Please select a bank"
+                },
                 "afterpay":
                 {
+                  "show": false,
                   "title": "Er gaat iets niet goed.",
                   "text": "Het spijt ons u te moeten mededelen dat uw aanvraag om uw bestelling achteraf te betalen op dit moment niet door AfterPay wordt geaccepteerd. Dit kan om diverse (tijdelijke) redenen zijn.Voor vragen over uw afwijzing kunt u contact opnemen met de Klantenservice van AfterPay. Of kijk op de website van AfterPay bij “Veel gestelde vragen” via de link http://www.afterpay.nl/page/consument-faq onder het kopje “Gegevenscontrole”. Wij adviseren u voor een andere betaalmethode te kiezen om alsnog de betaling van uw bestelling af te ronden."
                 }
@@ -93,7 +124,7 @@
                 "veilingkosten": 0.99,
                 "shippingdate": "01/02/2017"
               },
-              "shippingAsBilling": false,
+              "shippingAsBilling": true,
               "shipping":
               {
                 "aanhef": "dhr",
@@ -147,13 +178,13 @@
             <!-- Breadcrumbs -->
             <nav class="col-12 Checkout__breadcrumbs">
               <ol class="row Checkout__breadcrumbs-list">
-                <li class="col-4 Checkout__breadcrumbs-item done" data-checkout-view="overview">
+                <li class="col-4 Checkout__breadcrumbs-item" v-bind:class="{ active: steps.overview.active, done: steps.overview.done }" data-checkout-view="overview">
                   <span class="Checkout__breadcrumbs-text">Overzicht</span>
                 </li>
-                <li class="col-4 Checkout__breadcrumbs-item active" data-checkout-view="payment">
+                <li class="col-4 Checkout__breadcrumbs-item" v-bind:class="{ active: steps.payment.active, done: steps.payment.done }" data-checkout-view="payment">
                   <span class="Checkout__breadcrumbs-text">Betaling</span>
                 </li>
-                <li class="col-4 Checkout__breadcrumbs-item" data-checkout-view="thanks">
+                <li class="col-4 Checkout__breadcrumbs-item" v-bind:class="{ active: steps.thanks.active, done: steps.thanks.done }" data-checkout-view="thanks">
                   <span class="Checkout__breadcrumbs-text">Bedankt</span>
                 </li>
               </ol>
@@ -179,27 +210,27 @@
                             <span v-if="shipping.straat">
                               <% shipping.straat %>
                             </span>
-                            <span v-if="!shipping.straat && placeholders.straat" class="text-muted">
-                              <% placeholders.straat %>
+                            <span v-if="!shipping.straat && maps.placeholders.straat" class="text-muted">
+                              <% maps.placeholders.straat %>
                             </span>
                             <span v-if="shipping.huisnummer">
                               <% shipping.huisnummer %>
                             </span>
-                            <span v-if="!shipping.huisnummer && placeholders.huisnummer" class="text-muted">
-                              <% placeholders.huisnummer %>
+                            <span v-if="!shipping.huisnummer && maps.placeholders.huisnummer" class="text-muted">
+                              <% maps.placeholders.huisnummer %>
                             </span>
                             <br>
                             <span v-if="shipping.postcode">
                               <% shipping.postcode %>
                             </span>
-                            <span v-if="!shipping.postcode && placeholders.postcode" class="text-muted">
-                              <% placeholders.postcode %>
+                            <span v-if="!shipping.postcode && maps.placeholders.postcode" class="text-muted">
+                              <% maps.placeholders.postcode %>
                             </span>
                             <span v-if="shipping.plaats">
                               <% shipping.plaats %>
                             </span>
-                            <span v-if="!shipping.plaats && placeholders.plaats" class="text-muted">
-                              <% placeholders.plaats %>
+                            <span v-if="!shipping.plaats && maps.placeholders.plaats" class="text-muted">
+                              <% maps.placeholders.plaats %>
                             </span>
                             <br>
                             <% maps.land[shipping.land] %>
@@ -216,13 +247,33 @@
                             <% billing.voornam %>
                               <% billing.achternaam %>
                                 <br>
-                                <% billing.straat %>
+                                <span v-if="billing.straat">
+                                  <% billing.straat %>
+                                </span>
+                                <span v-if="!billing.straat && maps.placeholders.straat" class="text-muted">
+                                  <% maps.placeholders.straat %>
+                                </span>
+                                <span v-if="billing.huisnummer">
                                   <% billing.huisnummer %>
-                                    <br>
-                                    <% billing.postcode %>
-                                      <% billing.plaats %>
-                                        <br>
-                                        <% maps.land[billing.land] %>
+                                </span>
+                                <span v-if="!billing.huisnummer && maps.placeholders.huisnummer" class="text-muted">
+                                  <% maps.placeholders.huisnummer %>
+                                </span>
+                                <br>
+                                <span v-if="billing.postcode">
+                                  <% billing.postcode %>
+                                </span>
+                                <span v-if="!billing.postcode && maps.placeholders.postcode" class="text-muted">
+                                  <% maps.placeholders.postcode %>
+                                </span>
+                                <span v-if="billing.plaats">
+                                  <% billing.plaats %>
+                                </span>
+                                <span v-if="!billing.plaats && maps.placeholders.plaats" class="text-muted">
+                                  <% maps.placeholders.plaats %>
+                                </span>
+                                <br>
+                                <% maps.land[billing.land] %>
                         </div>
                         <!-- endmacro: Checkout__display_billing -->
                       </div>
@@ -256,7 +307,7 @@
                   </header>
                   <div id="Checkout__area-coupon" class="Checkout__article-body form-group show">
                     <input type="text" class="form-control Checkout__coupon-input" placeholder="Kortingscode" name="payment_coupon" v-model="payment.coupon" v-cloak>
-                    <button class="btn btn-success Checkout__coupon-submit" type="button" :disabled="!payment.coupon">Inwisselen</button>
+                    <button class="btn btn-success Checkout__coupon-submit" type="button" :disabled="!payment.coupon" v-on:click="submitCoupon">Inwisselen</button>
                   </div>
                   <header class="row Checkout__article-header" data-toggle="collapse" data-target="#Checkout__area-shippingdate" aria-expanded="true">
                     <i class="icon icon-keyboard_arrow_up"></i>
@@ -275,7 +326,7 @@
                   <header class="row Checkout__article-header">
                     <h3>Kies betaalmethode</h3>
                   </header>
-                  <div class="alert alert-danger" v-if="feedback.shipping">
+                  <div class="alert alert-danger" v-if="feedback.shipping.show" v-cloak>
                     <h5 v-if="feedback.shipping.title">
                       <% feedback.shipping.title %>
                     </h5>
@@ -283,10 +334,18 @@
                       <% feedback.shipping.text %>
                     </p>
                   </div>
+                  <div class="alert alert-danger" v-if="feedback.method.show" v-cloak>
+                    <h5 v-if="feedback.method.title">
+                      <% feedback.method.title %>
+                    </h5>
+                    <p v-if="feedback.method.text">
+                      <% feedback.method.text %>
+                    </p>
+                  </div>
                   <div id="Checkout__methods" class="Checkout__article-body" role="tablist" aria-multiselectable="true">
-                    <input id="Checkout__method-ideal" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="ideal">
+                    <input id="Checkout__method-ideal" class="Checkout__method-input" type="radio" name="payment.method" v-model="payment.method" value="ideal">
                     <div class="Checkout__method card">
-                      <label for="Checkout__method-ideal" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-ideal" aria-expanded="false" aria-controls="#Checkout__method-details-ideal">
+                      <label for="Checkout__method-ideal" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-ideal" aria-expanded="false" aria-controls="#Checkout__method-details-ideal" v-on:click="payment.method = 'ideal';">
                         <div class="Checkout__method-header">
                           <strong class="Checkout__method-name">iDEAL
                             <small>gratis | aanbevolen</small>
@@ -304,12 +363,20 @@
                             </select>
                           </div>
                         </div>
+                        <div class="alert alert-danger" v-if="feedback.ideal.show" v-cloak>
+                          <h5 v-if="feedback.ideal.title">
+                            <% feedback.ideal.title %>
+                          </h5>
+                          <p v-if="feedback.ideal.text">
+                            <% feedback.ideal.text %>
+                          </p>
+                        </div>
                         <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
-                    <input id="Checkout__method-paypal" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="paypal">
+                    <input id="Checkout__method-paypal" class="Checkout__method-input" type="radio" name="payment.method" v-model="payment.method" value="paypal">
                     <div class="Checkout__method card">
-                      <label for="Checkout__method-paypal" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-paypal" aria-expanded="false" aria-controls="#Checkout__method-details-paypal">
+                      <label for="Checkout__method-paypal" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-paypal" aria-expanded="false" aria-controls="#Checkout__method-details-paypal" v-on:click="payment.method = 'paypal';">
                         <div class="Checkout__method-header">
                           <strong class="Checkout__method-name">PayPal
                             <small>gratis</small>
@@ -320,9 +387,9 @@
                         <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
-                    <input id="Checkout__method-sofort" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="sofort">
+                    <input id="Checkout__method-sofort" class="Checkout__method-input" type="radio" name="payment.method" v-model="payment.method" value="sofort">
                     <div class="Checkout__method card">
-                      <label for="Checkout__method-sofort" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-sofort" aria-expanded="false" aria-controls="#Checkout__method-details-sofort">
+                      <label for="Checkout__method-sofort" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-sofort" aria-expanded="false" aria-controls="#Checkout__method-details-sofort" v-on:click="payment.method = 'sofort';">
                         <div class="Checkout__method-header">
                           <strong class="Checkout__method-name">Sofort
                             <small>gratis</small>
@@ -333,9 +400,10 @@
                         <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
-                    <input id="Checkout__method-bancontact" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="bancontact">
+                    <input id="Checkout__method-bancontact" class="Checkout__method-input" type="radio" name="payment.method" v-model="payment.method" value="bancontact">
                     <div class="Checkout__method card">
-                      <label for="Checkout__method-bancontact" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-bancontact" aria-expanded="false" aria-controls="#Checkout__method-details-bancontact">
+                      <label for="Checkout__method-bancontact" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-bancontact" aria-expanded="false" aria-controls="#Checkout__method-details-bancontact"
+                        v-on:click="payment.method = 'bancontact';">
                         <div class="Checkout__method-header">
                           <strong class="Checkout__method-name">Bancontact
                             <small>gratis</small>
@@ -346,9 +414,9 @@
                         <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
-                    <input id="Checkout__method-afterpay" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="afterpay">
+                    <input id="Checkout__method-afterpay" class="Checkout__method-input" type="radio" name="payment.method" v-model="payment.method" value="afterpay">
                     <div class="Checkout__method card">
-                      <label for="Checkout__method-afterpay" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-afterpay" aria-expanded="false" aria-controls="#Checkout__method-details-afterpay">
+                      <label for="Checkout__method-afterpay" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-afterpay" aria-expanded="false" aria-controls="#Checkout__method-details-afterpay" v-on:click="payment.method = 'afterpay';">
                         <div class="Checkout__method-header">
                           <strong class="Checkout__method-name">Afterpay
                             <small>€ 0,95</small>
@@ -362,16 +430,20 @@
                             <small>optioneel</small>
                           </label>
                           <span class="form-control-wrap">
-                            <input id="input__payment_afterpay_telefoonnummer" name="payment_afterpay_telefoonnummer" type="text" class="form-control" v-model="payment.afterpay.telefoonnummer"> </span>
+                            <input id="input__payment_afterpay_telefoonnummer" name="payment_afterpay_telefoonnummer" type="text" class="form-control" v-model="payment.afterpay.telefoonnummer">
+                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                          </span>
                         </div>
                         <div class="form-group has-clear">
                           <label for="input__payment_afterpay_geboortedatum">Geboortedatum
                             <small>optioneel</small>
                           </label>
                           <span class="form-control-wrap">
-                            <input id="input__payment_afterpay_geboortedatum" name="payment_afterpay_geboortedatum" type="text" class="form-control" v-model="payment.afterpay.geboortedatum"> </span>
+                            <input id="input__payment_afterpay_geboortedatum" name="payment_afterpay_geboortedatum" type="text" class="form-control" v-model="payment.afterpay.geboortedatum">
+                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                          </span>
                         </div>
-                        <div class="alert alert-danger" v-if="feedback.afterpay">
+                        <div class="alert alert-danger" v-if="feedback.afterpay.show" v-cloak>
                           <h5 v-if="feedback.afterpay.title">
                             <% feedback.afterpay.title %>
                           </h5>
@@ -382,9 +454,10 @@
                         <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
-                    <input id="Checkout__method-creditcard" class="Checkout__method-input" type="radio" name="payment_method" v-model="payment.method" value="creditcard">
+                    <input id="Checkout__method-creditcard" class="Checkout__method-input" type="radio" name="payment.method" v-model="payment.method" value="creditcard">
                     <div class="Checkout__method card">
-                      <label for="Checkout__method-creditcard" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-creditcard" aria-expanded="false" aria-controls="#Checkout__method-details-creditcard">
+                      <label for="Checkout__method-creditcard" class="Checkout__method-label" role="tab" data-toggle="collapse" data-target="#Checkout__method-details-creditcard" aria-expanded="false" aria-controls="#Checkout__method-details-creditcard"
+                        v-on:click="payment.method = 'creditcard';">
                         <div class="Checkout__method-header">
                           <strong class="Checkout__method-name">Creditcard
                             <small>gratis</small>
@@ -483,11 +556,6 @@
                   </div>
                 </article>
               </div>
-              <div class="row hidden-lg-up mt-3">
-                <div class="col-12">
-                  <button type="submit" class="btn btn-success" :disabled="!isFormValid">Doorgaan naar betalen</button>
-                </div>
-              </div>
             </section>
             <!-- Checkout: Edit details modal (start) -->
             <div id="Checkout__edit" class="modal restyling--modal Checkout__edit" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
@@ -501,7 +569,7 @@
                   </header>
                   <section class="modal-body">
                     <div class="hidden-lg-up">
-                      <button type="submit" class="btn btn-success btn-block-mobile">Opslaan en naar betalen</button>
+                      <button class="btn btn-success btn-block-mobile" v-on:click="editSave">Opslaan en naar betalen</button>
                       <header class="Checkout__article-header">
                         <h3>Gegevens wijzigen</h3>
                       </header>
@@ -527,19 +595,25 @@
                           <div class="form-group has-clear col-lg-6">
                             <label for="input__shipping_voornam">Voornaam</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_voornam" name="shipping_voornam" type="text" class="form-control" v-model="shipping.voornam" required> </span>
+                              <input id="input__shipping_voornam" name="shipping_voornam" type="text" class="form-control" v-model="shipping.voornam" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-6">
                             <label for="input__shipping_achternaam">Achternaam</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_achternaam" name="shipping_achternaam" type="text" class="form-control" v-model="shipping.achternaam" required> </span>
+                              <input id="input__shipping_achternaam" name="shipping_achternaam" type="text" class="form-control" v-model="shipping.achternaam" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-12">
                             <label for="input__shipping_bedrijfsnaam">Bedrijfsnaam
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_bedrijfsnaam" name="shipping_bedrijfsnaam" type="text" class="form-control" v-model="shipping.bedrijfsnaam"> </span>
+                              <input id="input__shipping_bedrijfsnaam" name="shipping_bedrijfsnaam" type="text" class="form-control" v-model="shipping.bedrijfsnaam">
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group col-lg-12">
                             <label class="label-over">Land</label>
@@ -554,36 +628,48 @@
                           <div class="form-group has-clear col-lg-4">
                             <label for="input__shipping_postcode">Postcode</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required> </span>
+                              <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-4">
                             <label for="input__shipping_huisnummer">Huisnummer</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control" v-model="shipping.huisnummer" required> </span>
+                              <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control" v-model="shipping.huisnummer" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-4">
                             <label for="input__shipping_toev">Toev.
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_toev" name="shipping_toev" type="text" class="form-control" v-model="shipping.toev"> </span>
+                              <input id="input__shipping_toev" name="shipping_toev" type="text" class="form-control" v-model="shipping.toev">
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-12">
                             <label for="input__shipping_straat">Straat</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control" v-model="shipping.straat" required> </span>
+                              <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control" v-model="shipping.straat" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-12">
                             <label for="input__shipping_plaats">Plaats</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required> </span>
+                              <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-12">
                             <label for="input__shipping_telefoonnummer">Telefoonnummer
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_telefoonnummer" name="shipping_telefoonnummer" type="text" class="form-control" v-model="shipping.telefoonnummer"> </span>
+                              <input id="input__shipping_telefoonnummer" name="shipping_telefoonnummer" type="text" class="form-control" v-model="shipping.telefoonnummer">
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group col-lg-12">
                             <label class="custom-control custom-checkbox">
@@ -606,37 +692,37 @@
                                 <span v-if="shipping.straat">
                                   <% shipping.straat %>
                                 </span>
-                                <span v-if="!shipping.straat && placeholders.straat" class="text-muted">
-                                  <% placeholders.straat %>
+                                <span v-if="!shipping.straat && maps.placeholders.straat" class="text-muted">
+                                  <% maps.placeholders.straat %>
                                 </span>
                                 <span v-if="shipping.huisnummer">
                                   <% shipping.huisnummer %>
                                 </span>
-                                <span v-if="!shipping.huisnummer && placeholders.huisnummer" class="text-muted">
-                                  <% placeholders.huisnummer %>
+                                <span v-if="!shipping.huisnummer && maps.placeholders.huisnummer" class="text-muted">
+                                  <% maps.placeholders.huisnummer %>
                                 </span>
                                 <br>
                                 <span v-if="shipping.postcode">
                                   <% shipping.postcode %>
                                 </span>
-                                <span v-if="!shipping.postcode && placeholders.postcode" class="text-muted">
-                                  <% placeholders.postcode %>
+                                <span v-if="!shipping.postcode && maps.placeholders.postcode" class="text-muted">
+                                  <% maps.placeholders.postcode %>
                                 </span>
                                 <span v-if="shipping.plaats">
                                   <% shipping.plaats %>
                                 </span>
-                                <span v-if="!shipping.plaats && placeholders.plaats" class="text-muted">
-                                  <% placeholders.plaats %>
+                                <span v-if="!shipping.plaats && maps.placeholders.plaats" class="text-muted">
+                                  <% maps.placeholders.plaats %>
                                 </span>
                                 <br>
                                 <% maps.land[shipping.land] %>
                           </div>
                           <!-- endmacro: Checkout__display_shipping -->
                         </div>
-                        <button class="btn btn-success Checkout__edit-submit" type="button">Opslaan en naar betalen</button>
-                        <a href="#pay" class="Checkout__edit-close" v-on:click="editClose">
-                          <i class="icon icon-keyboard_arrow_left"></i> Zonder opslaan naar betalen</a>
-                        <div class="alert alert-danger" v-if="feedback.shipping">
+                        <button class="btn btn-success Checkout__edit-submit" type="button" v-on:click="editSave">Opslaan en naar betalen</button>
+                        <span class="Checkout__linklike Checkout__edit-close" v-on:click="editDiscard">
+                          <i class="icon icon-keyboard_arrow_left"></i> Zonder opslaan naar betalen</span>
+                        <div class="alert alert-danger" v-if="feedback.shipping.show" v-cloak>
                           <h5 v-if="feedback.shipping.title">
                             <% feedback.shipping.title %>
                           </h5>
@@ -667,19 +753,25 @@
                           <div class="form-group has-clear col-lg-6">
                             <label for="input__billing_voornam">Voornaam</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_voornam" name="billing_voornam" type="text" class="form-control" v-model="billing.voornam" required> </span>
+                              <input id="input__billing_voornam" name="billing_voornam" type="text" class="form-control" v-model="billing.voornam" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-6">
                             <label for="input__billing_achternaam">Achternaam</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_achternaam" name="billing_achternaam" type="text" class="form-control" v-model="billing.achternaam" required> </span>
+                              <input id="input__billing_achternaam" name="billing_achternaam" type="text" class="form-control" v-model="billing.achternaam" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-12">
                             <label for="input__billing_bedrijfsnaam">Bedrijfsnaam
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_bedrijfsnaam" name="billing_bedrijfsnaam" type="text" class="form-control" v-model="billing.bedrijfsnaam"> </span>
+                              <input id="input__billing_bedrijfsnaam" name="billing_bedrijfsnaam" type="text" class="form-control" v-model="billing.bedrijfsnaam">
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group col-lg-12">
                             <label class="label-over">Land</label>
@@ -694,36 +786,48 @@
                           <div class="form-group has-clear col-lg-4">
                             <label for="input__billing_postcode">Postcode</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required> </span>
+                              <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-4">
                             <label for="input__billing_huisnummer">Huisnummer</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control" v-model="billing.huisnummer" required> </span>
+                              <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control" v-model="billing.huisnummer" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-4">
                             <label for="input__billing_toev">Toev.
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_toev" name="billing_toev" type="text" class="form-control" v-model="billing.toev"> </span>
+                              <input id="input__billing_toev" name="billing_toev" type="text" class="form-control" v-model="billing.toev">
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-12">
                             <label for="input__billing_straat">Straat</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_straat" name="billing_straat" type="text" class="form-control" v-model="billing.straat" required> </span>
+                              <input id="input__billing_straat" name="billing_straat" type="text" class="form-control" v-model="billing.straat" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-12">
                             <label for="input__billing_plaats">Plaats</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required> </span>
+                              <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required>
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                           <div class="form-group has-clear col-lg-12">
                             <label for="input__billing_telefoonnummer">Telefoonnummer
                               <small>optioneel</small>
                             </label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_telefoonnummer" name="billing_telefoonnummer" type="text" class="form-control" v-model="billing.telefoonnummer"> </span>
+                              <input id="input__billing_telefoonnummer" name="billing_telefoonnummer" type="text" class="form-control" v-model="billing.telefoonnummer">
+                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -737,18 +841,38 @@
                               <% billing.voornam %>
                                 <% billing.achternaam %>
                                   <br>
-                                  <% billing.straat %>
+                                  <span v-if="billing.straat">
+                                    <% billing.straat %>
+                                  </span>
+                                  <span v-if="!billing.straat && maps.placeholders.straat" class="text-muted">
+                                    <% maps.placeholders.straat %>
+                                  </span>
+                                  <span v-if="billing.huisnummer">
                                     <% billing.huisnummer %>
-                                      <br>
-                                      <% billing.postcode %>
-                                        <% billing.plaats %>
-                                          <br>
-                                          <% maps.land[billing.land] %>
+                                  </span>
+                                  <span v-if="!billing.huisnummer && maps.placeholders.huisnummer" class="text-muted">
+                                    <% maps.placeholders.huisnummer %>
+                                  </span>
+                                  <br>
+                                  <span v-if="billing.postcode">
+                                    <% billing.postcode %>
+                                  </span>
+                                  <span v-if="!billing.postcode && maps.placeholders.postcode" class="text-muted">
+                                    <% maps.placeholders.postcode %>
+                                  </span>
+                                  <span v-if="billing.plaats">
+                                    <% billing.plaats %>
+                                  </span>
+                                  <span v-if="!billing.plaats && maps.placeholders.plaats" class="text-muted">
+                                    <% maps.placeholders.plaats %>
+                                  </span>
+                                  <br>
+                                  <% maps.land[billing.land] %>
                           </div>
                           <!-- endmacro: Checkout__display_billing -->
                         </div>
-                        <button class="btn btn-success Checkout__edit-submit" type="button">Opslaan en naar betalen</button>
-                        <div class="alert alert-danger" v-if="feedback.billing">
+                        <button class="btn btn-success Checkout__edit-submit" type="button" v-on:click="editSave">Opslaan en naar betalen</button>
+                        <div class="alert alert-danger" v-if="feedback.billing.show" v-cloak>
                           <h5 v-if="feedback.billing.title">
                             <% feedback.billing.title %>
                           </h5>
@@ -1201,6 +1325,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script> -->
-    <script src="scripts/app.js?v=cee513921f310ee3461181c61f6fdbe1" inline></script>
+    <script src="scripts/app.js?v=78085ce6e7fd5b9062ad39eb764f734e" inline></script>
   </body>
 </html>

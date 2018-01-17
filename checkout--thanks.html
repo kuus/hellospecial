@@ -11,7 +11,7 @@
     <base href="/hellospecial/">
     <!-- for github deploy only -->
     <link rel="stylesheet" href="styles/app.css?v=ea40b21763f8faf715a7d82271384355" inline> </head>
-  <body class="page--orderconfirm">
+  <body class="page--checkout-thanks">
     <div class="wrap">
       <div class="wrap__top">
         <!-- macro: header -->
@@ -69,95 +69,40 @@
           <!--[if lt IE 10]>
   <div class="alert alert-warning browserupgrade"><p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>
 <![endif]-->
-          <article id="appOrderconfirm" class="container appOrderconfirm">
-            <div class="row hsPage__intro">
-              <div class="col">
+          <article id="appOrderconfirm" class="container Checkout__thanks appOrderconfirm">
+            <div class="row">
+              <!-- Breadcrumbs -->
+              <nav class="col-12 Checkout__breadcrumbs">
+                <ol class="row Checkout__breadcrumbs-list">
+                  <li class="col-4 Checkout__breadcrumbs-item done" data-checkout-view="overview">
+                    <span class="Checkout__breadcrumbs-text">Overzicht</span>
+                  </li>
+                  <li class="col-4 Checkout__breadcrumbs-item done" data-checkout-view="payment">
+                    <span class="Checkout__breadcrumbs-text">Betaling</span>
+                  </li>
+                  <li class="col-4 Checkout__breadcrumbs-item active" data-checkout-view="thanks">
+                    <span class="Checkout__breadcrumbs-text">Bedankt!</span>
+                  </li>
+                </ol>
+              </nav>
+              <div class="col-12 hsPage__intro">
                 <h1 class="text-uppercase">Gefeliciteerd!</h1>
-                <hr class="divider"></hr>
-              </div>
-            </div>
-            <div class="row appOrderconfirm__main nask">
-              <div class="col-lg-7 appOrderconfirm__main-product">
-                <div class="media hsContent__card">
-                  <img class="d-flex mr-3 mb-3" src="images/preview/5.jpg" width="120">
-                  <div class="media-body">
-                    <h4 class="hsContent__simpletitle">Magnani Italy 5-delige messenset</h4>
-                    <p>We hebben je betaling in goede orde ontvangen Jeffrey.
-                      <br> Je ordernummer is
-                      <strong>7959586</strong>. We gaan direct aan het werk om je bestelling te verwerken.</p> Binnen enkele seconden ontvang je een bevestigingsmail op het opgegeven emailadres. Het kan zijn dat de email in je spam folder terecht komt.</p>
-                    <p>Je kunt je bestelling in je account bij
-                      <a href="#" class="hsLink">gewonnen specials</a> volgen.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-5 appOrderconfirm__main-notifications nask__viewwrap">
-                <!-- we don't show nothing here -->
-                <div class="hsContent__card" data-nask-view="other">
-                  <h4 class="hsContent__simpletitle hsContent__simpletitle--withimg">Nog even je aandacht
-                    <img src="images/icon-bell.png" width="30">
-                  </h4>
-                  <p>Onze site werkt het beste in andere browsers. Probeer ook eens 1 van deze:</p>
-                  <div class="hsContent__card-maincentered">
-                    <ul class="appOrderconfirm__browsers">
-                      <li class="appOrderconfirm__browsers-item">
-                        <a class="appOrderconfirm__browsers-link" href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">
-                          <img src="images/browser-firefox.png" alt="Firefox" width="60">
-                          <span>Firefox</span>
-                        </a>
-                      </li>
-                      <li class="appOrderconfirm__browsers-item">
-                        <a class="appOrderconfirm__browsers-link" href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">
-                          <img src="images/browser-chrome.png" alt="Google Chrome" width="60">
-                          <span>Google Chrome</span>
-                        </a>
-                      </li>
-                      <li class="appOrderconfirm__browsers-item">
-                        <a class="appOrderconfirm__browsers-link" href="http://www.opera.com/download" target="_blank">
-                          <img src="images/browser-opera.png" alt="Opera" width="60">
-                          <span>Opera</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- we don't show nothing here -->
-                <div class="hsContent__card" data-nask-view="request">
-                  <h4 class="hsContent__simpletitle hsContent__simpletitle--withimg">Nog even je aandacht
-                    <img src="images/icon-bell.png" width="30">
-                  </h4>
-                  <p>Mogen wij je af en toe een bericht sturen over interessante veilingen voor jou?</p>
-                  <div class="hsContent__card-maincentered">
-                    <button class="btn btn-lg btn-success nask__askbtn">Ja natuurlijk</button>
-                  </div>
-                </div>
-                <div class="hsContent__card" data-nask-view="thanks">
-                  <h4 class="hsContent__simpletitle hsContent__simpletitle--withimg">Nog even je aandacht
-                    <img src="images/icon-bell.png" width="30">
-                  </h4>
-                  <p>Mogen wij je af en toe een bericht sturen over interessante veilingen voor jou?</p>
-                  <div class="hsContent__card-maincentered">
-                    <button class="btn btn-lg btn-success">
-                      <i class="icon icon-checkmark-thin"></i> Bedankt</button>
-                  </div>
-                </div>
-                <div class="hsContent__card" data-nask-view="allowing">
-                  <h4 class="hsContent__simpletitle hsContent__simpletitle--withimg">Nog even je aandacht
-                    <img src="images/icon-bell.png" width="30">
-                  </h4>
-                  <p>Mogen wij je af en toe een bericht sturen over interessante veilingen voor jou?</p>
-                  <div class="hsContent__card-maincentered appOrderconfirm__allowing">
-                    <span data-nask-env="android"> Klik onderaan op
-                      <button class="btn-native-android">Toestaan</button>
-                    </span>
-                    <span data-nask-env="chrome"> Klik linksboven op:
-                      <button class="btn-native-chrome">Toestaan</button>
-                    </span>
-                    <span data-nask-env="firefox"> Klik linksboven op:
-                      <button class="btn-native-firefox">Notificaties toestaan</button>
-                    </span>
-                    <span data-nask-env="opera"> Klik midden boven op:
-                      <button class="btn-native-opera">Allow</button>
-                    </span>
+                <hr class="divider"> </div>
+              <div class="col-12 appOrderconfirm__main">
+                <div class="row">
+                  <div class="col-lg-10 appOrderconfirm__main-product">
+                    <div class="media hsContent__card">
+                      <img class="d-flex mr-3 mb-3" src="images/preview/5.jpg" width="120">
+                      <div class="media-body">
+                        <h4 class="hsContent__simpletitle">Magnani Italy 5-delige messenset</h4>
+                        <p>We hebben je betaling in goede orde ontvangen Jeffrey.
+                          <br> Je ordernummer is
+                          <strong>7959586</strong>. We gaan direct aan het werk om je bestelling te verwerken.</p>
+                        <p>Binnen enkele seconden ontvang je een bevestigingsmail op het opgegeven emailadres. Het kan zijn dat de email in je spam folder terecht komt.</p>
+                        <p>Je kunt je bestelling in je account bij
+                          <a href="#" class="hsLink">gewonnen specials</a> volgen.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
