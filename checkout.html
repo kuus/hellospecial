@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400" rel="stylesheet">
     <base href="/hellospecial/">
     <!-- for github deploy only -->
-    <link rel="stylesheet" href="styles/app.css?v=45c7c81c4a9ee688d5f20a358a04f2c5" inline> </head>
+    <link rel="stylesheet" href="styles/app.css?v=e01f41dda0828c21544dfc249c910db4" inline> </head>
   <body class="page--checkout">
     <div class="wrap">
       <div class="wrap__top">
@@ -371,7 +371,7 @@
                     <h3>Verzenddatum</h3>
                   </header>
                   <div id="Checkout__area-shippingdate" class="Checkout__article-body show">
-                    <p class="Checkout__coupon-date" v-cloak>Uiterste verzenddatum:
+                    <p class="Checkout__coupon-date" v-cloak>Uiterlijk:
                       <% product.shippingdate %>
                     </p>
                   </div>
@@ -567,7 +567,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 Checkout__summary-backcol">
                       <a href="#" class="Checkout__summary-back">
                         <i class="icon icon-keyboard_arrow_left"></i> Terug naar de veilingen</a>
                     </div>
@@ -608,6 +608,14 @@
                 </article>
               </div>
             </section>
+            <div class="col-12 hidden-lg-up Checkout__mobilebottom">
+              <p class="Checkout__mobilebottom-terms">Door verder te gaan ga je akkoord met onze
+                <a href="#">algemene voorwaarden</a>
+              </p>
+              <button class="btn btn-success btn-block-mobile" v-on:click="editSave">Doorgaan naar betalen</button>
+              <a href="#" class="Checkout__mobilebottom-back">
+                <i class="icon icon-keyboard_arrow_left"></i> Terug naar de veilingen</a>
+            </div>
             <!-- Checkout: Edit details modal (start) -->
             <div id="Checkout__edit" class="modal restyling--modal Checkout__edit" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
               <div class="modal-dialog centered" role="document">
@@ -1567,6 +1575,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script> -->
-    <script src="scripts/app.js?v=846d07b6daa1483f764de455f3557072" inline></script>
+    <script src="scripts/app.js?v=a6b8d42648c61d4a285fdab355455297" inline></script>
   </body>
 </html>
