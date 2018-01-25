@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <title>HelloSpecial</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="author" content="kuus <kunderikuus@gmail.com> (http://kunderikuus.net)">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400" rel="stylesheet">
     <base href="/hellospecial/">
     <!-- for github deploy only -->
-    <link rel="stylesheet" href="styles/app.css?v=06c9131dbc25e25385c6ace0abf206e4" inline> </head>
+    <link rel="stylesheet" href="styles/app.css?v=45c7c81c4a9ee688d5f20a358a04f2c5" inline> </head>
   <body class="page--checkout">
     <div class="wrap">
       <div class="wrap__top">
@@ -123,7 +123,7 @@
               "shipping":
               {
                 "aanhef": "dhr",
-                "voornam": "Axel",
+                "voornaam": "Axel",
                 "achternaam": "Kenninck",
                 "bedrijfsnaam": "",
                 "land": "nl",
@@ -139,7 +139,7 @@
               "billing":
               {
                 "aanhef": "dhr",
-                "voornam": "Axel",
+                "voornaam": "Axel",
                 "achternaam": "Kenninck",
                 "bedrijfsnaam": "HelloSpecial B.V.",
                 "land": "nl",
@@ -206,10 +206,10 @@
                       <div v-cloak>
                         <% shipping.bedrijfsnaam %>
                           <br v-if="shipping.bedrijfsnaam">
-                          <span v-if="shipping.voornam">
-                            <% shipping.voornam %>
+                          <span v-if="shipping.voornaam">
+                            <% shipping.voornaam %>
                           </span>
-                          <span v-if="!shipping.voornam" class="text-muted">Voornam</span>
+                          <span v-if="!shipping.voornaam" class="text-muted">Voornaam</span>
                           <span v-if="shipping.achternaam">
                             <% shipping.achternaam %>
                           </span>
@@ -264,10 +264,10 @@
                         <div v-cloak>
                           <% billing.bedrijfsnaam %>
                             <br v-if="billing.bedrijfsnaam">
-                            <span v-if="billing.voornam">
-                              <% billing.voornam %>
+                            <span v-if="billing.voornaam">
+                              <% billing.voornaam %>
                             </span>
-                            <span v-if="!billing.voornam" class="text-muted">Voornam</span>
+                            <span v-if="!billing.voornaam" class="text-muted">Voornaam</span>
                             <span v-if="billing.achternaam">
                               <% billing.achternaam %>
                             </span>
@@ -371,10 +371,8 @@
                     <h3>Verzenddatum</h3>
                   </header>
                   <div id="Checkout__area-shippingdate" class="Checkout__article-body show">
-                    <p class="Checkout__coupon-date" v-cloak>
-                      <strong>Uiterste verzenddatum:
-                        <% product.shippingdate %>
-                      </strong>
+                    <p class="Checkout__coupon-date" v-cloak>Uiterste verzenddatum:
+                      <% product.shippingdate %>
                     </p>
                   </div>
                 </article>
@@ -483,20 +481,16 @@
                       <div id="Checkout__method-details-afterpay" class="Checkout__method-details collapse" data-checkout-method="afterpay" role="tabpanel">
                         <h4>Verificatie</h4>
                         <div class="form-group has-clear">
-                          <label for="input__payment_afterpay_telefoonnummer">Telefoonnummer
-                            <small>optioneel</small>
-                          </label>
+                          <label for="input__payment_afterpay_telefoonnummer">Telefoonnummer</label>
                           <span class="form-control-wrap">
-                            <input id="input__payment_afterpay_telefoonnummer" name="payment_afterpay_telefoonnummer" type="text" class="form-control" v-model="payment.afterpay.telefoonnummer">
+                            <input id="input__payment_afterpay_telefoonnummer" name="payment_afterpay_telefoonnummer" type="text" class="form-control" v-model="payment.afterpay.telefoonnummer" required>
                             <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
                           </span>
                         </div>
                         <div class="form-group has-clear">
-                          <label for="input__payment_afterpay_geboortedatum">Geboortedatum
-                            <small>optioneel</small>
-                          </label>
+                          <label for="input__payment_afterpay_geboortedatum">Geboortedatum</label>
                           <span class="form-control-wrap">
-                            <input id="input__payment_afterpay_geboortedatum" name="payment_afterpay_geboortedatum" type="text" class="form-control" v-model="payment.afterpay.geboortedatum">
+                            <input id="input__payment_afterpay_geboortedatum" name="payment_afterpay_geboortedatum" type="text" class="form-control" v-model="payment.afterpay.geboortedatum" required>
                             <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
                           </span>
                         </div>
@@ -620,7 +614,7 @@
                 <div class="modal-content">
                   <header class="modal-header">
                     <h3 class="modal-title">Gegevens wijzigen</h3>
-                    <button type="button" class="appModal__close close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="appModal__close close" data-dismiss="modal" aria-label="Close" v-on:click="editDiscard">
                       <i class="icon icon-cross-thin" aria-hidden="true"></i>
                     </button>
                   </header>
@@ -650,9 +644,9 @@
                             </label>
                           </div>
                           <div class="form-group has-clear col-lg-6">
-                            <label for="input__shipping_voornam">Voornaam</label>
+                            <label for="input__shipping_voornaam">Voornaam</label>
                             <span class="form-control-wrap">
-                              <input id="input__shipping_voornam" name="shipping_voornam" type="text" class="form-control" v-model="shipping.voornam" required>
+                              <input id="input__shipping_voornaam" name="shipping_voornaam" type="text" class="form-control" v-model="shipping.voornaam" required>
                               <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
                             </span>
                           </div>
@@ -826,10 +820,10 @@
                           <div v-cloak>
                             <% shipping.bedrijfsnaam %>
                               <br v-if="shipping.bedrijfsnaam">
-                              <span v-if="shipping.voornam">
-                                <% shipping.voornam %>
+                              <span v-if="shipping.voornaam">
+                                <% shipping.voornaam %>
                               </span>
-                              <span v-if="!shipping.voornam" class="text-muted">Voornam</span>
+                              <span v-if="!shipping.voornaam" class="text-muted">Voornaam</span>
                               <span v-if="shipping.achternaam">
                                 <% shipping.achternaam %>
                               </span>
@@ -909,9 +903,9 @@
                             </label>
                           </div>
                           <div class="form-group has-clear col-lg-6">
-                            <label for="input__billing_voornam">Voornaam</label>
+                            <label for="input__billing_voornaam">Voornaam</label>
                             <span class="form-control-wrap">
-                              <input id="input__billing_voornam" name="billing_voornam" type="text" class="form-control" v-model="billing.voornam" required>
+                              <input id="input__billing_voornaam" name="billing_voornaam" type="text" class="form-control" v-model="billing.voornaam" required>
                               <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
                             </span>
                           </div>
@@ -1068,10 +1062,10 @@
                           <div v-cloak>
                             <% billing.bedrijfsnaam %>
                               <br v-if="billing.bedrijfsnaam">
-                              <span v-if="billing.voornam">
-                                <% billing.voornam %>
+                              <span v-if="billing.voornaam">
+                                <% billing.voornaam %>
                               </span>
-                              <span v-if="!billing.voornam" class="text-muted">Voornam</span>
+                              <span v-if="!billing.voornaam" class="text-muted">Voornaam</span>
                               <span v-if="billing.achternaam">
                                 <% billing.achternaam %>
                               </span>
@@ -1573,6 +1567,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script> -->
-    <script src="scripts/app.js?v=48683d8705da23125e1f321dfb24e316" inline></script>
+    <script src="scripts/app.js?v=846d07b6daa1483f764de455f3557072" inline></script>
   </body>
 </html>
