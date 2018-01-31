@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400" rel="stylesheet">
     <base href="/hellospecial/">
     <!-- for github deploy only -->
-    <link rel="stylesheet" href="styles/app.css?v=61f5417e6dc504acd81b8416c0733285" inline> </head>
+    <link rel="stylesheet" href="styles/app.css?v=d9e67ebdae7673772c9e86ca8320cca6" inline> </head>
   <body class="page--checkout">
     <div class="wrap">
       <div class="wrap__top">
@@ -367,14 +367,14 @@
                           <label for="input__shipping_voornaam">Voornaam</label>
                           <span class="form-control-wrap">
                             <input id="input__shipping_voornaam" name="shipping_voornaam" type="text" class="form-control" v-model="shipping.voornaam" required>
-                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            <button class="form-control-clear" title="Clear"></button>
                           </span>
                         </div>
                         <div class="form-group has-clear col-lg-6">
                           <label for="input__shipping_achternaam">Achternaam</label>
                           <span class="form-control-wrap">
                             <input id="input__shipping_achternaam" name="shipping_achternaam" type="text" class="form-control" v-model="shipping.achternaam" required>
-                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            <button class="form-control-clear" title="Clear"></button>
                           </span>
                         </div>
                         <div class="form-group has-clear col-lg-12">
@@ -383,7 +383,7 @@
                           </label>
                           <span class="form-control-wrap">
                             <input id="input__shipping_bedrijfsnaam" name="shipping_bedrijfsnaam" type="text" class="form-control" v-model="shipping.bedrijfsnaam">
-                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            <button class="form-control-clear" title="Clear"></button>
                           </span>
                         </div>
                         <!-- macro: Checkout__form_address -->
@@ -403,14 +403,14 @@
                               <label for="input__shipping_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-4">
                               <label for="input__shipping_huisnummer">Huisnummer</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control" v-model="shipping.huisnummer" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-4">
@@ -419,21 +419,21 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_toev" name="shipping_toev" type="text" class="form-control" v-model="shipping.toev">
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-12">
                               <label for="input__shipping_straat">Straat</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control" v-model="shipping.straat" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-12">
                               <label for="input__shipping_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                           </div>
@@ -444,14 +444,14 @@
                               <label for="input__shipping_straat">Straat</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control" v-model="shipping.straat" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-6 col-lg-4">
                               <label for="input__shipping_huisnummer">Huisnummer</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control" v-model="shipping.huisnummer" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-6 col-lg-4">
@@ -460,21 +460,21 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_busnr" name="shipping_busnr" type="text" class="form-control" v-model="shipping.busnr">
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-4">
                               <label for="input__shipping_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-12">
                               <label for="input__shipping_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                           </div>
@@ -485,14 +485,14 @@
                               <label for="input__shipping_nummerstraat">Nummer + Straatnaam</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_nummerstraat" name="shipping_nummerstraat" type="text" class="form-control" v-model="shipping.nummerstraat" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-4">
                               <label for="input__shipping_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-8">
@@ -501,14 +501,14 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_addressprefix" name="shipping_addressprefix" type="text" class="form-control" v-model="shipping.addressprefix">
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-12">
                               <label for="input__shipping_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                           </div>
@@ -520,7 +520,7 @@
                           </label>
                           <span class="form-control-wrap">
                             <input id="input__shipping_telefoonnummer" name="shipping_telefoonnummer" type="text" class="form-control" v-model="shipping.telefoonnummer">
-                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            <button class="form-control-clear" title="Clear"></button>
                           </span>
                         </div>
                         <div class="form-group col-lg-12">
@@ -628,14 +628,14 @@
                           <label for="input__billing_voornaam">Voornaam</label>
                           <span class="form-control-wrap">
                             <input id="input__billing_voornaam" name="billing_voornaam" type="text" class="form-control" v-model="billing.voornaam" required>
-                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            <button class="form-control-clear" title="Clear"></button>
                           </span>
                         </div>
                         <div class="form-group has-clear col-lg-6">
                           <label for="input__billing_achternaam">Achternaam</label>
                           <span class="form-control-wrap">
                             <input id="input__billing_achternaam" name="billing_achternaam" type="text" class="form-control" v-model="billing.achternaam" required>
-                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            <button class="form-control-clear" title="Clear"></button>
                           </span>
                         </div>
                         <div class="form-group has-clear col-lg-12">
@@ -644,7 +644,7 @@
                           </label>
                           <span class="form-control-wrap">
                             <input id="input__billing_bedrijfsnaam" name="billing_bedrijfsnaam" type="text" class="form-control" v-model="billing.bedrijfsnaam">
-                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            <button class="form-control-clear" title="Clear"></button>
                           </span>
                         </div>
                         <!-- macro: Checkout__form_address -->
@@ -664,14 +664,14 @@
                               <label for="input__billing_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-4">
                               <label for="input__billing_huisnummer">Huisnummer</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control" v-model="billing.huisnummer" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-4">
@@ -680,21 +680,21 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_toev" name="billing_toev" type="text" class="form-control" v-model="billing.toev">
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-12">
                               <label for="input__billing_straat">Straat</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_straat" name="billing_straat" type="text" class="form-control" v-model="billing.straat" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-12">
                               <label for="input__billing_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                           </div>
@@ -705,14 +705,14 @@
                               <label for="input__billing_straat">Straat</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_straat" name="billing_straat" type="text" class="form-control" v-model="billing.straat" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-6 col-lg-4">
                               <label for="input__billing_huisnummer">Huisnummer</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control" v-model="billing.huisnummer" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-6 col-lg-4">
@@ -721,21 +721,21 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_busnr" name="billing_busnr" type="text" class="form-control" v-model="billing.busnr">
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-4">
                               <label for="input__billing_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-12">
                               <label for="input__billing_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                           </div>
@@ -746,14 +746,14 @@
                               <label for="input__billing_nummerstraat">Nummer + Straatnaam</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_nummerstraat" name="billing_nummerstraat" type="text" class="form-control" v-model="billing.nummerstraat" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-4">
                               <label for="input__billing_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-8">
@@ -762,14 +762,14 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_addressprefix" name="billing_addressprefix" type="text" class="form-control" v-model="billing.addressprefix">
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                             <div class="form-group has-clear col-lg-12">
                               <label for="input__billing_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required>
-                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                                <button class="form-control-clear" title="Clear"></button>
                               </span>
                             </div>
                           </div>
@@ -862,7 +862,7 @@
                     <div class="form-group has-clear">
                       <span class="form-control-wrap">
                         <input id="input__payment_coupon" name="payment_coupon" type="text" class="form-control" v-model="payment.coupon">
-                        <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                        <button class="form-control-clear" title="Clear"></button>
                       </span>
                     </div>
                     <button class="btn btn-success Checkout__coupon-submit" type="button" :disabled="!payment.coupon || feedback.coupon.valid" v-on:click="submitCoupon">
@@ -999,14 +999,14 @@
                           <label for="input__payment_afterpay_telefoonnummer">Telefoonnummer</label>
                           <span class="form-control-wrap">
                             <input id="input__payment_afterpay_telefoonnummer" name="payment_afterpay_telefoonnummer" type="text" class="form-control" v-model="payment.afterpay.telefoonnummer" required>
-                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            <button class="form-control-clear" title="Clear"></button>
                           </span>
                         </div>
                         <div class="form-group has-clear">
                           <label for="input__payment_afterpay_geboortedatum">Geboortedatum</label>
                           <span class="form-control-wrap">
-                            <input id="input__payment_afterpay_geboortedatum" name="payment_afterpay_geboortedatum" type="text" class="form-control" v-model="payment.afterpay.geboortedatum" required>
-                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                            <input id="input__payment_afterpay_geboortedatum" name="payment_afterpay_geboortedatum" type="text" class="form-control" v-model="payment.afterpay.geboortedatum" placeholder="dd/mm/yyyy" required>
+                            <button class="form-control-clear" title="Clear"></button>
                           </span>
                         </div>
                         <div class="alert alert-danger" v-if="feedback.afterpay.show" v-cloak>
@@ -1584,6 +1584,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script> -->
-    <script src="scripts/app.js?v=161c8a66ae16a1cecc24f4c227fbb8c3" inline></script>
+    <script src="scripts/app.js?v=c004e2e14749b2ecfe375646a4950bbc" inline></script>
   </body>
 </html>
