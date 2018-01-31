@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400" rel="stylesheet">
     <base href="/hellospecial/">
     <!-- for github deploy only -->
-    <link rel="stylesheet" href="styles/app.css?v=e01f41dda0828c21544dfc249c910db4" inline> </head>
+    <link rel="stylesheet" href="styles/app.css?v=61f5417e6dc504acd81b8416c0733285" inline> </head>
   <body class="page--checkout">
     <div class="wrap">
       <div class="wrap__top">
@@ -190,7 +190,7 @@
             <section class="col-lg-4 Checkout__overview">
               <div class="row">
                 <div class="col-12 hidden-lg-up">
-                  <button class="btn btn-success btn-block-mobile" v-on:click="editSave">Doorgaan naar betalen</button>
+                  <button class="btn btn-md btn-success btn-block-mobile" v-on:click="editSave">Doorgaan naar betalen</button>
                 </div>
                 <!-- Article: Details -->
                 <article class="col Checkout__details">
@@ -198,68 +198,588 @@
                     <i class="icon icon-keyboard_arrow_up"></i>
                     <h3>Gegevens</h3>
                   </header>
-                  <div id="Checkout__area-details" class="Checkout__article-body row show">
-                    <div class="Checkout__details-block col-md-4 col-lg-12">
-                      <h4 class="Checkout__details-title" v-if="shippingAsBilling">Factuur- en afleveradres</h4>
-                      <h4 class="Checkout__details-title" v-if="!shippingAsBilling">Afleveradres</h4>
-                      <!-- macro: Checkout__display_address -->
-                      <div v-cloak>
-                        <% shipping.bedrijfsnaam %>
-                          <br v-if="shipping.bedrijfsnaam">
-                          <span v-if="shipping.voornaam">
-                            <% shipping.voornaam %>
-                          </span>
-                          <span v-if="!shipping.voornaam" class="text-muted">Voornaam</span>
-                          <span v-if="shipping.achternaam">
-                            <% shipping.achternaam %>
-                          </span>
-                          <span v-if="!shipping.achternaam" class="text-muted">Achternaam</span>
-                          <br>
-                          <span v-if="shipping.addressprefix">
-                            <% shipping.addressprefix %>
-                              <br>
-                          </span>
-                          <div v-if="shipping.land === 'fr'">
-                            <span v-if="shipping.nummerstraat">
-                              <% shipping.nummerstraat %>
+                  <div id="Checkout__area-details" class="Checkout__article-body show">
+                    <div class="row">
+                      <div class="Checkout__details-block col-12 col-md-auto col-lg-12">
+                        <h4 class="Checkout__details-title" v-if="shippingAsBilling">Factuur- en afleveradres</h4>
+                        <h4 class="Checkout__details-title" v-if="!shippingAsBilling">Afleveradres</h4>
+                        <!-- macro: Checkout__display_address -->
+                        <div v-cloak>
+                          <% shipping.bedrijfsnaam %>
+                            <br v-if="shipping.bedrijfsnaam">
+                            <span v-if="shipping.voornaam">
+                              <% shipping.voornaam %>
                             </span>
-                            <span v-if="!shipping.nummerstraat" class="text-muted">Huisnr Straatnaam</span>
-                          </div>
-                          <div v-if="shipping.land !== 'fr'">
-                            <span v-if="shipping.straat">
-                              <% shipping.straat %>
+                            <span v-if="!shipping.voornaam" class="text-muted">Voornaam</span>
+                            <span v-if="shipping.achternaam">
+                              <% shipping.achternaam %>
                             </span>
-                            <span v-if="!shipping.straat" class="text-muted">Straatnaam</span>
-                            <span v-if="shipping.huisnummer">
-                              <% shipping.huisnummer %>
-                                <span v-if="shipping.land === 'nl'">
-                                  <% shipping.toev %>
-                                </span>
-                                <span v-if="shipping.land === 'be'">
-                                  <% shipping.busnr %>
-                                </span>
+                            <span v-if="!shipping.achternaam" class="text-muted">Achternaam</span>
+                            <br>
+                            <span v-if="shipping.addressprefix">
+                              <% shipping.addressprefix %>
+                                <br>
                             </span>
-                            <span v-if="!shipping.huisnummer" class="text-muted">Huisnr.</span>
-                            <br> </div>
-                          <span v-if="shipping.postcode">
-                            <% shipping.postcode %>
-                          </span>
-                          <span v-if="!shipping.postcode" class="text-muted">Postcode</span>
-                          <span v-if="shipping.plaats">
-                            <% shipping.plaats %>
-                          </span>
-                          <span v-if="!shipping.plaats" class="text-muted">Plaats</span>
-                          <br>
-                          <span v-if="shipping.land">
-                            <% lands[shipping.land] %>
-                          </span>
-                          <span v-if="!shipping.land" class="text-muted">Land</span>
+                            <div v-if="shipping.land === 'fr'">
+                              <span v-if="shipping.nummerstraat">
+                                <% shipping.nummerstraat %>
+                              </span>
+                              <span v-if="!shipping.nummerstraat" class="text-muted">Huisnr Straatnaam</span>
+                            </div>
+                            <div v-if="shipping.land !== 'fr'">
+                              <span v-if="shipping.straat">
+                                <% shipping.straat %>
+                              </span>
+                              <span v-if="!shipping.straat" class="text-muted">Straatnaam</span>
+                              <span v-if="shipping.huisnummer">
+                                <% shipping.huisnummer %>
+                                  <span v-if="shipping.land === 'nl'">
+                                    <% shipping.toev %>
+                                  </span>
+                                  <span v-if="shipping.land === 'be'">
+                                    <% shipping.busnr %>
+                                  </span>
+                              </span>
+                              <span v-if="!shipping.huisnummer" class="text-muted">Huisnr.</span>
+                              <br> </div>
+                            <span v-if="shipping.postcode">
+                              <% shipping.postcode %>
+                            </span>
+                            <span v-if="!shipping.postcode" class="text-muted">Postcode</span>
+                            <span v-if="shipping.plaats">
+                              <% shipping.plaats %>
+                            </span>
+                            <span v-if="!shipping.plaats" class="text-muted">Plaats</span>
+                            <br>
+                            <span v-if="shipping.land">
+                              <% lands[shipping.land] %>
+                            </span>
+                            <span v-if="!shipping.land" class="text-muted">Land</span>
+                        </div>
+                        <!-- endmacro: Checkout__display_address -->
                       </div>
-                      <!-- endmacro: Checkout__display_address -->
+                      <div class="Checkout__details-block col-12 col-md-auto col-lg-12">
+                        <h4 class="Checkout__details-title" v-if="!shippingAsBilling">Factuuradres</h4>
+                        <div v-if="!shippingAsBilling">
+                          <!-- macro: Checkout__display_address -->
+                          <div v-cloak>
+                            <% billing.bedrijfsnaam %>
+                              <br v-if="billing.bedrijfsnaam">
+                              <span v-if="billing.voornaam">
+                                <% billing.voornaam %>
+                              </span>
+                              <span v-if="!billing.voornaam" class="text-muted">Voornaam</span>
+                              <span v-if="billing.achternaam">
+                                <% billing.achternaam %>
+                              </span>
+                              <span v-if="!billing.achternaam" class="text-muted">Achternaam</span>
+                              <br>
+                              <span v-if="billing.addressprefix">
+                                <% billing.addressprefix %>
+                                  <br>
+                              </span>
+                              <div v-if="billing.land === 'fr'">
+                                <span v-if="billing.nummerstraat">
+                                  <% billing.nummerstraat %>
+                                </span>
+                                <span v-if="!billing.nummerstraat" class="text-muted">Huisnr Straatnaam</span>
+                              </div>
+                              <div v-if="billing.land !== 'fr'">
+                                <span v-if="billing.straat">
+                                  <% billing.straat %>
+                                </span>
+                                <span v-if="!billing.straat" class="text-muted">Straatnaam</span>
+                                <span v-if="billing.huisnummer">
+                                  <% billing.huisnummer %>
+                                    <span v-if="billing.land === 'nl'">
+                                      <% billing.toev %>
+                                    </span>
+                                    <span v-if="billing.land === 'be'">
+                                      <% billing.busnr %>
+                                    </span>
+                                </span>
+                                <span v-if="!billing.huisnummer" class="text-muted">Huisnr.</span>
+                                <br> </div>
+                              <span v-if="billing.postcode">
+                                <% billing.postcode %>
+                              </span>
+                              <span v-if="!billing.postcode" class="text-muted">Postcode</span>
+                              <span v-if="billing.plaats">
+                                <% billing.plaats %>
+                              </span>
+                              <span v-if="!billing.plaats" class="text-muted">Plaats</span>
+                              <br>
+                              <span v-if="billing.land">
+                                <% lands[billing.land] %>
+                              </span>
+                              <span v-if="!billing.land" class="text-muted">Land</span>
+                          </div>
+                          <!-- endmacro: Checkout__display_address -->
+                        </div>
+                      </div>
+                      <div class="Checkout__details-block col-12 col-md-auto col-lg-12">
+                        <h4 class="Checkout__details-title">Contactgegevens</h4>
+                        <!-- macro: Checkout__display_contact -->
+                        <div v-cloak>
+                          <% contact.email %>
+                            <br>
+                            <% shipping.telefoonnummer %>
+                        </div>
+                        <!-- endmacro: Checkout__display_contact -->
+                      </div>
+                      <div class="col-12">
+                        <a class="Checkout__details-edit" href="#" v-on:click="editDetails">
+                          <i class="icon icon-keyboard_arrow_right"></i> Wijzig gegevens</a>
+                      </div>
                     </div>
-                    <div class="Checkout__details-block col-md-4 col-lg-12">
-                      <h4 class="Checkout__details-title" v-if="!shippingAsBilling">Factuuradres</h4>
-                      <div v-if="!shippingAsBilling">
+                  </div>
+                </article>
+              </div>
+            </section>
+            <section id="Checkout__edit-mobile" class="col-12">
+              <article id="Checkout__edit" class="Checkout__edit row">
+                <div class="col-12 hidden-lg-up">
+                  <button class="btn btn-md btn-success btn-block-mobile" v-on:click="editSave">Opslaan en naar betalen</button>
+                  <header class="Checkout__article-header">
+                    <h3>Gegevens wijzigen</h3>
+                  </header>
+                </div>
+                <div class="col-12 Checkout__edit-shipping">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="row">
+                        <div class="col form-group">
+                          <h4>Afleveradres</h4>
+                        </div>
+                        <div class="form-group col-lg-12">
+                          <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="shipping_aanhef_1" name="shipping_aanhef" v-model="shipping.aanhef" class="custom-control-input" value="dhr">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Dhr.</span>
+                          </label>
+                          <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="shipping_aanhef_2" name="shipping_aanhef" v-model="shipping.aanhef" class="custom-control-input" value="mvr">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Mvr.</span>
+                          </label>
+                        </div>
+                        <div class="form-group has-clear col-lg-6">
+                          <label for="input__shipping_voornaam">Voornaam</label>
+                          <span class="form-control-wrap">
+                            <input id="input__shipping_voornaam" name="shipping_voornaam" type="text" class="form-control" v-model="shipping.voornaam" required>
+                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                          </span>
+                        </div>
+                        <div class="form-group has-clear col-lg-6">
+                          <label for="input__shipping_achternaam">Achternaam</label>
+                          <span class="form-control-wrap">
+                            <input id="input__shipping_achternaam" name="shipping_achternaam" type="text" class="form-control" v-model="shipping.achternaam" required>
+                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                          </span>
+                        </div>
+                        <div class="form-group has-clear col-lg-12">
+                          <label for="input__shipping_bedrijfsnaam">Bedrijfsnaam
+                            <small>optioneel</small>
+                          </label>
+                          <span class="form-control-wrap">
+                            <input id="input__shipping_bedrijfsnaam" name="shipping_bedrijfsnaam" type="text" class="form-control" v-model="shipping.bedrijfsnaam">
+                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                          </span>
+                        </div>
+                        <!-- macro: Checkout__form_address -->
+                        <div class="form-group col-lg-12">
+                          <label class="label-over">Land</label>
+                          <div class="custom-select__wrap">
+                            <select id="input__shipping_land" class="custom-select" name="shipping_land" v-model="shipping.land">
+                              <option value="nl">Nederland</option>
+                              <option value="be">België</option>
+                              <option value="fr">France</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div v-if="shipping.land === 'nl'" class="col-12 form-group-spacer">
+                          <div class="row">
+                            <div class="form-group has-clear col-lg-4">
+                              <label for="input__shipping_postcode">Postcode</label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-4">
+                              <label for="input__shipping_huisnummer">Huisnummer</label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control" v-model="shipping.huisnummer" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-4">
+                              <label for="input__shipping_toev">Toev.
+                                <small>optioneel</small>
+                              </label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_toev" name="shipping_toev" type="text" class="form-control" v-model="shipping.toev">
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__shipping_straat">Straat</label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control" v-model="shipping.straat" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__shipping_plaats">Plaats</label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div v-if="shipping.land === 'be'" class="col-12 form-group-spacer">
+                          <div class="row">
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__shipping_straat">Straat</label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control" v-model="shipping.straat" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-6 col-lg-4">
+                              <label for="input__shipping_huisnummer">Huisnummer</label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control" v-model="shipping.huisnummer" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-6 col-lg-4">
+                              <label for="input__shipping_busnr">Busnr.
+                                <small>optioneel</small>
+                              </label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_busnr" name="shipping_busnr" type="text" class="form-control" v-model="shipping.busnr">
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-4">
+                              <label for="input__shipping_postcode">Postcode</label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__shipping_plaats">Plaats</label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div v-if="shipping.land === 'fr'" class="col-12 form-group-spacer">
+                          <div class="row">
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__shipping_nummerstraat">Nummer + Straatnaam</label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_nummerstraat" name="shipping_nummerstraat" type="text" class="form-control" v-model="shipping.nummerstraat" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-4">
+                              <label for="input__shipping_postcode">Postcode</label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-8">
+                              <label for="input__shipping_addressprefix">App. - Etage - Res.
+                                <small>optioneel</small>
+                              </label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_addressprefix" name="shipping_addressprefix" type="text" class="form-control" v-model="shipping.addressprefix">
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__shipping_plaats">Plaats</label>
+                              <span class="form-control-wrap">
+                                <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- endmacro: Checkout__form_address -->
+                        <div class="form-group has-clear col-lg-12">
+                          <label for="input__shipping_telefoonnummer">Telefoonnummer
+                            <small>optioneel</small>
+                          </label>
+                          <span class="form-control-wrap">
+                            <input id="input__shipping_telefoonnummer" name="shipping_telefoonnummer" type="text" class="form-control" v-model="shipping.telefoonnummer">
+                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                          </span>
+                        </div>
+                        <div class="form-group col-lg-12">
+                          <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="shippingAsBilling" v-model="shippingAsBilling" v-validate="''">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Factuuradres is hetzelfde als afleveradres</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="Checkout__edit-summary">
+                        <h4 v-if="shippingAsBilling">Factuur- en afleveradres</h4>
+                        <h4 v-if="!shippingAsBilling">Afleveradres</h4>
+                        <!-- macro: Checkout__display_address -->
+                        <div v-cloak>
+                          <% shipping.bedrijfsnaam %>
+                            <br v-if="shipping.bedrijfsnaam">
+                            <span v-if="shipping.voornaam">
+                              <% shipping.voornaam %>
+                            </span>
+                            <span v-if="!shipping.voornaam" class="text-muted">Voornaam</span>
+                            <span v-if="shipping.achternaam">
+                              <% shipping.achternaam %>
+                            </span>
+                            <span v-if="!shipping.achternaam" class="text-muted">Achternaam</span>
+                            <br>
+                            <span v-if="shipping.addressprefix">
+                              <% shipping.addressprefix %>
+                                <br>
+                            </span>
+                            <div v-if="shipping.land === 'fr'">
+                              <span v-if="shipping.nummerstraat">
+                                <% shipping.nummerstraat %>
+                              </span>
+                              <span v-if="!shipping.nummerstraat" class="text-muted">Huisnr Straatnaam</span>
+                            </div>
+                            <div v-if="shipping.land !== 'fr'">
+                              <span v-if="shipping.straat">
+                                <% shipping.straat %>
+                              </span>
+                              <span v-if="!shipping.straat" class="text-muted">Straatnaam</span>
+                              <span v-if="shipping.huisnummer">
+                                <% shipping.huisnummer %>
+                                  <span v-if="shipping.land === 'nl'">
+                                    <% shipping.toev %>
+                                  </span>
+                                  <span v-if="shipping.land === 'be'">
+                                    <% shipping.busnr %>
+                                  </span>
+                              </span>
+                              <span v-if="!shipping.huisnummer" class="text-muted">Huisnr.</span>
+                              <br> </div>
+                            <span v-if="shipping.postcode">
+                              <% shipping.postcode %>
+                            </span>
+                            <span v-if="!shipping.postcode" class="text-muted">Postcode</span>
+                            <span v-if="shipping.plaats">
+                              <% shipping.plaats %>
+                            </span>
+                            <span v-if="!shipping.plaats" class="text-muted">Plaats</span>
+                            <br>
+                            <span v-if="shipping.land">
+                              <% lands[shipping.land] %>
+                            </span>
+                            <span v-if="!shipping.land" class="text-muted">Land</span>
+                        </div>
+                        <!-- endmacro: Checkout__display_address -->
+                      </div>
+                      <button class="btn btn-md btn-success Checkout__edit-submit" type="button" v-on:click="editSave">Opslaan en naar betalen</button>
+                      <span class="Checkout__linklike Checkout__edit-close" v-on:click="editDiscard">
+                        <i class="icon icon-keyboard_arrow_left"></i> Zonder opslaan naar betalen</span>
+                      <div class="alert alert-danger" v-if="feedback.shipping.show" v-cloak>
+                        <h5 v-if="feedback.shipping.title">
+                          <% feedback.shipping.title %>
+                        </h5>
+                        <p v-if="feedback.shipping.text">
+                          <% feedback.shipping.text %>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 Checkout__edit-billing" v-if="!shippingAsBilling">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="row">
+                        <div class="col form-group">
+                          <h4>Factuuradres</h4>
+                        </div>
+                        <div class="form-group col-lg-12">
+                          <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="billing_aanhef_1" name="billing_aanhef" v-model="billing.aanhef" class="custom-control-input" value="dhr">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Dhr.</span>
+                          </label>
+                          <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="billing_aanhef_2" name="billing_aanhef" v-model="billing.aanhef" class="custom-control-input" value="mvr">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Mvr.</span>
+                          </label>
+                        </div>
+                        <div class="form-group has-clear col-lg-6">
+                          <label for="input__billing_voornaam">Voornaam</label>
+                          <span class="form-control-wrap">
+                            <input id="input__billing_voornaam" name="billing_voornaam" type="text" class="form-control" v-model="billing.voornaam" required>
+                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                          </span>
+                        </div>
+                        <div class="form-group has-clear col-lg-6">
+                          <label for="input__billing_achternaam">Achternaam</label>
+                          <span class="form-control-wrap">
+                            <input id="input__billing_achternaam" name="billing_achternaam" type="text" class="form-control" v-model="billing.achternaam" required>
+                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                          </span>
+                        </div>
+                        <div class="form-group has-clear col-lg-12">
+                          <label for="input__billing_bedrijfsnaam">Bedrijfsnaam
+                            <small>optioneel</small>
+                          </label>
+                          <span class="form-control-wrap">
+                            <input id="input__billing_bedrijfsnaam" name="billing_bedrijfsnaam" type="text" class="form-control" v-model="billing.bedrijfsnaam">
+                            <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                          </span>
+                        </div>
+                        <!-- macro: Checkout__form_address -->
+                        <div class="form-group col-lg-12">
+                          <label class="label-over">Land</label>
+                          <div class="custom-select__wrap">
+                            <select id="input__billing_land" class="custom-select" name="billing_land" v-model="billing.land">
+                              <option value="nl">Nederland</option>
+                              <option value="be">België</option>
+                              <option value="fr">France</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div v-if="billing.land === 'nl'" class="col-12 form-group-spacer">
+                          <div class="row">
+                            <div class="form-group has-clear col-lg-4">
+                              <label for="input__billing_postcode">Postcode</label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-4">
+                              <label for="input__billing_huisnummer">Huisnummer</label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control" v-model="billing.huisnummer" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-4">
+                              <label for="input__billing_toev">Toev.
+                                <small>optioneel</small>
+                              </label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_toev" name="billing_toev" type="text" class="form-control" v-model="billing.toev">
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__billing_straat">Straat</label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_straat" name="billing_straat" type="text" class="form-control" v-model="billing.straat" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__billing_plaats">Plaats</label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div v-if="billing.land === 'be'" class="col-12 form-group-spacer">
+                          <div class="row">
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__billing_straat">Straat</label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_straat" name="billing_straat" type="text" class="form-control" v-model="billing.straat" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-6 col-lg-4">
+                              <label for="input__billing_huisnummer">Huisnummer</label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control" v-model="billing.huisnummer" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-6 col-lg-4">
+                              <label for="input__billing_busnr">Busnr.
+                                <small>optioneel</small>
+                              </label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_busnr" name="billing_busnr" type="text" class="form-control" v-model="billing.busnr">
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-4">
+                              <label for="input__billing_postcode">Postcode</label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__billing_plaats">Plaats</label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div v-if="billing.land === 'fr'" class="col-12 form-group-spacer">
+                          <div class="row">
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__billing_nummerstraat">Nummer + Straatnaam</label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_nummerstraat" name="billing_nummerstraat" type="text" class="form-control" v-model="billing.nummerstraat" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-4">
+                              <label for="input__billing_postcode">Postcode</label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-8">
+                              <label for="input__billing_addressprefix">App. - Etage - Res.
+                                <small>optioneel</small>
+                              </label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_addressprefix" name="billing_addressprefix" type="text" class="form-control" v-model="billing.addressprefix">
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                            <div class="form-group has-clear col-lg-12">
+                              <label for="input__billing_plaats">Plaats</label>
+                              <span class="form-control-wrap">
+                                <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required>
+                                <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- endmacro: Checkout__form_address -->
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="Checkout__edit-summary">
+                        <h4>Factuuradres</h4>
                         <!-- macro: Checkout__display_address -->
                         <div v-cloak>
                           <% billing.bedrijfsnaam %>
@@ -315,24 +835,19 @@
                         </div>
                         <!-- endmacro: Checkout__display_address -->
                       </div>
-                    </div>
-                    <div class="Checkout__details-block col-md-4 col-lg-12">
-                      <h4 class="Checkout__details-title">Contactgegevens</h4>
-                      <!-- macro: Checkout__display_contact -->
-                      <div v-cloak>
-                        <% contact.email %>
-                          <br>
-                          <% shipping.telefoonnummer %>
+                      <button class="btn btn-success Checkout__edit-submit" type="button" v-on:click="editSave">Opslaan en naar betalen</button>
+                      <div class="alert alert-danger" v-if="feedback.billing.show" v-cloak>
+                        <h5 v-if="feedback.billing.title">
+                          <% feedback.billing.title %>
+                        </h5>
+                        <p v-if="feedback.billing.text">
+                          <% feedback.billing.text %>
+                        </p>
                       </div>
-                      <!-- endmacro: Checkout__display_contact -->
-                    </div>
-                    <div class="col-12">
-                      <a class="Checkout__details-edit" href="#" data-toggle="modal" data-target="#Checkout__edit">
-                        <i class="icon icon-keyboard_arrow_right"></i> Wijzig gegevens</a>
                     </div>
                   </div>
-                </article>
-              </div>
+                </div>
+              </article>
             </section>
             <!-- Section: Payment -->
             <section class="col-lg-8 Checkout__payment">
@@ -426,7 +941,7 @@
                             <% feedback.ideal.text %>
                           </p>
                         </div>
-                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
+                        <button class="btn btn-md btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
                     <input id="Checkout__method-paypal" class="Checkout__method-input" type="radio" name="payment.method" v-model="payment.method" value="paypal">
@@ -439,7 +954,7 @@
                           <img class="Checkout__method-img" src="images/Checkout__paypal.svg" height="18"> </div>
                       </label>
                       <div id="Checkout__method-details-paypal" class="Checkout__method-details collapse" data-checkout-method="paypal" role="tabpanel">
-                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
+                        <button class="btn btn-md btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
                     <input id="Checkout__method-klarna" class="Checkout__method-input" type="radio" name="payment.method" v-model="payment.method" value="klarna">
@@ -452,7 +967,7 @@
                           <img class="Checkout__method-img" src="images/Checkout__klarna.svg" height="14"> </div>
                       </label>
                       <div id="Checkout__method-details-klarna" class="Checkout__method-details collapse" data-checkout-method="klarna" role="tabpanel">
-                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
+                        <button class="btn btn-md btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
                     <input id="Checkout__method-bancontact" class="Checkout__method-input" type="radio" name="payment.method" v-model="payment.method" value="bancontact">
@@ -466,7 +981,7 @@
                           <img class="Checkout__method-img" src="images/Checkout__bancontact.svg" height="22"> </div>
                       </label>
                       <div id="Checkout__method-details-bancontact" class="Checkout__method-details collapse" data-checkout-method="bancontact" role="tabpanel">
-                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
+                        <button class="btn btn-md btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
                     <input id="Checkout__method-afterpay" class="Checkout__method-input" type="radio" name="payment.method" v-model="payment.method" value="afterpay">
@@ -502,7 +1017,7 @@
                             <% feedback.afterpay.text %>
                           </p>
                         </div>
-                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
+                        <button class="btn btn-md btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
                     <input id="Checkout__method-creditcard" class="Checkout__method-input" type="radio" name="payment.method" v-model="payment.method" value="creditcard">
@@ -516,7 +1031,7 @@
                           <img class="Checkout__method-img" src="images/Checkout__creditcard.svg" height="14"> </div>
                       </label>
                       <div id="Checkout__method-details-creditcard" class="Checkout__method-details collapse" data-checkout-method="creditcard" role="tabpanel">
-                        <button class="btn btn-success Checkout__method-submit" type="submit">Betalen</button>
+                        <button class="btn btn-md btn-success Checkout__method-submit" type="submit">Betalen</button>
                       </div>
                     </div>
                   </div>
@@ -612,527 +1127,21 @@
               <p class="Checkout__mobilebottom-terms">Door verder te gaan ga je akkoord met onze
                 <a href="#">algemene voorwaarden</a>
               </p>
-              <button class="btn btn-success btn-block-mobile" v-on:click="editSave">Doorgaan naar betalen</button>
+              <button class="btn btn-md btn-success btn-block-mobile" v-on:click="editSave">Doorgaan naar betalen</button>
               <a href="#" class="Checkout__mobilebottom-back">
                 <i class="icon icon-keyboard_arrow_left"></i> Terug naar de veilingen</a>
             </div>
             <!-- Checkout: Edit details modal (start) -->
-            <div id="Checkout__edit" class="modal restyling--modal Checkout__edit" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+            <div id="Checkout__edit-modal" class="modal restyling--modal Checkout__edit-modal" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
               <div class="modal-dialog centered" role="document">
                 <div class="modal-content">
                   <header class="modal-header">
                     <h3 class="modal-title">Gegevens wijzigen</h3>
-                    <button type="button" class="appModal__close close" data-dismiss="modal" aria-label="Close" v-on:click="editDiscard">
+                    <button type="button" class="appModal__close close" data-dismiss="modal" aria-label="Close" v-on:click="editClose">
                       <i class="icon icon-cross-thin" aria-hidden="true"></i>
                     </button>
                   </header>
-                  <section class="modal-body">
-                    <div class="hidden-lg-up">
-                      <button class="btn btn-success btn-block-mobile" v-on:click="editSave">Opslaan en naar betalen</button>
-                      <header class="Checkout__article-header">
-                        <h3>Gegevens wijzigen</h3>
-                      </header>
-                    </div>
-                    <div class="row Checkout__edit-shipping">
-                      <div class="col-lg-6">
-                        <div class="row">
-                          <div class="col form-group">
-                            <h4>Afleveradres</h4>
-                          </div>
-                          <div class="form-group col-lg-12">
-                            <label class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" id="shipping_aanhef_1" name="shipping_aanhef" v-model="shipping.aanhef" class="custom-control-input" value="dhr">
-                              <span class="custom-control-indicator"></span>
-                              <span class="custom-control-description">Dhr.</span>
-                            </label>
-                            <label class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" id="shipping_aanhef_2" name="shipping_aanhef" v-model="shipping.aanhef" class="custom-control-input" value="mvr">
-                              <span class="custom-control-indicator"></span>
-                              <span class="custom-control-description">Mvr.</span>
-                            </label>
-                          </div>
-                          <div class="form-group has-clear col-lg-6">
-                            <label for="input__shipping_voornaam">Voornaam</label>
-                            <span class="form-control-wrap">
-                              <input id="input__shipping_voornaam" name="shipping_voornaam" type="text" class="form-control" v-model="shipping.voornaam" required>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                            </span>
-                          </div>
-                          <div class="form-group has-clear col-lg-6">
-                            <label for="input__shipping_achternaam">Achternaam</label>
-                            <span class="form-control-wrap">
-                              <input id="input__shipping_achternaam" name="shipping_achternaam" type="text" class="form-control" v-model="shipping.achternaam" required>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                            </span>
-                          </div>
-                          <div class="form-group has-clear col-lg-12">
-                            <label for="input__shipping_bedrijfsnaam">Bedrijfsnaam
-                              <small>optioneel</small>
-                            </label>
-                            <span class="form-control-wrap">
-                              <input id="input__shipping_bedrijfsnaam" name="shipping_bedrijfsnaam" type="text" class="form-control" v-model="shipping.bedrijfsnaam">
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                            </span>
-                          </div>
-                          <!-- macro: Checkout__form_address -->
-                          <div class="form-group col-lg-12">
-                            <label class="label-over">Land</label>
-                            <div class="custom-select__wrap">
-                              <select id="input__shipping_land" class="custom-select" name="shipping_land" v-model="shipping.land">
-                                <option value="nl">Nederland</option>
-                                <option value="be">België</option>
-                                <option value="fr">France</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div v-if="shipping.land === 'nl'" class="col-12 form-group-spacer">
-                            <div class="row">
-                              <div class="form-group has-clear col-lg-4">
-                                <label for="input__shipping_postcode">Postcode</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-4">
-                                <label for="input__shipping_huisnummer">Huisnummer</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control" v-model="shipping.huisnummer" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-4">
-                                <label for="input__shipping_toev">Toev.
-                                  <small>optioneel</small>
-                                </label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_toev" name="shipping_toev" type="text" class="form-control" v-model="shipping.toev">
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__shipping_straat">Straat</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control" v-model="shipping.straat" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__shipping_plaats">Plaats</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div v-if="shipping.land === 'be'" class="col-12 form-group-spacer">
-                            <div class="row">
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__shipping_straat">Straat</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control" v-model="shipping.straat" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-6 col-lg-4">
-                                <label for="input__shipping_huisnummer">Huisnummer</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control" v-model="shipping.huisnummer" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-6 col-lg-4">
-                                <label for="input__shipping_busnr">Busnr.
-                                  <small>optioneel</small>
-                                </label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_busnr" name="shipping_busnr" type="text" class="form-control" v-model="shipping.busnr">
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-4">
-                                <label for="input__shipping_postcode">Postcode</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__shipping_plaats">Plaats</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div v-if="shipping.land === 'fr'" class="col-12 form-group-spacer">
-                            <div class="row">
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__shipping_nummerstraat">Nummer + Straatnaam</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_nummerstraat" name="shipping_nummerstraat" type="text" class="form-control" v-model="shipping.nummerstraat" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-4">
-                                <label for="input__shipping_postcode">Postcode</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control" v-model="shipping.postcode" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-8">
-                                <label for="input__shipping_addressprefix">App. - Etage - Res.
-                                  <small>optioneel</small>
-                                </label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_addressprefix" name="shipping_addressprefix" type="text" class="form-control" v-model="shipping.addressprefix">
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__shipping_plaats">Plaats</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control" v-model="shipping.plaats" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- endmacro: Checkout__form_address -->
-                          <div class="form-group has-clear col-lg-12">
-                            <label for="input__shipping_telefoonnummer">Telefoonnummer
-                              <small>optioneel</small>
-                            </label>
-                            <span class="form-control-wrap">
-                              <input id="input__shipping_telefoonnummer" name="shipping_telefoonnummer" type="text" class="form-control" v-model="shipping.telefoonnummer">
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                            </span>
-                          </div>
-                          <div class="form-group col-lg-12">
-                            <label class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" name="shippingAsBilling" v-model="shippingAsBilling" v-validate="''">
-                              <span class="custom-control-indicator"></span>
-                              <span class="custom-control-description">Factuuradres is hetzelfde als afleveradres</span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="Checkout__edit-summary">
-                          <h4 v-if="shippingAsBilling">Factuur- en afleveradres</h4>
-                          <h4 v-if="!shippingAsBilling">Afleveradres</h4>
-                          <!-- macro: Checkout__display_address -->
-                          <div v-cloak>
-                            <% shipping.bedrijfsnaam %>
-                              <br v-if="shipping.bedrijfsnaam">
-                              <span v-if="shipping.voornaam">
-                                <% shipping.voornaam %>
-                              </span>
-                              <span v-if="!shipping.voornaam" class="text-muted">Voornaam</span>
-                              <span v-if="shipping.achternaam">
-                                <% shipping.achternaam %>
-                              </span>
-                              <span v-if="!shipping.achternaam" class="text-muted">Achternaam</span>
-                              <br>
-                              <span v-if="shipping.addressprefix">
-                                <% shipping.addressprefix %>
-                                  <br>
-                              </span>
-                              <div v-if="shipping.land === 'fr'">
-                                <span v-if="shipping.nummerstraat">
-                                  <% shipping.nummerstraat %>
-                                </span>
-                                <span v-if="!shipping.nummerstraat" class="text-muted">Huisnr Straatnaam</span>
-                              </div>
-                              <div v-if="shipping.land !== 'fr'">
-                                <span v-if="shipping.straat">
-                                  <% shipping.straat %>
-                                </span>
-                                <span v-if="!shipping.straat" class="text-muted">Straatnaam</span>
-                                <span v-if="shipping.huisnummer">
-                                  <% shipping.huisnummer %>
-                                    <span v-if="shipping.land === 'nl'">
-                                      <% shipping.toev %>
-                                    </span>
-                                    <span v-if="shipping.land === 'be'">
-                                      <% shipping.busnr %>
-                                    </span>
-                                </span>
-                                <span v-if="!shipping.huisnummer" class="text-muted">Huisnr.</span>
-                                <br> </div>
-                              <span v-if="shipping.postcode">
-                                <% shipping.postcode %>
-                              </span>
-                              <span v-if="!shipping.postcode" class="text-muted">Postcode</span>
-                              <span v-if="shipping.plaats">
-                                <% shipping.plaats %>
-                              </span>
-                              <span v-if="!shipping.plaats" class="text-muted">Plaats</span>
-                              <br>
-                              <span v-if="shipping.land">
-                                <% lands[shipping.land] %>
-                              </span>
-                              <span v-if="!shipping.land" class="text-muted">Land</span>
-                          </div>
-                          <!-- endmacro: Checkout__display_address -->
-                        </div>
-                        <button class="btn btn-success Checkout__edit-submit" type="button" v-on:click="editSave">Opslaan en naar betalen</button>
-                        <span class="Checkout__linklike Checkout__edit-close" v-on:click="editDiscard">
-                          <i class="icon icon-keyboard_arrow_left"></i> Zonder opslaan naar betalen</span>
-                        <div class="alert alert-danger" v-if="feedback.shipping.show" v-cloak>
-                          <h5 v-if="feedback.shipping.title">
-                            <% feedback.shipping.title %>
-                          </h5>
-                          <p v-if="feedback.shipping.text">
-                            <% feedback.shipping.text %>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row Checkout__edit-billing" v-if="!shippingAsBilling">
-                      <div class="col-lg-6">
-                        <div class="row">
-                          <div class="col form-group">
-                            <h4>Factuuradres</h4>
-                          </div>
-                          <div class="form-group col-lg-12">
-                            <label class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" id="billing_aanhef_1" name="billing_aanhef" v-model="billing.aanhef" class="custom-control-input" value="dhr">
-                              <span class="custom-control-indicator"></span>
-                              <span class="custom-control-description">Dhr.</span>
-                            </label>
-                            <label class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" id="billing_aanhef_2" name="billing_aanhef" v-model="billing.aanhef" class="custom-control-input" value="mvr">
-                              <span class="custom-control-indicator"></span>
-                              <span class="custom-control-description">Mvr.</span>
-                            </label>
-                          </div>
-                          <div class="form-group has-clear col-lg-6">
-                            <label for="input__billing_voornaam">Voornaam</label>
-                            <span class="form-control-wrap">
-                              <input id="input__billing_voornaam" name="billing_voornaam" type="text" class="form-control" v-model="billing.voornaam" required>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                            </span>
-                          </div>
-                          <div class="form-group has-clear col-lg-6">
-                            <label for="input__billing_achternaam">Achternaam</label>
-                            <span class="form-control-wrap">
-                              <input id="input__billing_achternaam" name="billing_achternaam" type="text" class="form-control" v-model="billing.achternaam" required>
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                            </span>
-                          </div>
-                          <div class="form-group has-clear col-lg-12">
-                            <label for="input__billing_bedrijfsnaam">Bedrijfsnaam
-                              <small>optioneel</small>
-                            </label>
-                            <span class="form-control-wrap">
-                              <input id="input__billing_bedrijfsnaam" name="billing_bedrijfsnaam" type="text" class="form-control" v-model="billing.bedrijfsnaam">
-                              <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                            </span>
-                          </div>
-                          <!-- macro: Checkout__form_address -->
-                          <div class="form-group col-lg-12">
-                            <label class="label-over">Land</label>
-                            <div class="custom-select__wrap">
-                              <select id="input__billing_land" class="custom-select" name="billing_land" v-model="billing.land">
-                                <option value="nl">Nederland</option>
-                                <option value="be">België</option>
-                                <option value="fr">France</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div v-if="billing.land === 'nl'" class="col-12 form-group-spacer">
-                            <div class="row">
-                              <div class="form-group has-clear col-lg-4">
-                                <label for="input__billing_postcode">Postcode</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-4">
-                                <label for="input__billing_huisnummer">Huisnummer</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control" v-model="billing.huisnummer" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-4">
-                                <label for="input__billing_toev">Toev.
-                                  <small>optioneel</small>
-                                </label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_toev" name="billing_toev" type="text" class="form-control" v-model="billing.toev">
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__billing_straat">Straat</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_straat" name="billing_straat" type="text" class="form-control" v-model="billing.straat" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__billing_plaats">Plaats</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div v-if="billing.land === 'be'" class="col-12 form-group-spacer">
-                            <div class="row">
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__billing_straat">Straat</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_straat" name="billing_straat" type="text" class="form-control" v-model="billing.straat" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-6 col-lg-4">
-                                <label for="input__billing_huisnummer">Huisnummer</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control" v-model="billing.huisnummer" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-6 col-lg-4">
-                                <label for="input__billing_busnr">Busnr.
-                                  <small>optioneel</small>
-                                </label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_busnr" name="billing_busnr" type="text" class="form-control" v-model="billing.busnr">
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-4">
-                                <label for="input__billing_postcode">Postcode</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__billing_plaats">Plaats</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div v-if="billing.land === 'fr'" class="col-12 form-group-spacer">
-                            <div class="row">
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__billing_nummerstraat">Nummer + Straatnaam</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_nummerstraat" name="billing_nummerstraat" type="text" class="form-control" v-model="billing.nummerstraat" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-4">
-                                <label for="input__billing_postcode">Postcode</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control" v-model="billing.postcode" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-8">
-                                <label for="input__billing_addressprefix">App. - Etage - Res.
-                                  <small>optioneel</small>
-                                </label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_addressprefix" name="billing_addressprefix" type="text" class="form-control" v-model="billing.addressprefix">
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                              <div class="form-group has-clear col-lg-12">
-                                <label for="input__billing_plaats">Plaats</label>
-                                <span class="form-control-wrap">
-                                  <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control" v-model="billing.plaats" required>
-                                  <i class="form-control-clear icon icon-cross-thin" title="Clear"></i>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- endmacro: Checkout__form_address -->
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="Checkout__edit-summary">
-                          <h4>Factuuradres</h4>
-                          <!-- macro: Checkout__display_address -->
-                          <div v-cloak>
-                            <% billing.bedrijfsnaam %>
-                              <br v-if="billing.bedrijfsnaam">
-                              <span v-if="billing.voornaam">
-                                <% billing.voornaam %>
-                              </span>
-                              <span v-if="!billing.voornaam" class="text-muted">Voornaam</span>
-                              <span v-if="billing.achternaam">
-                                <% billing.achternaam %>
-                              </span>
-                              <span v-if="!billing.achternaam" class="text-muted">Achternaam</span>
-                              <br>
-                              <span v-if="billing.addressprefix">
-                                <% billing.addressprefix %>
-                                  <br>
-                              </span>
-                              <div v-if="billing.land === 'fr'">
-                                <span v-if="billing.nummerstraat">
-                                  <% billing.nummerstraat %>
-                                </span>
-                                <span v-if="!billing.nummerstraat" class="text-muted">Huisnr Straatnaam</span>
-                              </div>
-                              <div v-if="billing.land !== 'fr'">
-                                <span v-if="billing.straat">
-                                  <% billing.straat %>
-                                </span>
-                                <span v-if="!billing.straat" class="text-muted">Straatnaam</span>
-                                <span v-if="billing.huisnummer">
-                                  <% billing.huisnummer %>
-                                    <span v-if="billing.land === 'nl'">
-                                      <% billing.toev %>
-                                    </span>
-                                    <span v-if="billing.land === 'be'">
-                                      <% billing.busnr %>
-                                    </span>
-                                </span>
-                                <span v-if="!billing.huisnummer" class="text-muted">Huisnr.</span>
-                                <br> </div>
-                              <span v-if="billing.postcode">
-                                <% billing.postcode %>
-                              </span>
-                              <span v-if="!billing.postcode" class="text-muted">Postcode</span>
-                              <span v-if="billing.plaats">
-                                <% billing.plaats %>
-                              </span>
-                              <span v-if="!billing.plaats" class="text-muted">Plaats</span>
-                              <br>
-                              <span v-if="billing.land">
-                                <% lands[billing.land] %>
-                              </span>
-                              <span v-if="!billing.land" class="text-muted">Land</span>
-                          </div>
-                          <!-- endmacro: Checkout__display_address -->
-                        </div>
-                        <button class="btn btn-success Checkout__edit-submit" type="button" v-on:click="editSave">Opslaan en naar betalen</button>
-                        <div class="alert alert-danger" v-if="feedback.billing.show" v-cloak>
-                          <h5 v-if="feedback.billing.title">
-                            <% feedback.billing.title %>
-                          </h5>
-                          <p v-if="feedback.billing.text">
-                            <% feedback.billing.text %>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
+                  <section id="Checkout__edit-modal-body" class="modal-body"> </section>
                 </div>
               </div>
             </div>
@@ -1575,6 +1584,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script> -->
-    <script src="scripts/app.js?v=a6b8d42648c61d4a285fdab355455297" inline></script>
+    <script src="scripts/app.js?v=ff810b231b4898c77deeff7573da36f0" inline></script>
   </body>
 </html>
