@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400" rel="stylesheet">
     <base href="/hellospecial/">
     <!-- for github deploy only -->
-    <link rel="stylesheet" href="styles/app.css?v=15dc1a7c1332dc25f3dbd249a59b0207" inline> </head>
+    <link rel="stylesheet" href="styles/app.css?v=b03cc4f4b93a40ec197c8b68eb2d6a3f" inline> </head>
   <body class="page--checkout">
     <div class="wrap">
       <div class="wrap__top">
@@ -200,7 +200,7 @@
                   </header>
                   <div id="Checkout__area-details" class="Checkout__article-body show">
                     <div class="row" v-if="isAddressEmpty">
-                      <div class="col-12">
+                      <div class="col-12 pb-5">
                         <a class="btn btn-md btn-success" href="#" v-on:click="addAddress">Adresgegevens bijwerken</a>
                       </div>
                     </div>
@@ -372,14 +372,14 @@
                           <label for="input__shipping_voornaam">Voornaam</label>
                           <span class="form-control-wrap">
                             <input id="input__shipping_voornaam" name="shipping_voornaam" type="text" class="form-control form-control-clearable" v-model="shipping.voornaam" required>
-                            <button class="form-control-clear" title="Clear"></button>
+                            <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                           </span>
                         </div>
                         <div class="form-group col-lg-6">
                           <label for="input__shipping_achternaam">Achternaam</label>
                           <span class="form-control-wrap">
                             <input id="input__shipping_achternaam" name="shipping_achternaam" type="text" class="form-control form-control-clearable" v-model="shipping.achternaam" required>
-                            <button class="form-control-clear" title="Clear"></button>
+                            <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                           </span>
                         </div>
                         <div class="form-group col-lg-12">
@@ -388,7 +388,7 @@
                           </label>
                           <span class="form-control-wrap">
                             <input id="input__shipping_bedrijfsnaam" name="shipping_bedrijfsnaam" type="text" class="form-control form-control-clearable" v-model="shipping.bedrijfsnaam">
-                            <button class="form-control-clear" title="Clear"></button>
+                            <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                           </span>
                         </div>
                         <!-- macro: Checkout__form_address -->
@@ -408,14 +408,14 @@
                               <label for="input__shipping_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control form-control-clearable" v-model="shipping.postcode" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-4">
                               <label for="input__shipping_huisnummer">Huisnummer</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control form-control-clearable" v-model="shipping.huisnummer" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-4">
@@ -424,21 +424,21 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_toev" name="shipping_toev" type="text" class="form-control form-control-clearable" v-model="shipping.toev">
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-12">
                               <label for="input__shipping_straat">Straat</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control form-control-clearable" v-model="shipping.straat" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-12">
                               <label for="input__shipping_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control form-control-clearable" v-model="shipping.plaats" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                           </div>
@@ -449,14 +449,14 @@
                               <label for="input__shipping_straat">Straat</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_straat" name="shipping_straat" type="text" class="form-control form-control-clearable" v-model="shipping.straat" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-6 col-lg-4">
                               <label for="input__shipping_huisnummer">Huisnummer</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_huisnummer" name="shipping_huisnummer" type="text" class="form-control form-control-clearable" v-model="shipping.huisnummer" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-6 col-lg-4">
@@ -465,21 +465,21 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_busnr" name="shipping_busnr" type="text" class="form-control form-control-clearable" v-model="shipping.busnr">
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-4">
                               <label for="input__shipping_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control form-control-clearable" v-model="shipping.postcode" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-12">
                               <label for="input__shipping_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control form-control-clearable" v-model="shipping.plaats" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                           </div>
@@ -490,14 +490,14 @@
                               <label for="input__shipping_nummerstraat">Nummer + Straatnaam</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_nummerstraat" name="shipping_nummerstraat" type="text" class="form-control form-control-clearable" v-model="shipping.nummerstraat" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-4">
                               <label for="input__shipping_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_postcode" name="shipping_postcode" type="text" class="form-control form-control-clearable" v-model="shipping.postcode" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-8">
@@ -506,14 +506,14 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_addressprefix" name="shipping_addressprefix" type="text" class="form-control form-control-clearable" v-model="shipping.addressprefix">
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-12">
                               <label for="input__shipping_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__shipping_plaats" name="shipping_plaats" type="text" class="form-control form-control-clearable" v-model="shipping.plaats" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                           </div>
@@ -525,7 +525,7 @@
                           </label>
                           <span class="form-control-wrap">
                             <input id="input__shipping_telefoonnummer" name="shipping_telefoonnummer" type="text" class="form-control form-control-clearable" v-model="shipping.telefoonnummer">
-                            <button class="form-control-clear" title="Clear"></button>
+                            <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                           </span>
                         </div>
                         <div class="form-group col-lg-12">
@@ -633,14 +633,14 @@
                           <label for="input__billing_voornaam">Voornaam</label>
                           <span class="form-control-wrap">
                             <input id="input__billing_voornaam" name="billing_voornaam" type="text" class="form-control form-control-clearable" v-model="billing.voornaam" required>
-                            <button class="form-control-clear" title="Clear"></button>
+                            <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                           </span>
                         </div>
                         <div class="form-group col-lg-6">
                           <label for="input__billing_achternaam">Achternaam</label>
                           <span class="form-control-wrap">
                             <input id="input__billing_achternaam" name="billing_achternaam" type="text" class="form-control form-control-clearable" v-model="billing.achternaam" required>
-                            <button class="form-control-clear" title="Clear"></button>
+                            <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                           </span>
                         </div>
                         <div class="form-group col-lg-12">
@@ -649,7 +649,7 @@
                           </label>
                           <span class="form-control-wrap">
                             <input id="input__billing_bedrijfsnaam" name="billing_bedrijfsnaam" type="text" class="form-control form-control-clearable" v-model="billing.bedrijfsnaam">
-                            <button class="form-control-clear" title="Clear"></button>
+                            <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                           </span>
                         </div>
                         <!-- macro: Checkout__form_address -->
@@ -669,14 +669,14 @@
                               <label for="input__billing_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control form-control-clearable" v-model="billing.postcode" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-4">
                               <label for="input__billing_huisnummer">Huisnummer</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control form-control-clearable" v-model="billing.huisnummer" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-4">
@@ -685,21 +685,21 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_toev" name="billing_toev" type="text" class="form-control form-control-clearable" v-model="billing.toev">
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-12">
                               <label for="input__billing_straat">Straat</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_straat" name="billing_straat" type="text" class="form-control form-control-clearable" v-model="billing.straat" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-12">
                               <label for="input__billing_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control form-control-clearable" v-model="billing.plaats" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                           </div>
@@ -710,14 +710,14 @@
                               <label for="input__billing_straat">Straat</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_straat" name="billing_straat" type="text" class="form-control form-control-clearable" v-model="billing.straat" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-6 col-lg-4">
                               <label for="input__billing_huisnummer">Huisnummer</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_huisnummer" name="billing_huisnummer" type="text" class="form-control form-control-clearable" v-model="billing.huisnummer" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-6 col-lg-4">
@@ -726,21 +726,21 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_busnr" name="billing_busnr" type="text" class="form-control form-control-clearable" v-model="billing.busnr">
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-4">
                               <label for="input__billing_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control form-control-clearable" v-model="billing.postcode" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-12">
                               <label for="input__billing_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control form-control-clearable" v-model="billing.plaats" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                           </div>
@@ -751,14 +751,14 @@
                               <label for="input__billing_nummerstraat">Nummer + Straatnaam</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_nummerstraat" name="billing_nummerstraat" type="text" class="form-control form-control-clearable" v-model="billing.nummerstraat" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-4">
                               <label for="input__billing_postcode">Postcode</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_postcode" name="billing_postcode" type="text" class="form-control form-control-clearable" v-model="billing.postcode" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-8">
@@ -767,14 +767,14 @@
                               </label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_addressprefix" name="billing_addressprefix" type="text" class="form-control form-control-clearable" v-model="billing.addressprefix">
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                             <div class="form-group col-lg-12">
                               <label for="input__billing_plaats">Plaats</label>
                               <span class="form-control-wrap">
                                 <input id="input__billing_plaats" name="billing_plaats" type="text" class="form-control form-control-clearable" v-model="billing.plaats" required>
-                                <button class="form-control-clear" title="Clear"></button>
+                                <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                               </span>
                             </div>
                           </div>
@@ -867,7 +867,7 @@
                     <div class="form-group">
                       <span class="form-control-wrap">
                         <input id="input__payment_coupon" name="payment_coupon" type="text" class="form-control form-control-clearable" v-model="payment.coupon">
-                        <button class="form-control-clear" title="Clear"></button>
+                        <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                       </span>
                     </div>
                     <button class="btn btn-success Checkout__coupon-submit" type="button" :disabled="!payment.coupon || feedback.coupon.valid" v-on:click="submitCoupon">
@@ -1004,14 +1004,14 @@
                           <label for="input__payment_afterpay_telefoonnummer">Telefoonnummer</label>
                           <span class="form-control-wrap">
                             <input id="input__payment_afterpay_telefoonnummer" name="payment_afterpay_telefoonnummer" type="text" class="form-control form-control-clearable" v-model="payment.afterpay.telefoonnummer" required>
-                            <button class="form-control-clear" title="Clear"></button>
+                            <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                           </span>
                         </div>
                         <div class="form-group">
                           <label for="input__payment_afterpay_geboortedatum">Geboortedatum</label>
                           <span class="form-control-wrap">
                             <input id="input__payment_afterpay_geboortedatum" name="payment_afterpay_geboortedatum" type="text" class="form-control form-control-clearable" v-model="payment.afterpay.geboortedatum" placeholder="dd/mm/yyyy" required>
-                            <button class="form-control-clear" title="Clear"></button>
+                            <button class="form-control-clear" title="Clear" tabindex="-1"></button>
                           </span>
                         </div>
                         <div class="alert alert-danger" v-if="feedback.afterpay.show" v-cloak>
@@ -1589,6 +1589,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script> -->
-    <script src="scripts/app.js?v=89b20dc061baef26747e73f00ed28a6c" inline></script>
+    <script src="scripts/app.js?v=6065ed3fd1daa7c5739ecee9105146f9" inline></script>
   </body>
 </html>
